@@ -1,3 +1,7 @@
+babysitting:
+    resource: "@BabysittingBundle/Resources/config/routing.yml"
+    prefix:   /
+
 medecin:
     resource: "@MedecinBundle/Resources/config/routing.yml"
     prefix:   /medecin
