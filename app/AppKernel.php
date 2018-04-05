@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new ELearningBundle\ELearningBundle(),
             new RecetteBundle\RecetteBundle(),
             new GarderieBundle\GarderieBundle(),
+            new MedecinBundle\MedecinBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
