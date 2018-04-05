@@ -1,0 +1,3 @@
+garderie_homepage:
+    path:     /garderie
+    defaults: { _controller: GarderieBundle:Default:index }
