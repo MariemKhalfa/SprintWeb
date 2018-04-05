@@ -40,7 +40,18 @@
 <div class="single-input">
     {{ form_row(form.roles) }}
 </div>
+<div class="single-input">
+    {{ form_row(form.babysitter) }}
+</div>
+<div class="single-input">
+    {{ form_row(form.covoiturage) }}
+</div>
+<div class="single-input">
+    {{ form_row(form.nbreEnfants) }}
+</div>
 <div  class="single-input text-center">
     <input type="submit" class="sign__btn" value="{{ 'Sign up'|trans }}" />
 </div>
+
 {{ form_end(form) }}
+

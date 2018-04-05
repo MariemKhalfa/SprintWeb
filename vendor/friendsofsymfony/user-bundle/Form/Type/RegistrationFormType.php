@@ -12,12 +12,14 @@
 namespace FOS\UserBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -63,9 +65,17 @@ class RegistrationFormType extends AbstractType
                 'choices'  => array(
                     'Femme' => 'Femme',
                     'Homme' => 'Homme',
-                )))
+                )))->add('covoiturage', CheckboxType::class, array(
+                'label'    => 'Covoitureur',
+                'required' => false,
+            ))
+            ->add('babysitter', CheckboxType::class, array(
+                'label'    => 'babysitter',
+                'required' => false,
+            ))
             ->add('dateNaissance',DateType::class)
             ->add('rue',TextType::class,array('label' => 'Rue'))
+            ->add('nbreEnfants',IntegerType::class)
             ->add('ville',TextType::class,array('label' => 'Ville'))
             ->add('codePostal',TextType::class,array('label' => 'Code Postal'))
             ->add('telephone',TextType::class,array('label' => 'Telephone'))

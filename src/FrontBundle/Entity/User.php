@@ -24,19 +24,19 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="string",length=255)
      */
-    private $CIN=1;
+    private $CIN;
     /**
      * @ORM\Column(type="string",length=255)
      */
-    private $nom="Enseignant";
+    private $nom;
     /**
      * @ORM\Column(type="string",length=255)
      */
-    private $prenom="Enseigant";
+    private $prenom;
     /**
      * @ORM\Column(type="string",length=255,nullable=true)
      */
-    private $sexe="Homme";
+    private $sexe;
     /**
      * @ORM\Column(type="date",nullable=true)
      */
@@ -57,6 +57,10 @@ class User extends BaseUser
      * @ORM\Column(type="integer",nullable=true)
      */
     private $telephone;
+    /**
+     * @ORM\Column(type="integer",nullable=true)
+     */
+    private $nbreEnfants;
     /**
      * @ORM\Column(type="string",nullable=true,length=255)
      */
@@ -343,5 +347,29 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+    }
+
+    /**
+     * Set nbreEnfants
+     *
+     * @param integer $nbreEnfants
+     *
+     * @return User
+     */
+    public function setNbreEnfants($nbreEnfants)
+    {
+        $this->nbreEnfants = $nbreEnfants;
+    
+        return $this;
+    }
+
+    /**
+     * Get nbreEnfants
+     *
+     * @return integer
+     */
+    public function getNbreEnfants()
+    {
+        return $this->nbreEnfants;
     }
 }
