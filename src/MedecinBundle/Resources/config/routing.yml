@@ -1,0 +1,3 @@
+medecin_homepage:
+    path:     /
+    defaults: { _controller: MedecinBundle:Default:index }
