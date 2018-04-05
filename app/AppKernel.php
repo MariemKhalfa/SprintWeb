@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new RecetteBundle\RecetteBundle(),
             new GarderieBundle\GarderieBundle(),
             new CovoiturageBundle\CovoiturageBundle(),
+            new MedecinBundle\MedecinBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -1,10 +1,14 @@
+medecin:
+    resource: "@MedecinBundle/Resources/config/routing.yml"
+    prefix:   /medecin
+
 covoiturage:
     resource: "@CovoiturageBundle/Resources/config/routing.yml"
     prefix:   /covoiturage
 
 garderie:
     resource: "@GarderieBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /garderie
 
 recette:
     resource: "@RecetteBundle/Resources/config/routing.yml"
