@@ -4,6 +4,7 @@ namespace GarderieBundle\Controller;
 
 use GarderieBundle\Entity\Garderies;
 use GarderieBundle\Form\GarderiesType;
+use GarderieBundle\Form\GarderiesUpdateType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,7 +35,7 @@ class GarderiesController extends Controller
             $em=$this->getDoctrine()->getManager();
             $em->persist($garderie);
             $em->flush();
-           // return  $this->redirectToRoute("garderie1_afficher");
+           return  $this->redirectToRoute("garderie_liste");
         }
         return $this->render('GarderieBundle:Back:ajoutGarderie.html.twig',array('form'=>$Form->createView()));
     }
@@ -42,12 +43,15 @@ class GarderiesController extends Controller
         $em=$this->getDoctrine()->getManager();
         if ($request->query->getAlnum('filter')) {
             $queryBuilder = $em->getRepository('GarderieBundle:Garderies')->createQueryBuilder('bp1');
-            $queryBuilder->where('bp1.nom like :nom')->setParameter('nom', '%' . $request->query->getAlnum('filter') . '%');
+            $queryBuilder->where('bp1.nom like :nom and bp1.proprietaire=:id')->setParameter('nom', '%' . $request->query->getAlnum('filter') . '%')
+                ->setParameter('id',$this->getUser()->getId());
             $query=$queryBuilder->getQuery();}
 
         else{   //$modeles=$em->getRepository("Garderie1Bundle:Garderies")->findAll();
-            $dql="Select m from GarderieBundle:Garderies m";
-            $query=$em->createQuery($dql);}
+            $queryBuilder = $em->getRepository('GarderieBundle:Garderies')->createQueryBuilder('bp1');
+            $queryBuilder->where(' bp1.proprietaire=:id')
+                ->setParameter('id',$this->getUser()->getId());
+            $query=$queryBuilder->getQuery();}
         $paginator  = $this->get('knp_paginator');
 
         $result = $paginator->paginate(
@@ -56,6 +60,35 @@ class GarderiesController extends Controller
             $request->query->getInt('limit',2)
         );
         return $this->render('GarderieBundle:Back:listeGarderies.html.twig',array("garderie"=>$result));
+    }
+    function UpdateAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        $garderie=$em->getRepository('GarderieBundle:Garderies')->find($request->get('id'));
+
+        $Form=$this->createForm(GarderiesUpdateType::class,$garderie);
+        $Form->handleRequest($request);
+        if($Form->isValid()){
+            $file=$garderie->getImage();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('image_directory'), $fileName);
+            $garderie->setImage($fileName);
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($garderie);
+            $em->flush();
+            return $this->redirectToRoute('garderie_liste');
+        }
+        return $this->render('GarderieBundle:Back:ModifierGarderie.html.twig',array('form'=>$Form->createView()));
+
+
+    }
+    function DeleteAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        $garderie=$em->getRepository('GarderieBundle:Garderies')->find($request->get('id'));
+        $vote=$em->getRepository('GarderieBundle:Vote')->RemoveVote($garderie->getId());
+        $em->remove($garderie);
+        $em->flush();
+        return $this->redirectToRoute("garderie_liste");
+
     }
 
 }

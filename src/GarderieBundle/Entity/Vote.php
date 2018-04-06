@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Vote
  *
  * @ORM\Table(name="vote", indexes={@ORM\Index(name="IDX_5A108564C02AFAE6", columns={"idgarderie"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="GarderieBundle\Repository\VoteRepository")
  */
 class Vote
 {
