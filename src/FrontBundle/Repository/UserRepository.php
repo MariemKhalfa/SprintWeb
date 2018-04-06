@@ -21,4 +21,12 @@ class UserRepository extends EntityRepository
             ");
      return $query->getResult();
  }
+    public function SelectPropGarderie()
+    {
+        $qb = $this->createQueryBuilder('u');
+
+        $qb->where('u.roles LIKE :role')
+            ->setParameter('role', '%"ROLE_GARDERIE"%');
+        return $qb;
+    }
 }

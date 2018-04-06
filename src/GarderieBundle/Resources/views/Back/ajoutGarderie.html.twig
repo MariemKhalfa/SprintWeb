@@ -1,0 +1,144 @@
+{% extends 'GarderieBundle::GarderieBase.html.twig' %}
+{% block body %}
+    <!-- Main Content -->
+    <div class="page-wrapper">
+    <div class="container-fluid">
+
+    <!-- Title -->
+    <div class="row heading-bg bg-pink">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h5 class="txt-light">All for kids</h5>
+        </div>
+
+        <!-- Breadcrumb -->
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="#"><span>Garderies</span></a></li>
+                <li class="active"><span>Ajout Garderie</span></li>
+            </ol>
+        </div>
+        <!-- /Breadcrumb -->
+
+    </div>
+{{ form_start(form) }}
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+<script src="{{ asset('jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
+
+
+
+
+    <!-- Row -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default card-view">
+                <div class="panel-heading">
+                    <div class="pull-left">
+                        <h6 class="panel-title txt-dark"></h6>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-wrapper collapse in">
+                    <div class="panel-body">
+                        <div class="form-wrap mt-40">
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nom</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.nom,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Adresse</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.adresse,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Telephone</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.telephone,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Image</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.image,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.descriptif,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Date_ouverture</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.dateOuverture,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Date_fermeture</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.dateFermeture,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Rating</label></div>
+                                {{ form_widget(form.rating) }}
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cout</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.cout,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Heure_deb</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.heureDeb,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Heure_fin</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.heureFin,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Email</label></div>
+                                <div class="col-12 col-md-9">{{ form_widget(form.email,{attr: {class: 'form-control input-sm'} }) }}</div>
+                            </div>
+
+
+
+                            <div class="card-footer">
+                                {{ form_widget(form.Ajouter,{attr: {class: 'btn btn-primary btn-sm'}}) }}
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel panel-default card-view">
+                <div class="panel-heading">
+
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-wrapper collapse in">
+                    <div class="panel-body">
+
+                        <div class="form-wrap mt-40">
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Proprietaire</label></div>
+
+                                        {{ form_widget(form.proprietaire,{attr: {class: 'form-control select2'} }) }}
+
+                                </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Langues</label></div>
+
+                                        {{ form_widget(form.langues,{attr: {class: 'form-control select2'} }) }}
+
+                                </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+    <!-- /Row -->
+{% endblock body %}

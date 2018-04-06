@@ -29,8 +29,7 @@ class Vote
     private $rating;
 
     /**
-     * @var \Garderies
-     *
+     * @var \GarderieBundle\Entity\Garderies
      * @ORM\ManyToOne(targetEntity="Garderies")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idgarderie", referencedColumnName="id")

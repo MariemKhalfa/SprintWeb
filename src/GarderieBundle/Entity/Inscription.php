@@ -71,7 +71,7 @@ class Inscription
     private $jourArriv;
 
     /**
-     * @var \Enfant
+     * @var \FrontBundle\Entity\Enfant
      *
      * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\Enfant")
      * @ORM\JoinColumns({
@@ -81,7 +81,7 @@ class Inscription
     private $idEnfant;
 
     /**
-     * @var \User
+     * @var \FrontBundle\Entity\User
      *
      * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
      * @ORM\JoinColumns({
@@ -91,9 +91,9 @@ class Inscription
     private $idParent;
 
     /**
-     * @var \Garderies
+     * @var \GarderieBundle\Entity\Garderies
      *
-     * @ORM\ManyToOne(targetEntity="Garderies")
+     * @ORM\ManyToOne(targetEntity="GarderieBundle\Entity\Garderies")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_garderie", referencedColumnName="id")
      * })
@@ -283,11 +283,11 @@ class Inscription
     /**
      * Set idEnfant
      *
-     * @param \GarderieBundle\Entity\Enfant $idEnfant
+     * @param \FrontBundle\Entity\Enfant $idEnfant
      *
      * @return Inscription
      */
-    public function setIdEnfant(\GarderieBundle\Entity\Enfant $idEnfant = null)
+    public function setIdEnfant(\FrontBundle\Entity\Enfant $idEnfant = null)
     {
         $this->idEnfant = $idEnfant;
     
@@ -297,7 +297,7 @@ class Inscription
     /**
      * Get idEnfant
      *
-     * @return \GarderieBundle\Entity\Enfant
+     * @return \FrontBundle\Entity\Enfant
      */
     public function getIdEnfant()
     {
@@ -307,11 +307,11 @@ class Inscription
     /**
      * Set idParent
      *
-     * @param \GarderieBundle\Entity\User $idParent
+     * @param \FrontBundle\Entity\User $idParent
      *
      * @return Inscription
      */
-    public function setIdParent(\GarderieBundle\Entity\User $idParent = null)
+    public function setIdParent(\FrontBundle\Entity\User $idParent = null)
     {
         $this->idParent = $idParent;
     
@@ -321,7 +321,7 @@ class Inscription
     /**
      * Get idParent
      *
-     * @return \GarderieBundle\Entity\User
+     * @return \FrontBundle\Entity\User
      */
     public function getIdParent()
     {

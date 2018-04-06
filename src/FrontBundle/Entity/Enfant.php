@@ -36,9 +36,9 @@ class Enfant
     private $sexe;
 
     /**
-     * @var \User
+     * @var \FrontBundle\Entity\User
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="cin", referencedColumnName="id")
      * })

@@ -134,7 +134,7 @@ class Garderies
     private $latitude;
 
     /**
-     * @var \User
+     * @var \FrontBundle\Entity\User
      *
      * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
      * @ORM\JoinColumns({
@@ -542,11 +542,11 @@ class Garderies
     /**
      * Set proprietaire
      *
-     * @param \GarderieBundle\Entity\User $proprietaire
+     * @param \FrontBundle\Entity\User $proprietaire
      *
      * @return Garderies
      */
-    public function setProprietaire(\GarderieBundle\Entity\User $proprietaire = null)
+    public function setProprietaire(\FrontBundle\Entity\User $proprietaire = null)
     {
         $this->proprietaire = $proprietaire;
     
@@ -556,7 +556,7 @@ class Garderies
     /**
      * Get proprietaire
      *
-     * @return \GarderieBundle\Entity\User
+     * @return \FrontBundle\Entity\User
      */
     public function getProprietaire()
     {
