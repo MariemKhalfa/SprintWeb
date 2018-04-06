@@ -56,6 +56,29 @@ class Voiture
      */
     private $proprio;
 
+    /**
+     * Voiture constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProprio()
+    {
+        return $this->proprio;
+    }
+
+    /**
+     * @param mixed $proprio
+     */
+    public function setProprio($proprio)
+    {
+        $this->proprio = $proprio;
+    }
+
 
     /**
      * Set matricule
