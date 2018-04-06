@@ -73,9 +73,10 @@ class Covoiturage
     private $description;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="voiture", type="string", length=255, nullable=false)
+     * @ORM\ManyToOne(targetEntity="CovoiturageBundle\Entity\Voiture")
+     * @ORM\JoinColumns({
+     * @ORM\JoinColumn(name="voiture", referencedColumnName="matricule")
+     * })
      */
     private $voiture;
 
