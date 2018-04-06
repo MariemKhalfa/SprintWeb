@@ -43,12 +43,15 @@ class GarderiesController extends Controller
         $em=$this->getDoctrine()->getManager();
         if ($request->query->getAlnum('filter')) {
             $queryBuilder = $em->getRepository('GarderieBundle:Garderies')->createQueryBuilder('bp1');
-            $queryBuilder->where('bp1.nom like :nom')->setParameter('nom', '%' . $request->query->getAlnum('filter') . '%');
+            $queryBuilder->where('bp1.nom like :nom and bp1.proprietaire=:id')->setParameter('nom', '%' . $request->query->getAlnum('filter') . '%')
+                ->setParameter('id',$this->getUser()->getId());
             $query=$queryBuilder->getQuery();}
 
         else{   //$modeles=$em->getRepository("Garderie1Bundle:Garderies")->findAll();
-            $dql="Select m from GarderieBundle:Garderies m";
-            $query=$em->createQuery($dql);}
+            $queryBuilder = $em->getRepository('GarderieBundle:Garderies')->createQueryBuilder('bp1');
+            $queryBuilder->where(' bp1.proprietaire=:id')
+                ->setParameter('id',$this->getUser()->getId());
+            $query=$queryBuilder->getQuery();}
         $paginator  = $this->get('knp_paginator');
 
         $result = $paginator->paginate(
@@ -76,6 +79,14 @@ class GarderiesController extends Controller
         }
         return $this->render('GarderieBundle:Back:ModifierGarderie.html.twig',array('form'=>$Form->createView()));
 
+
+    }
+    function DeleteAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        $garderie=$em->getRepository('GarderieBundle:Garderies')->find($request->get('id'));
+        $em->remove($garderie);
+        $em->flush();
+        return $this->redirectToRoute("garderie_liste");
 
     }
 

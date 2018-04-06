@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bc05050-bc0d-460f-b213-135f88966292" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesUpdateType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/ModifierGarderie.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/espaceGarderie.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2018_16_56__Default_.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/FrontBundle/Handler/UserAuthentificationHandler.php" afterPath="$PROJECT_DIR$/src/FrontBundle/Handler/UserAuthentificationHandler.php" />
-      <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/GarderieBundle/Controller/DefaultController.php" />
       <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php" afterPath="$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php" />
-      <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/ajoutGarderie.html.twig" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/ajoutGarderie.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesUpdateType.php" afterPath="$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesUpdateType.php" />
+      <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/espaceGarderie.html.twig" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/espaceGarderie.html.twig" />
       <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/listeGarderies.html.twig" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/listeGarderies.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/GarderieBase.html.twig" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/GarderieBase.html.twig" />
     </list>
     <ignored path="C:\wamp64\www\GitHub\SprintWeb\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +25,8 @@
       <file leaf-file-name="listeGarderies.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/listeGarderies.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="73" column="96" lean-forward="false" selection-start-line="73" selection-start-column="96" selection-end-line="73" selection-end-column="96" />
+            <state relative-caret-position="-591">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="e#12#50#0#Twig" expanded="true" />
               </folding>
@@ -39,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/config/services.yml">
+      <file leaf-file-name="Garderies.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="158">
+              <caret line="91" column="13" lean-forward="false" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -52,15 +47,50 @@
       <file leaf-file-name="GarderiesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="214">
+              <caret line="85" column="62" lean-forward="false" selection-start-line="85" selection-start-column="62" selection-end-line="85" selection-end-column="62" />
               <folding>
                 <element signature="e#1330#1375#0#PHP" expanded="true" />
                 <element signature="e#1608#1634#1#PHP" expanded="true" />
-                <element signature="e#2275#2321#0#PHP" expanded="true" />
-                <element signature="e#2487#2513#1#PHP" expanded="true" />
-                <element signature="e#3128#3176#0#PHP" expanded="true" />
-                <marker date="1523026584412" expanded="true" signature="1942:1982" ph="Select m fro... GarderieBundle" />
+                <element signature="e#2059#2085#1#PHP" expanded="true" />
+                <element signature="e#2530#2576#0#PHP" expanded="true" />
+                <element signature="e#2742#2768#1#PHP" expanded="true" />
+                <element signature="e#3383#3431#0#PHP" expanded="true" />
+                <element signature="e#3607#3633#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModifierGarderie.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/ModifierGarderie.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#12#50#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GarderiesUpdateType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesUpdateType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="espaceGarderie.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/espaceGarderie.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="36" column="110" lean-forward="false" selection-start-line="36" selection-start-column="110" selection-end-line="36" selection-end-column="110" />
+              <folding>
+                <element signature="e#12#50#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,8 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wrapper</find>
-      <find>slider_</find>
       <find>contact</find>
       <find>con</find>
       <find>contain</find>
@@ -142,12 +170,12 @@
       <find>enfant</find>
       <find>nbrenfants</find>
       <find>ga</find>
+      <find>heure</find>
+      <find>sear</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="c dump-autoload" />
-      <command text="s cache:clear" />
       <command text="s generate:bundle" />
       <command text="php bin/console generate:bundle" />
       <command text="s generate:bundle" />
@@ -171,6 +199,8 @@
       <command text="php bin/console composer require knplabs/knp-paginator-bundle" />
       <command text="php bin/console php.exe C:\xampp\php\composer.phar require knplabs/knp-paginator-bundle" />
       <command text=" php.exe C:\xampp\php\composer.phar require knplabs/knp-paginator-bundle" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="php bin\console doctrine:schema:update --force" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -192,8 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ELearningBundle/Controller/EnfantMaladeController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/backLogin_content.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/layoutLoginBack.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/backLogin.html.twig" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
@@ -240,9 +268,11 @@
         <option value="$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesType.php" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesUpdateType.php" />
+        <option value="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/espaceGarderie.html.twig" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/listeGarderies.html.twig" />
+        <option value="$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php" />
       </list>
     </option>
   </component>
@@ -681,11 +711,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523010411880</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commiting Garderie functions">
+      <created>1523026653431</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1523026653431</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208560000" />
+    <option name="totallyTimeSpent" value="210687000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -737,41 +774,14 @@
     <MESSAGE value="commiting entity Voiture" />
     <MESSAGE value="commiting Garderie ajout" />
     <MESSAGE value="commiting Garderie functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="commiting Garderie functions" />
+    <MESSAGE value="committing garderies" />
+    <option name="LAST_COMMIT_MESSAGE" value="committing garderies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="69" column="30" lean-forward="false" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="109" column="64" lean-forward="false" selection-start-line="109" selection-start-column="64" selection-end-line="109" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/editUser.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -975,14 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9486">
-          <caret line="558" column="27" lean-forward="false" selection-start-line="558" selection-start-column="27" selection-end-line="558" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Vote.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-510">
@@ -1060,6 +1062,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,6 +1070,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="25" column="64" lean-forward="false" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,17 +1092,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php">
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/ModifierGarderie.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1330#1375#0#PHP" expanded="true" />
-            <element signature="e#1608#1634#1#PHP" expanded="true" />
-            <element signature="e#2275#2321#0#PHP" expanded="true" />
-            <element signature="e#2487#2513#1#PHP" expanded="true" />
-            <element signature="e#3128#3176#0#PHP" expanded="true" />
-            <marker date="1523026584412" expanded="true" signature="1942:1982" ph="Select m fro... GarderieBundle" />
+            <element signature="e#12#50#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="91" column="13" lean-forward="false" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/espaceGarderie.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="36" column="110" lean-forward="false" selection-start-line="36" selection-start-column="110" selection-end-line="36" selection-end-column="110" />
+          <folding>
+            <element signature="e#12#50#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1113,10 +1138,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/listeGarderies.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="73" column="96" lean-forward="false" selection-start-line="73" selection-start-column="96" selection-end-line="73" selection-end-column="96" />
+        <state relative-caret-position="-591">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="e#12#50#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesUpdateType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="85" column="62" lean-forward="false" selection-start-line="85" selection-start-column="62" selection-end-line="85" selection-end-column="62" />
+          <folding>
+            <element signature="e#1330#1375#0#PHP" expanded="true" />
+            <element signature="e#1608#1634#1#PHP" expanded="true" />
+            <element signature="e#2059#2085#1#PHP" expanded="true" />
+            <element signature="e#2530#2576#0#PHP" expanded="true" />
+            <element signature="e#2742#2768#1#PHP" expanded="true" />
+            <element signature="e#3383#3431#0#PHP" expanded="true" />
+            <element signature="e#3607#3633#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

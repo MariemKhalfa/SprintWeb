@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -25,7 +26,7 @@ class GarderiesUpdateType extends AbstractType
         add('image',FileType::class,array('data_class' => null,'label'=>"insérez une image"))->
         add('email')->add('descriptif',TextareaType::class)->add('langues',ChoiceType::class, array(
             'choices' => array('FR' => 'FR', 'EN' => 'EN')))->add('dateOuverture')->add('dateFermeture')->
-        add('rating')->add('cout')->add('heureDeb')->add('heureFin')
+        add('rating',HiddenType::class)->add('cout')->add('heureDeb')->add('heureFin')
             ->add('proprietaire',EntityType::class,array('class'=>'FrontBundle\Entity\User','choice_label'=>'username', 'query_builder' => function (\FrontBundle\Repository\UserRepository $ur)  {
             return $ur->SelectPropGarderie();
 
