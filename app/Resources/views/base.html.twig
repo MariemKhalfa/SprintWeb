@@ -188,8 +188,9 @@
     <!-- //Header -->
     {% block container %} {% endblock %}
     <!-- Footer Area -->
-    <footer id="footer" class="footer-area">
-        <div class="footer__wrapper poss-relative ftr__btm__image section-padding--lg bg--white">
+    <!-- Footer Area -->
+    <footer id="footer" class="footer-area footer--2">
+        <div class="footer__wrapper bg-image--10 section-padding--lg">
             <div class="container">
                 <div class="row">
                     <!-- Start Single Widget -->
@@ -197,47 +198,30 @@
                         <div class="footer__widget">
                             <div class="ft__logo">
                                 <a href="index-2.html">
-                                    <img src="{{ asset('images/logo/2.png') }}" alt="logo images">
+                                    <img src="{{ asset('images/logo/junior.png')}}" alt="logo images">
                                 </a>
                             </div>
                             <div class="ftr__details">
-                                <p>All For Kids est une application destinée aux parents afin de leur facilicter leur tâches en les aidant à trouver le meilleur pour leurs enfants.</p>
-                                <p>Les enfants aussi peuvent trouver leur bonheur grâce aux jeux et quiz.</p>
+                                <p>All For Kids est comme son nom l'indique, est une application destinée aux parents et à leurs enfants afin de facilicter la vie aux prents en les aidant à trouver le meilleur pour leurs enfants..</p>
                             </div>
                             <div class="ftr__address__inner">
-                                <div class="ftr__address">
-                                    <div class="ftr_icon">
-                                        <i class="fa fa-home"></i>
-                                    </div>
-                                    <div class="ftr__contact">
-                                        <p>Uttara, Zamzam Tower</p>
-                                        <p>Road # 12, Sec #13, 5th Floor</p>
-                                    </div>
+                                <div class="footer__social__icon">
+                                    <ul class="dacre__social__link--2 d-flex justify-content-start">
+                                        <li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="vimeo"><a href="https://vimeo.com/"><i class="fa fa-vimeo"></i></a></li>
+                                        <li class="pinterest"><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p"></i></a></li>
+                                    </ul>
                                 </div>
-                                <div class="ftr__address">
-                                    <div class="ftr_icon">
-                                        <i class="fa fa-phone"></i>
-                                    </div>
-                                    <div class="ftr__contact">
-                                        <p><a href="#">+21652225148</a></p>
-                                    </div>
-                                </div>
-                                <div class="ftr__address">
-                                    <div class="ftr_icon">
-                                        <i class="fa fa-envelope"></i>
-                                    </div>
-                                    <div class="ftr__contact">
-                                        <p><a href="#">allforkids.codeminers@gmail.com</a></p>
-
-                                    </div>
+                                <div class="ft__btm__title">
+                                    <h4>About Us</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- End Single Widget -->
                     <!-- Start Single Widget -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 sm-mt-40">
-
+                    <div class="col-lg-4 col-md-6 col-sm-12 sm-mt-40">
                         <div class="footer__widget">
                             <h4>Latest Blog</h4>
                             <div class="footer__innner">
@@ -246,7 +230,7 @@
                                     <div class="single__ftr__post d-flex">
                                         <div class="ftr__post__thumb">
                                             <a href="blog-details.html">
-                                                <img src="{{ asset('images/blog/post-img/1.jpg') }}" alt="post images">
+                                                <img src="{{ asset('images/blog/post-img/2.jpg')}}" alt="post images">
                                             </a>
                                         </div>
                                         <div class="ftr__post__details">
@@ -259,12 +243,12 @@
                                     <div class="single__ftr__post d-flex">
                                         <div class="ftr__post__thumb">
                                             <a href="blog-details.html">
-                                                <img src="{{ asset('images/blog/post-img/5.jpg') }}" alt="post images">
+                                                <img src="{{ asset('images/images/blog/post-img/3.jpg')}}" alt="post images">
                                             </a>
                                         </div>
                                         <div class="ftr__post__details">
-                                            <h6><a href="blog-details.html">Sports Day is near! so lets get ready soon</a></h6>
-                                            <span><i class="fa fa-calendar"></i>30th Dec, 2017</span>
+                                            <h6><a href="blog-details.html">Sports Day Celebration</a></h6>
+                                            <span><i class="fa fa-calendar"></i>21th Dec, 2017</span>
                                         </div>
                                     </div>
                                     <!-- End Single -->
@@ -272,12 +256,12 @@
                                     <div class="single__ftr__post d-flex">
                                         <div class="ftr__post__thumb">
                                             <a href="blog-details.html">
-                                                <img src="{{ asset('images/blog/post-img/6.jpg') }}" alt="post images">
+                                                <img src="images/blog/post-img/4.jpg" alt="post images">
                                             </a>
                                         </div>
                                         <div class="ftr__post__details">
-                                            <h6><a href="blog-details.html">Sports Day is near! so lets get ready soon</a></h6>
-                                            <span><i class="fa fa-calendar"></i>30th Dec, 2017</span>
+                                            <h6><a href="blog-details.html">Sports Day Celebration</a></h6>
+                                            <span><i class="fa fa-calendar"></i>10th Dec, 2017</span>
                                         </div>
                                     </div>
                                     <!-- End Single -->
@@ -286,6 +270,9 @@
                         </div>
                     </div>
                     <!-- End Single Widget -->
+                    <!-- Start Single Wedget -->
+
+                    <!-- End Single Wedget -->
                     <!-- Start Single Widget -->
                     <div class="col-lg-3 col-md-6 col-sm-12 md-mt-40 sm-mt-40">
                         <div class="footer__widget">
@@ -298,8 +285,9 @@
                                             <i class="fa fa-twitter"></i>
                                         </div>
                                         <div class="dcare__twit__details">
-                                            <p>Lorem ipsum dolor sit  co<a href="#"># twitter.com?web/lnk/statement</a></p>
+                                            <p>Lorem ipsum dolor sit  consect ietur adipisicing sed  eiipsa<a href="#"># twitter .com?web/lnk/statement</a></p>
                                             <span><i class="fa fa-clock-o"></i>30th Dec, 2017</span>
+                                            <span><i class="fa fa-calendar"></i>30th Dec, 2017</span>
                                         </div>
                                     </div>
                                     <!-- End Single -->
@@ -309,44 +297,12 @@
                                             <i class="fa fa-twitter"></i>
                                         </div>
                                         <div class="dcare__twit__details">
-                                            <p>Lorem ipsum dolor sit  co<a href="#"># twitter.com?web/lnk/statement</a></p>
-                                            <span><i class="fa fa-clock-o"></i>30th Dec, 2017</span>
+                                            <p>Lorem ipsum dolor sit  consect ietur adipisicing sed  eiipsa<a href="#"># twitter .com?web/lnk/statement</a></p>
+                                            <span><i class="fa fa-clock-o"></i>11 Avril, 2018</span>
+                                            <span><i class="fa fa-calendar"></i>11 Avril, 2018</span>
                                         </div>
                                     </div>
                                     <!-- End Single -->
-                                    <!-- Start Single -->
-                                    <div class="dcare__twit d-flex">
-                                        <div class="dcare__twit__icon">
-                                            <i class="fa fa-twitter"></i>
-                                        </div>
-                                        <div class="dcare__twit__details">
-                                            <p>Lorem ipsum dolor sit  co<a href="#"># twitter.com?web/lnk/statement</a></p>
-                                            <span><i class="fa fa-clock-o"></i>30th Dec, 2017</span>
-                                        </div>
-                                    </div>
-                                    <!-- End Single -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Widget -->
-                    <!-- Start Single Widget -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 md-mt-40 sm-mt-40">
-                        <div class="footer__widget">
-                            <h4>From Gallery</h4>
-                            <div class="footer__innner">
-                                <div class="dcare__twit__wrap">
-                                    <ul class="sm__gallery__list d-flex flex-wrap">
-                                        <li><a href="#"><img src="{{ asset('images/gallery/sm-gallery/1.jpg') }}" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/gallery/sm-gallery/2.jpg') }}" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/gallery/sm-gallery/3.jpg') }}" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/gallery/sm-gallery/4.jpg') }}" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/gallery/sm-gallery/5.jpg') }}" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/gallery/sm-gallery/6.jpg') }}" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/gallery/sm-gallery/7.jpg') }}" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/gallery/sm-gallery/8.jpg') }}" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/gallery/sm-gallery/9.jpg') }}" alt="gallery images"></a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -354,23 +310,59 @@
                     <!-- End Single Widget -->
                 </div>
             </div>
+            <div class="ft__bottom__images--1 wow flipInX" data-wow-delay="0.6s">
+                <img src="{{ asset('images/banner/mid-img/ft.png')}}" alt="footer images">
+            </div>
+            <div class="ft__bottom__images--2 wow fadeInRight" data-wow-delay="0.6s">
+                <img src="{{ asset('images/banner/mid-img/ft-2.png')}}" alt="footer images">
+            </div>
         </div>
-        <div class="copyright">
+        <!-- .Start Footer Contact Area -->
+        <div class="footer__contact__area bg__cat--2">
             <div class="container">
-                <div class="row align-items-center copyright__wrapper">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="coppy__right__inner">
-                            <p><i class="fa fa-copyright"></i>Copyright, 2018 <a href="https://devitems.com/" target="_blank"> allforkids.codeminers.com</a></p>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__contact__wrapper d-flex flex-wrap justify-content-between">
+                            <div class="single__footer__address">
+                                <div class="ft__contact__icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <div class="ft__contact__details">
+                                    <p> All For Kids </p>
+                                    <p>Lac 2, 10 Rue les Jardins - Tunis 1053</p>
+                                </div>
+                            </div>
+                            <div class="single__footer__address">
+                                <div class="ft__contact__icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="ft__contact__details">
+                                    <p><a href="#">+216 52 22 51 48</a></p>
+                                    <p><a href="#">+216 58 12 77 39</a></p>
+                                </div>
+                            </div>
+                            <div class="single__footer__address">
+                                <div class="ft__contact__icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="ft__contact__details">
+                                    <p><a href="#">allforkids.codeminers@gmail.com</a></p>
+                                    <p><a href="#">allforkids@gmail.com</a></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="ftr__social__icon">
-                            <ul class="dacre__social__link d-flex justify-content-center justify-content-md-end justify-content-lg-end">
-                                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li class="vimeo"><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                <li class="pinterest"><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                            </ul>
+                </div>
+            </div>
+        </div>
+        <!-- .End Footer Contact Area -->
+        <!-- .End Footer Contact Area -->
+        <div class="copyright  bg--theme">
+            <div class="container">
+                <div class="row align-items-center copyright__wrapper justify-content-center">
+                    <div class="col-lg-12 col-sm-12 col-md-12">
+                        <div class="coppy__right__inner text-center">
+                            <p><i class="fa fa-copyright"></i>All Right Reserved.<a href="https://allforkids.codeminers.com"> CodeMiners</a></p>
                         </div>
                     </div>
                 </div>
@@ -378,77 +370,7 @@
         </div>
     </footer>
     <!-- //Footer Area -->
-    <!-- Cartbox -->
-    <div class="cartbox-wrap">
-        <div class="cartbox text-right">
-            <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
-            <div class="cartbox__inner text-left">
-                <div class="cartbox__items">
-                    <!-- Cartbox Single Item -->
-                    <div class="cartbox__item">
-                        <div class="cartbox__item__thumb">
-                            <a href="shop-single.html">
-                                <img src="{{ asset('images/product/sm-pro/1.jpg') }}" alt="small thumbnail">
-                            </a>
-                        </div>
-                        <div class="cartbox__item__content">
-                            <h5><a href="shop-single.html" class="product-name">brown jacket</a></h5>
-                            <p>Qty: <span>01</span></p>
-                            <span class="price">$15</span>
-                        </div>
-                        <button class="cartbox__item__remove">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                    <!-- //Cartbox Single Item -->
-                    <!-- Cartbox Single Item -->
-                    <div class="cartbox__item">
-                        <div class="cartbox__item__thumb">
-                            <a href="shop-single.html">
-                                <img src="{{ asset('images/product/sm-pro/2.jpg') }}" alt="small thumbnail">
-                            </a>
-                        </div>
-                        <div class="cartbox__item__content">
-                            <h5><a href="shop-single.html" class="product-name">long sleeve t-shirt</a></h5>
-                            <p>Qty: <span>01</span></p>
-                            <span class="price">$25</span>
-                        </div>
-                        <button class="cartbox__item__remove">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div><!-- //Cartbox Single Item -->
-                    <!-- Cartbox Single Item -->
-                    <div class="cartbox__item">
-                        <div class="cartbox__item__thumb">
-                            <a href="shop-single.html">
-                                <img src="{{ asset('images/product/sm-pro/3.jpg') }}" alt="small thumbnail">
-                            </a>
-                        </div>
-                        <div class="cartbox__item__content">
-                            <h5><a href="shop-single.html" class="product-name">black polo shirt</a></h5>
-                            <p>Qty: <span>01</span></p>
-                            <span class="price">$30</span>
-                        </div>
-                        <button class="cartbox__item__remove">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </div>
-                    <!-- //Cartbox Single Item -->
-                </div>
-                <div class="cartbox__total">
-                    <ul>
-                        <li><span class="cartbox__total__title">Subtotal</span><span class="price">$70</span></li>
-                        <li class="shipping-charge"><span class="cartbox__total__title">Shipping Charge</span><span class="price">$05</span></li>
-                        <li class="grandtotal">Total<span class="price">$75</span></li>
-                    </ul>
-                </div>
-                <div class="cartbox__buttons">
-                    <a class="dcare__btn" href="cart.html"><span>View cart</span></a>
-                    <a class="dcare__btn" href="checkout.html"><span>Checkout</span></a>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- //Cartbox -->
 
 
