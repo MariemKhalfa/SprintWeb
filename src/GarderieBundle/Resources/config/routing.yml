@@ -4,3 +4,6 @@ garderie_homepage:
 garderie_ajout:
     path:     /Ajoutgarderie
     defaults: { _controller: GarderieBundle:Garderies:ajout }
+garderie_liste:
+    path:     /listesgarderies
+    defaults: { _controller: GarderieBundle:Garderies:list }

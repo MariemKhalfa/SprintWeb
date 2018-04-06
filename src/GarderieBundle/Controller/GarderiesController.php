@@ -26,6 +26,7 @@ class GarderiesController extends Controller
              * Get image
              * @var UploadedFile $file
              */
+
             $file=$garderie->getImage();
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
             $file->move($this->getParameter('image_directory'), $fileName);
@@ -36,6 +37,25 @@ class GarderiesController extends Controller
            // return  $this->redirectToRoute("garderie1_afficher");
         }
         return $this->render('GarderieBundle:Back:ajoutGarderie.html.twig',array('form'=>$Form->createView()));
+    }
+    function listAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        if ($request->query->getAlnum('filter')) {
+            $queryBuilder = $em->getRepository('GarderieBundle:Garderies')->createQueryBuilder('bp1');
+            $queryBuilder->where('bp1.nom like :nom')->setParameter('nom', '%' . $request->query->getAlnum('filter') . '%');
+            $query=$queryBuilder->getQuery();}
+
+        else{   //$modeles=$em->getRepository("Garderie1Bundle:Garderies")->findAll();
+            $dql="Select m from GarderieBundle:Garderies m";
+            $query=$em->createQuery($dql);}
+        $paginator  = $this->get('knp_paginator');
+
+        $result = $paginator->paginate(
+            $query,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',2)
+        );
+        return $this->render('GarderieBundle:Back:listeGarderies.html.twig',array("garderie"=>$result));
     }
 
 }

@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new GarderieBundle\GarderieBundle(),
             new CovoiturageBundle\CovoiturageBundle(),
             new MedecinBundle\MedecinBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new BabysittingBundle\BabysittingBundle(),
         ];
 

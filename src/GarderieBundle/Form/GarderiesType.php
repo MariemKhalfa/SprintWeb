@@ -26,7 +26,7 @@ class GarderiesType extends AbstractType
         add('email')->add('descriptif',TextareaType::class)->add('langues',ChoiceType::class, array(
             'choices' => array('FR' => 'FR', 'EN' => 'EN')))->add('dateOuverture')->add('dateFermeture')
             ->add('rating', HiddenType::class)->add('cout')->add('heureDeb')->add('heureFin')->add('latitude',HiddenType::class)->add('longitude',HiddenType::class)
-            ->add('proprietaire',EntityType::class,array('class'=>'FrontBundle\Entity\User','choice_label'=>'id',
+            ->add('proprietaire',EntityType::class,array('class'=>'FrontBundle\Entity\User','choice_label'=>'username',
                 'query_builder' => function (UserRepository $ur)  {
                     return $ur->SelectPropGarderie();
 
