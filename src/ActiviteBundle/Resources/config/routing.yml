@@ -1,0 +1,33 @@
+activite_homepage:
+    path:     /
+    defaults: { _controller: ActiviteBundle:Default:index }
+
+activite_viewActivite:
+    path:     /activite/view
+    defaults: { _controller: ActiviteBundle:Activite:viewActivite }
+
+activite_createActivite:
+    path:     /activite/create
+    defaults: { _controller: ActiviteBundle:Activite:createActivite }
+
+activite_updateActivite:
+    path:     /activite/update/{id}
+    defaults: { _controller: ActiviteBundle:Activite:updateActivite }
+
+activite_showActivite:
+    path:     /activite/show/{id}
+    defaults: { _controller: ActiviteBundle:Activite:showActivite }
+
+activite_deleteActivite:
+    path:     /activite/delete/{id}
+    defaults: { _controller: ActiviteBundle:Activite:deleteActivite }
+
+e_learning_afficherBackEnseignant:
+    path:     /affichbackEnseignant
+    defaults: { _controller: ELearningBundle:Default:afficheBack }
+
+
+
+
+
+

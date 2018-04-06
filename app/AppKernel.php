@@ -25,6 +25,9 @@ class AppKernel extends Kernel
             new MedecinBundle\MedecinBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new BabysittingBundle\BabysittingBundle(),
+
+            new ActiviteBundle\ActiviteBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

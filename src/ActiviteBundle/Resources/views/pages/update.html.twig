@@ -1,0 +1,10 @@
+
+{{ include ('@Activite/pages/inc/header.html.twig') }}
+<div class="container">
+
+    <a href="{{ absolute_url(asset('')) }}app_dev.php/activite/view" class="btn btn-primary">Retour</a>
+    <h3> <br> MODIFIER ACTIVITE</h3>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{{ include ('@Activite/pages/inc/footer.html.twig') }}

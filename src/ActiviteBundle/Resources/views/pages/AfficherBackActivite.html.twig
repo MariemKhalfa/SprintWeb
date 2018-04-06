@@ -1,0 +1,57 @@
+{% extends 'backBase.html.twig' %}
+{% block body %}
+    <div class="col-sm-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">Enseignant</h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                     <code>La table des Activités :</code>
+                    <a href="" class="btn" value="Ajouter un enseignant" style="color: #0e3e70;">Ajouter une activité </a>
+                    <div class="table-wrap mt-40">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered mb-0">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Age minimal</th>
+                                    <th>Adresse</th>
+                                    <th>Date</th>
+                                    <th>Heure</th>
+
+                                    <th class="text-nowrap">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for a in Activite %}
+                                <tr>
+
+                                    <td>{{  }}</td>
+                                    <td>{{ m.nom }}</td>
+                                    <td>{{ m.prenom }}</td>
+                                    <td>{{ m.telephone}}</td>
+                                    <td>{{ m.email }}</td>
+                                    <td>{{ m.description }}</td>
+                                    <td>{{ m.specialite }}</td>
+                                    <td class="text-nowrap"><a href="{{ path('e_learning_modifBackEnseignant',{'id':m.id }) }}"  class="mr-25" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a> <a href="{{ path('e_learning_suppBackEnseignant',{'id':m.id  }) }}" > <i class="fa fa-close text-danger"></i> </a> </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% block java %}
+    <script src="{{ asset('vendors/bower_components/peity/jquery.peity.min.js') }}"></script>
+    <script src="{{ asset('dist/js/peity-data.js') }}"></script>
+
+    {% endblock %}
+{% endblock %}

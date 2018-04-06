@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+{% block container %}
+    <a href="{{ absolute_url(asset('')) }}app_dev.php/activite/view" class="btn btn-primary">Retour</a>
+    <h3> <br> CREER ACTIVITES</h3>
+    {{ form_start(form) }}
+    {{ form_widget(form)}}
+    {{ form_end(form)   }}
+{% endblock %}
+

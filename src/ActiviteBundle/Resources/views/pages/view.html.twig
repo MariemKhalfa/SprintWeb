@@ -1,0 +1,25 @@
+
+{{ include ('@Activite/pages/inc/header.html.twig') }}
+<div class="container">
+
+
+
+
+    <h3> <br> VOIR ACTIVITES</h3>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+            Activités
+        </a>
+
+        <p class="list-group-item list-group-item-action">{{ activite.type }}        </p>
+        <p class="list-group-item list-group-item-action">{{ activite.adresse }}        </p>
+        <p class="list-group-item list-group-item-action">{{ activite.date | date('d-m-y') }}        </p>
+        <p class="list-group-item list-group-item-action">{{ activite.heure }}        </p>
+        <p class="list-group-item list-group-item-action">{{ activite.agemin }}        </p>
+        <p class="list-group-item list-group-item-action">
+            <a href="{{ absolute_url(asset('')) }}app_dev.php/activite/view" class="btn btn-success">Retour</a>
+        </p>
+
+    </div>
+
+{{ include ('@Activite/pages/inc/footer.html.twig') }}
