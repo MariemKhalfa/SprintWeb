@@ -73,7 +73,7 @@ class Inscription
     /**
      * @var \Enfant
      *
-     * @ORM\ManyToOne(targetEntity="Enfant")
+     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\Enfant")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_enfant", referencedColumnName="pseudonyme")
      * })
@@ -83,7 +83,7 @@ class Inscription
     /**
      * @var \User
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_parent", referencedColumnName="id")
      * })

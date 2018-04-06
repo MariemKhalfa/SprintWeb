@@ -2,13 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bc05050-bc0d-460f-b213-135f88966292" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/FrontBundle/Entity/Enfant.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Entity/Inscription.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Entity/Vote.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Controller/BabysittingController.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Entity/Babysitting.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Repository/BabysittingRepository.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Resources/config/doctrine/Babysitting.orm.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/ajouter_babysitting.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/chercher_babysitting.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/distance_babysitting.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/historique_babysitting.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/lister_des_babysittings.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/lister_mes_babysittings.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/modifier_babysitting.html.twig" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Tests/Controller/BabysittingControllerTest.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/BabysittingBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Resources/config/routing.yml" />
+      <change beforePath="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php" afterPath="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php" />
+      <change beforePath="$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php" afterPath="$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php" />
+      <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php" afterPath="$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php" />
+      <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Entity/Inscription.php" afterPath="$PROJECT_DIR$/src/GarderieBundle/Entity/Inscription.php" />
     </list>
-    <ignored path="C:\xampp\htdocs\SprintWeb\.idea\shelf/" />
+    <ignored path="C:\wamp64\www\GitHub\SprintWeb\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,31 +34,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig">
+      <file leaf-file-name="VoitureRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Repository/VoitureRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <file leaf-file-name="Covoiturage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FrontBundle/Entity/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="697">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -54,11 +57,51 @@
       <file leaf-file-name="Enfant.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FrontBundle/Entity/Enfant.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="134" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BabysittingRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Repository/BabysittingRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Babysitting.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Entity/Babysitting.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FrontBundle/Repository/UserRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="34" />
               <folding>
-                <marker date="1523001802975" expanded="true" signature="255:935" ph="{...}" />
+                <marker date="1522276544803" expanded="true" signature="326:409" ph="select u fro... FrontBundle" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CovoiturageRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,10 +110,8 @@
         <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="32" />
-              <folding>
-                <marker date="1523001843563" expanded="true" signature="238:2899" ph="{...}" />
-              </folding>
+              <caret line="138" column="55" lean-forward="false" selection-start-line="138" selection-start-column="55" selection-end-line="138" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,53 +119,19 @@
       <file leaf-file-name="Inscription.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Inscription.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-              <folding>
-                <marker date="1523001862120" expanded="true" signature="371:2231" ph="{...}" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="85" column="59" lean-forward="false" selection-start-line="85" selection-start-column="59" selection-end-line="85" selection-end-column="59" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vote.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Vote.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Vote.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+            <state relative-caret-position="-510">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register_content.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backLayout.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/backLayout.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="111" lean-forward="false" selection-start-line="9" selection-start-column="111" selection-end-line="9" selection-end-column="111" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationFormType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="109" column="36" lean-forward="false" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
-              <folding>
-                <element signature="e#298#338#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -133,9 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ScrollTo</find>
-      <find>Regis</find>
-      <find>scroll</find>
       <find>Register</find>
       <find>wrapper</find>
       <find>slider_</find>
@@ -163,6 +167,9 @@
       <find>content</find>
       <find>envelop</find>
       <find>login</find>
+      <find>pro</find>
+      <find>enfant</find>
+      <find>nbrenfants</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
@@ -174,34 +181,33 @@
       <command text="s cache:clear" />
       <command text="s generate:bundle" />
       <command text="php bin/console generate:bundle" />
-      <command text="s doctrine:database:create" />
-      <command text="php bin\console doctrine:database:create" />
-      <command text="php bin\console doctrine:schema:update" />
-      <command text="php bin\console doctrine:schema:update --force" />
-      <command text="php bin\console  doctrine:generate:entities " />
-      <command text="php bin\console  doctrine:generate:entities FrontBundle:User" />
-      <command text="php bin\console   doctrine:mapping:import --force GarderieBundle xml  --filter=Garderies" />
-      <command text="php bin\console   doctrine:mapping:import --force GarderieBundle xml  --filter=Inscription" />
-      <command text="php bin\console   doctrine:mapping:import --force GarderieBundle xml  --filter=Vote" />
-      <command text="php bin\console   doctrine:mapping:import --force FrontBundle xml  --filter=Enfant" />
-      <command text="php bin\console  doctrine:mapping:convert annotation ./src/GarderieBundle/Entity --from-database --filter=Garderies" />
-      <command text="php bin\console  doctrine:mapping:convert annotation ./src/GarderieBundle/Entity --from-database --filter=Inscription" />
-      <command text="php bin\console  doctrine:mapping:convert annotation ./src/GarderieBundle/Entity --from-database --filter=Vote" />
-      <command text="php bin\console  doctrine:mapping:convert annotation ./src/FrontBundle/Entity --from-database --filter=Enfant" />
-      <command text="php bin\console  doctrine:generate:entities FrontBundle:Enfant" />
-      <command text="php bin\console  doctrine:generate:entities GarderieBundle:Garderies" />
-      <command text="php bin\console  doctrine:generate:entities GarderieBundle:Inscription" />
-      <command text="php bin\console  doctrine:generate:entities GarderieBundle:Vote" />
+      <command text="s generate:bundle" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s cache:clear" />
+      <command text="c dump-autoload" />
+      <command text="composer update" />
+      <command text="update" />
+      <command text="C:\wamp64\bin\php\php7.0.10\php.exe C:\Users\Mariem\composer.phar update" />
+      <command text="s generate:controller" />
+      <command text="s generate:bundle" />
+      <command text="s doctrine:generate:entity " />
+      <command text="CovoiturageBundle:Covoiturage" />
+      <command text="s generate:controller" />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s doctrine:generate:entity " />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s doctrine:generate:entity " />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s generate:controller" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="botbot &lt;haifa.akrout@esprit.tn&gt;" />
+        <option value="MariemKhalfa &lt;mariem.khalfa@esprit.tn&gt;" />
         <option value="haifa.akrout@esprit.tn" />
         <option value="haifa" />
         <option value="houhi" />
-        <option value="MariemKhalfa &lt;mariem.khalfa@esprit.tn&gt;" />
       </list>
     </option>
     <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
@@ -213,10 +219,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/backLayout.html.twig" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/security.xml" />
-        <option value="$PROJECT_DIR$/src/FrontBundle/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/src/ELearningBundle/Entity/EnfantMalade.php" />
         <option value="$PROJECT_DIR$/src/ELearningBundle/Resources/views/EnfantMalade/AffecterEnfant.html.twig" />
         <option value="$PROJECT_DIR$/src/ELearningBundle/Form/EnfantMaladeType.php" />
@@ -230,6 +232,7 @@
         <option value="$PROJECT_DIR$/app/Resources/views/backBase.html.twig" />
         <option value="$PROJECT_DIR$/src/FrontBundle/Form/ModificationEnseignant.php" />
         <option value="$PROJECT_DIR$/src/ELearningBundle/Form/ModificationEnseignant.php" />
+        <option value="$PROJECT_DIR$/src/FrontBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/ELearningBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/ELearningBundle/Resources/views/Enseignant/ModificationEnseignant.html.twig" />
         <option value="$PROJECT_DIR$/src/ELearningBundle/Resources/views/Enseignant/AfficherBackEnseignant.html.twig" />
@@ -247,23 +250,26 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
+        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/FrontBundle/Handler/UserAuthentificationHandler.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/FrontBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
-        <option value="$PROJECT_DIR$/src/FrontBundle/Entity/Enfant.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Voiture.php" />
+        <option value="$PROJECT_DIR$/src/CovoiturageBundle/Repository/VoitureRepository.php" />
+        <option value="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php" />
+        <option value="$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Entity/Inscription.php" />
-        <option value="$PROJECT_DIR$/src/GarderieBundle/Entity/Vote.php" />
+        <option value="$PROJECT_DIR$/src/BabysittingBundle/Repository/BabysittingRepository.php" />
+        <option value="$PROJECT_DIR$/src/BabysittingBundle/Entity/Babysitting.php" />
       </list>
     </option>
   </component>
@@ -317,8 +323,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="120" />
-    <option name="y" value="115" />
+    <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -340,8 +345,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -352,7 +357,102 @@
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="bin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Default" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="CovoiturageBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="CovoiturageBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="CovoiturageBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -372,15 +472,7 @@
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -405,10 +497,47 @@
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="GarderieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Loader" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -420,22 +549,22 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
-    <property name="SearchEverywhereHistoryKey" value="user&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Security/UserProvider.php&#10;admin&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Security/AdminProvider.php&#10;security&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php&#10;vendor/friendsofsymfony/user-bundle/Security&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php&#10;app.p&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/web/app.php&#10;profil&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Form/Type/ProfileFormType.php&#10;registration&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php&#10;registra&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/src/FrontBundle/Form/RegistrationType.php&#10;profileCont&#9;null&#9;null&#10;Registra&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;registr&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;Regis&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;securi&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php&#10;register&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/app/Resources/FOSUserBundle/views/Registration/register.html.twig&#10;securityCon&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="nbrenfants&#9;null&#9;null&#10;user&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Security/UserProvider.php&#10;admin&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Security/AdminProvider.php&#10;security&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php&#10;vendor/friendsofsymfony/user-bundle/Security&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php&#10;app.p&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/web/app.php&#10;profil&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Form/Type/ProfileFormType.php&#10;registration&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php&#10;registra&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/src/FrontBundle/Form/RegistrationType.php&#10;profileCont&#9;null&#9;null&#10;Registra&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;registr&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;Regis&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php&#10;securi&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php&#10;register&#9;FILE&#9;file://C:/wamp64/www/FrontOffice/app/Resources/FOSUserBundle/views/Registration/register.html.twig&#10;securityCon&#9;null&#9;null" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Allah1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\FrontOffice\src\ELearningBundle\Form" />
-      <recent name="C:\wamp64\www\FrontOffice\src\FrontBundle\Handler" />
-      <recent name="C:\wamp64\www\FrontOffice\src\AppBundle\Resources\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\SprintWeb\web" />
       <recent name="C:\wamp64\www\FOSAjax\FrontOffice\src\AppBundle\Resources\views" />
       <recent name="C:\wamp64\www\FrontOffice\app\Resources\views\default" />
       <recent name="C:\wamp64\www\FrontOffice\vendor\friendsofsymfony\user-bundle\Resources\views\Security" />
       <recent name="C:\wamp64\www\FrontOffice\vendor\friendsofsymfony\user-bundle\Resources\views" />
+      <recent name="C:\wamp64\www\FrontOffice\web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\FrontOffice\src\ELearningBundle\Form" />
+      <recent name="C:\wamp64\www\FrontOffice\src\FrontBundle\Handler" />
+      <recent name="C:\wamp64\www\FrontOffice\src\AppBundle\Resources\views" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -453,213 +582,6 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/composer.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/composer.lock</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/config/routing.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/composer/autoload_files.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/composer/autoload_static.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/composer/installed.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/.gitignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/.php_cs.dist</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/.travis.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/CHANGELOG</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/composer.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/advanced.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/api.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/deprecated.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/batch.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/convert_encoding.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/date.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/date_modify.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/escape.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/first.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/last.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/length.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/nl2br.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/number_format.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/reverse.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/round.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/slice.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/split.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/trim.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/filters/url_encode.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/attribute.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/block.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/constant.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/date.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/dump.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/include.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/max.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/min.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/random.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/source.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/functions/template_from_string.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/index.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/installation.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/internals.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/intro.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/recipes.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/autoescape.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/do.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/embed.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/extends.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/flush.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/for.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/include.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/macro.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/use.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/verbatim.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tags/with.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/templates.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tests/constant.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tests/divisibleby.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tests/empty.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tests/iterable.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/tests/sameas.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/BaseNodeVisitor.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Cache/Filesystem.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Cache/Null.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Compiler.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Environment.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Error.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Error/Loader.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Error/Syntax.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/ExistsLoaderInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/ExpressionParser.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/Core.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/Debug.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/Escaper.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/GlobalsInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/InitRuntimeInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/Optimizer.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/Profiler.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/Sandbox.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/Staging.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Extension/StringLoader.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/ExtensionInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Filter.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Function.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Lexer.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Loader/Array.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Loader/Chain.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Loader/Filesystem.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/LoaderInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Markup.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/AutoEscape.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Block.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/CheckSecurity.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Embed.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Array.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Binary.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Power.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/BlockReference.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Call.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Filter.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Filter/Default.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Function.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/GetAttr.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Name.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/NullCoalesce.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Test.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Test/Defined.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/Unary.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/For.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/If.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Macro.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Module.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Sandbox.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/SandboxedPrint.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Set.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Spaceless.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/NodeTraverser.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/NodeVisitor/Escaper.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/NodeVisitor/Optimizer.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/NodeVisitor/SafeAnalysis.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/NodeVisitor/Sandbox.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/NodeVisitorInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Parser.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Profiler/Dumper/Blackfire.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Profiler/Dumper/Html.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Profiler/Dumper/Text.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Profiler/Node/EnterProfile.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Profiler/NodeVisitor/Profiler.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Profiler/Profile.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Sandbox/SecurityPolicy.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/SimpleFilter.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/SimpleFunction.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/SimpleTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Source.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/SourceContextLoaderInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Template.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TemplateWrapper.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Test.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Test/IntegrationTestCase.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Test/NodeTestCase.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Token.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/AutoEscape.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Block.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Do.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Embed.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Extends.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Filter.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Flush.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/For.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/From.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/If.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Import.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Include.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Macro.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Sandbox.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Set.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Spaceless.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/Use.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParser/With.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParserInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenStream.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Util/DeprecationCollector.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Cache/FilesystemTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/ContainerRuntimeLoaderTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/CustomExtensionTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/EnvironmentTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/ErrorTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Extension/CoreTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Extension/SandboxTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/FilesystemHelper.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/expressions/array.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/convert_encoding.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/date_default_format_interval.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/date_immutable.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/date_interval.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/default.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/length_utf8.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/split_utf8.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/urlencode.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/regression/simple_xml_element.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/autoescape/basic.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tests/in.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/IntegrationTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/LexerTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Loader/ArrayTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Loader/ChainTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Loader/FilesystemTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/NativeExtensionTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/CallTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/FilterTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/FunctionTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/GetAttrTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/NameTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/NullCoalesceTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/TestTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/MacroTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/ModuleTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/SandboxTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/SandboxedPrintTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/NodeVisitor/OptimizerTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/ParserTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/TemplateTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/TokenStreamTest.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -667,78 +589,10 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/commandlinetools/Symfony_06_04_18_01_53_s.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Controller/CovoiturageController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Controller/VoitureController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Entity/Voiture.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Repository/VoitureRepository.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/config/doctrine/Covoiturage.orm.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/ajouter_cov.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/chercher_cov.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/distance_cov.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/historique_cov.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/lister_des_cov.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/lister_mes_cov.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/matching_cov.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/modifier_cov.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Voiture/ajout_voiture.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Voiture/detail_voiture.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Voiture/modifier_voiture.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Voiture/supprimer_voiture.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Tests/Controller/CovoiturageControllerTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/CovoiturageBundle/Tests/Controller/VoitureControllerTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/doc/advanced_legacy.rst</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/ext/twig/.gitignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/ext/twig/config.m4</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/ext/twig/config.w32</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/ext/twig/php_twig.h</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/ext/twig/twig.c</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Autoloader.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/CompilerInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Filter/Function.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Filter/Method.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Filter/Node.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/FilterCallableInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/FilterInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Function/Function.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Function/Method.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Function/Node.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/FunctionCallableInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/FunctionInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/LexerInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Loader/String.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/Expression/ExtensionReference.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Node/SetTemp.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/NodeInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/ParserInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TemplateInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Test/Function.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Test/Method.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Test/Node.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TestCallableInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TestInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParserBroker.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/TokenParserBrokerInterface.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/src/Node/SetTempNode.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/AutoloaderTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/FileCachingTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/filters/urlencode_deprecated.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/functions/magic_call53.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/autoescape/strategy.legacy.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/macro/from_with_reserved_name.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/macro/import_with_reserved_nam.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/macro/reserved_name.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/raw/basic.legacy.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/raw/mixed_usage_with_raw.legacy.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/raw/whitespace_control.legacy.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/tags/verbatim/mixed_usage_with_raw.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/LegacyFixtures/test.legacy.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/LegacyIntegrationTest.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/PHP53/FilterInclude.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/PHP53/FunctionInclude.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Node/Expression/PHP53/TestInclude.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/FrontBundle/Entity/Enfant.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/GarderieBundle/Entity/Inscription.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/GarderieBundle/Entity/Vote.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -746,12 +600,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/commandlinetools/Composer_05_04_18_21_22_c.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/lib/Twig/ExtensionSet.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/src/ExtensionSet.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/extensions/anonymous_functions.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/functions/block_without_parent.test</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor/twig/twig/test/Twig/Tests/Fixtures/functions/magic_static_call.test</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -886,7 +734,7 @@
       <workItem from="1522875374634" duration="17333000" />
       <workItem from="1522938878371" duration="7072000" />
       <workItem from="1522960149537" duration="623000" />
-      <workItem from="1522969009863" duration="3456000" />
+      <workItem from="1522962867348" duration="157000" />
     </task>
     <task id="LOCAL-00001" summary="test2">
       <created>1522945158166</created>
@@ -895,21 +743,35 @@
       <option name="project" value="LOCAL" />
       <updated>1522945158166</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commiting Babysitting bundle">
+      <created>1522962993391</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1522962993391</updated>
+    </task>
+    <task id="LOCAL-00003" summary="commiting entity Voiture">
+      <created>1522977795086</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1522977795086</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204419000" />
+    <option name="totallyTimeSpent" value="205580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19106881" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21961933" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2845912" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37480316" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -922,6 +784,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28503937" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -945,77 +808,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test2" />
     <MESSAGE value="haifa" />
-    <MESSAGE value="committing update user" />
-    <option name="LAST_COMMIT_MESSAGE" value="committing update user" />
+    <MESSAGE value="commiting Babysitting bundle" />
+    <MESSAGE value="commiting entity Voiture" />
+    <option name="LAST_COMMIT_MESSAGE" value="commiting entity Voiture" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/backLayout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/backLogin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/layoutLoginBack.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Form/ModificationEnseignant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RecetteBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RecetteBundle/Repository/RecetteRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RecetteBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ELearningBundle/Controller/EnfantMaladeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
@@ -1100,6 +901,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1111,6 +919,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="71" column="156" lean-forward="false" selection-start-line="71" selection-start-column="156" selection-end-line="71" selection-end-column="156" />
         </state>
       </provider>
     </entry>
@@ -1153,6 +968,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1174,6 +990,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7786">
+          <caret line="460" column="63" lean-forward="false" selection-start-line="460" selection-start-column="63" selection-end-line="460" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1181,69 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="907">
-          <caret line="68" column="28" lean-forward="false" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding>
-            <marker date="1522963227093" expanded="true" signature="0:378" ph="imports: &lt;7 items&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/jquery-3.2.1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/backLayout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="111" lean-forward="false" selection-start-line="9" selection-start-column="111" selection-end-line="9" selection-end-column="111" />
           <folding />
         </state>
       </provider>
@@ -1256,33 +1018,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        <state relative-caret-position="68">
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="109" column="36" lean-forward="false" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
-          <folding>
-            <element signature="e#298#338#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/config/doctrine/Vote.orm.xml">
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1290,48 +1034,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Entity/User.php">
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="323">
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <marker date="1522962958533" expanded="true" signature="0:516" ph="imports: &lt;9 items&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Entity/Enfant.php">
+    <entry file="file://$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Loader/Filesystem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="285" column="9" lean-forward="false" selection-start-line="285" selection-start-column="9" selection-end-line="285" selection-end-column="9" />
+          <folding>
+            <marker date="1522977147302" expanded="true" signature="8500:8633" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <caret line="62" column="25" lean-forward="false" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
           <folding>
-            <marker date="1523001802975" expanded="true" signature="255:935" ph="{...}" />
+            <element signature="e#120#152#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Controller/VoitureController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Voiture/ajout_voiture.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#28#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Entity/Voiture.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Repository/VoitureRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="68" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="32" />
-          <folding>
-            <marker date="1523001843563" expanded="true" signature="238:2899" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Inscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding>
-            <marker date="1523001862120" expanded="true" signature="371:2231" ph="{...}" />
-          </folding>
+          <caret line="138" column="55" lean-forward="false" selection-start-line="138" selection-start-column="55" selection-end-line="138" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Vote.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        <state relative-caret-position="-510">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Inscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="85" column="59" lean-forward="false" selection-start-line="85" selection-start-column="59" selection-end-line="85" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Resources/config/doctrine/Babysitting.orm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Entity/Enfant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="134" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <marker date="1522276544803" expanded="true" signature="326:409" ph="select u fro... FrontBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Repository/BabysittingRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Entity/Babysitting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
           <folding />
         </state>
       </provider>

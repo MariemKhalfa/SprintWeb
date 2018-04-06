@@ -30,7 +30,7 @@ class Covoiturage
     /**
      * @var string
      *
-     * @ORM\Column(name="titr", type="string", length=255, nullable=false)
+     * @ORM\Column(name="titre", type="string", length=255, nullable=false)
      */
     private $titre;
 

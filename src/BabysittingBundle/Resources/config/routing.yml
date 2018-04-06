@@ -1,3 +1,31 @@
 babysitting_homepage:
     path:     /
     defaults: { _controller: BabysittingBundle:Default:index }
+
+ajouter_babysitting:
+    path:     /ajouterBabysitting
+    defaults: { _controller: BabysittingBundle:Babysitting:ajouterBabysitting }
+
+modifier_babysitting:
+    path:     /modifierBabysitting
+    defaults: { _controller: BabysittingBundle:Babysitting:modifierBabysitting }
+
+lister_mes_babysittings:
+    path:     /listerMesBabysittings
+    defaults: { _controller: BabysittingBundle:Babysitting:listerMesBabysittings }
+
+lister_des_babysittings:
+    path:     /listerDesBabysittings
+    defaults: { _controller: BabysittingBundle:Babysitting:listerDesBabysittings }
+
+historique_babysitting:
+    path:     /historiqueBabysitting
+    defaults: { _controller: BabysittingBundle:Babysitting:historiqueBabysitting }
+
+chercher_babysitting:
+    path:     /chercherBabysitting
+    defaults: { _controller: BabysittingBundle:Babysitting:chercherBabysitting }
+
+distance_babysitting:
+    path:     /distanceBabysitting
+    defaults: { _controller: BabysittingBundle:Babysitting:distanceBabysitting }

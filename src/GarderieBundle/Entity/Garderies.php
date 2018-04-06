@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Garderies
  *
- * @ORM\Table(name="garderies", indexes={@ORM\Index(name="IDX_2CBC0B4969E399D6", columns={"proprietaire"})})
+ * @ORM\Table(name="garderies", indexes={@ORM\Index(name="proprietaire", columns={"proprietaire"})})
  * @ORM\Entity
  */
 class Garderies
@@ -136,7 +136,7 @@ class Garderies
     /**
      * @var \User
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="proprietaire", referencedColumnName="id")
      * })
