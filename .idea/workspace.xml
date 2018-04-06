@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bc05050-bc0d-460f-b213-135f88966292" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/ActiviteBundle.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Controller/ActiviteController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Controller/DefaultController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Entity/Activite.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Repository/ActiviteRepository.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/config/routing.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/config/services.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/Default/index.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/AfficherBackActivite.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/create.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/delete.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/inc/footer.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/inc/header.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/index.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/show.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/update.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/view.html.twig" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_04_2018_23_20__Default_.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2018_01_04__Default_.xml" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2018_01_04__Default_.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2018_09_12__Default_.xml" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2018_09_12__Default_.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2018_12_23__Default_.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/backBase.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/backBase.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
     </list>
     <ignored path="C:\wamp64\www\GitHub\SprintWeb\.idea\shelf/" />
     <ignored path="C:\Users\Lynda\Documents\GitHub\SprintWeb\.idea\shelf/" />
@@ -472,7 +448,7 @@
       <workItem from="1522962867348" duration="157000" />
       <workItem from="1523016852152" duration="26000" />
       <workItem from="1523019678519" duration="826000" />
-      <workItem from="1523037339989" duration="3327000" />
+      <workItem from="1523037339989" duration="3916000" />
     </task>
     <task id="LOCAL-00001" summary="test2">
       <created>1522945158166</created>
@@ -495,11 +471,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522977795086</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commiting modif covoiturage">
+      <created>1523041394843</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1523041394859</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211758000" />
+    <option name="totallyTimeSpent" value="212347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
