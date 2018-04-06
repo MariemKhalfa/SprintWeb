@@ -4,6 +4,7 @@ namespace GarderieBundle\Controller;
 
 use GarderieBundle\Entity\Garderies;
 use GarderieBundle\Form\GarderiesType;
+use GarderieBundle\Form\GarderiesUpdateType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,7 +35,7 @@ class GarderiesController extends Controller
             $em=$this->getDoctrine()->getManager();
             $em->persist($garderie);
             $em->flush();
-           // return  $this->redirectToRoute("garderie1_afficher");
+           return  $this->redirectToRoute("garderie_liste");
         }
         return $this->render('GarderieBundle:Back:ajoutGarderie.html.twig',array('form'=>$Form->createView()));
     }
@@ -56,6 +57,26 @@ class GarderiesController extends Controller
             $request->query->getInt('limit',2)
         );
         return $this->render('GarderieBundle:Back:listeGarderies.html.twig',array("garderie"=>$result));
+    }
+    function UpdateAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        $garderie=$em->getRepository('GarderieBundle:Garderies')->find($request->get('id'));
+
+        $Form=$this->createForm(GarderiesUpdateType::class,$garderie);
+        $Form->handleRequest($request);
+        if($Form->isValid()){
+            $file=$garderie->getImage();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('image_directory'), $fileName);
+            $garderie->setImage($fileName);
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($garderie);
+            $em->flush();
+            return $this->redirectToRoute('garderie_liste');
+        }
+        return $this->render('GarderieBundle:Back:ModifierGarderie.html.twig',array('form'=>$Form->createView()));
+
+
     }
 
 }

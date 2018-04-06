@@ -7,3 +7,9 @@ garderie_ajout:
 garderie_liste:
     path:     /listesgarderies
     defaults: { _controller: GarderieBundle:Garderies:list }
+garderie_modifier:
+    path:     /ModifierGarderie
+    defaults: { _controller: GarderieBundle:Garderies:Update }
+garderie_supprimer:
+    path:     /SupprimerGarderie
+    defaults: { _controller: GarderieBundle:Garderies:Delete }

@@ -61,7 +61,7 @@ class UserAuthentificationHandler implements AuthenticationSuccessHandlerInterfa
             $url = null;
             if(in_array('ROLE_PARENT',$rolesTab))
                 $url = $this->router->generate('homepage');
-            else $url = $this->router->generate('garderie_ajout');
+            else $url = $this->router->generate('garderie_homepage');
             return new JsonResponse(array('success' => true,'targetUrl' => $url));
         }
         else {

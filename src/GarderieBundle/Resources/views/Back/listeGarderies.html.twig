@@ -1,30 +1,31 @@
 {% extends 'GarderieBundle::GarderieBase.html.twig' %}
-{% block body %}
-    <!-- Main Content -->
-    <div class="page-wrapper">
-    <div class="container-fluid">
+{% block container %}
 
-    <!-- Title -->
-    <div class="row heading-bg bg-pink">
-        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h5 class="txt-light">All for kids</h5>
+
+    <!-- Start Bradcaump area -->
+    <div class="ht__bradcaump__area">
+        <div class="ht__bradcaump__container">
+            <img src="{{ asset('images/bg-png/6.png') }}" alt="bradcaump images">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2 class="bradcaump-title">Espace Garderie</h2>
+                            <nav class="bradcaump-inner">
+                                <a class="breadcrumb-item" href="index-2.html">Home</a>
+                                <span class="brd-separetor"><img src="{{ asset('images/icons/brad.png') }}" alt="separator images"></span>
+                                <span class="breadcrumb-item active">Listes Garderie</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Breadcrumb -->
-        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-            <ol class="breadcrumb">
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="#"><span>Garderies</span></a></li>
-                <li class="active"><span>liste Garderie</span></li>
-            </ol>
-        </div>
-        <!-- /Breadcrumb -->
-
     </div>
-
+    <!-- End Bradcaump area -->
     <div class="card">
     <div class="card-header">
-        <strong class="card-title">Data Table</strong>
+        <h2 class="bradcaump-title">Listes Garderies</h2>
     </div>
     <div class="card-body">
         <div id="bootstrap-data-table_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="bootstrap-data-table_length"><label>Show <select name="bootstrap-data-table_length" aria-controls="bootstrap-data-table" class="form-control form-control-sm"><option value="10">10</option><option value="20">20</option><option value="50" href="{{ path('garderie_liste', {'limit':5})}}">50</option>
@@ -47,8 +48,8 @@
                             <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">DateOuverture</th>
                             <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">DateFermeture</th>
                             <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Image</th>
-                            <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Options</th>
-
+                            <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Modifier</th>
+                            <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Supprimer</th>
                         </tr>    </thead>
                         <tbody>
 
@@ -70,7 +71,9 @@
                                 <td>{{ m.telephone }}</td>
                                 <td>{{ m.dateOuverture|date("d/m/y")}}</td>
                                 <td>{{ m.dateFermeture|date("d/m/y")}}</td>
-                                <td><img src="{{ asset('uploads/images/'~ m.image ) }}" width="100%"></td>
+                                <td><img src="{{ asset('uploads/images/'~ m.image ) }}" width="200%"></td>
+                                <td> <a  class='btn btn-primary btn-sccess' href="{{ path('garderie_modifier',{'id':m.id}) }}" >Modifier </a></td>
+                                <td><a class='btn btn-primary btn-danger' href="{{ path('garderie_supprimer',{'id':m.id}) }}" >supprimer</a><td>
 
 
                             </tr>
@@ -81,9 +84,13 @@
                 </div>
             </div>
         </div>
+    <div class="row">
+    <div class="col-lg-12"><div class="dcare__pagination mt--80">
 
-        <div class="navigation text-center">
+        <div class="dcare__page__list d-flex justify-content-center">
             {{ knp_pagination_render(garderie) }}
         </div>
+        </div>
+    </div></div>
     </div><!-- .animated -->
-{%  endblock %}
+{% endblock  %}
