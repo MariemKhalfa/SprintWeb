@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bc05050-bc0d-460f-b213-135f88966292" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2018_16_56__Default_.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/WebServerBundle/Resources/router.php" afterPath="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/WebServerBundle/Resources/router.php" />
     </list>
     <ignored path="C:\wamp64\www\GitHub\SprintWeb\.idea\shelf/" />
     <ignored path="C:\Users\Lynda\Documents\GitHub\SprintWeb\.idea\shelf/" />
@@ -449,7 +447,7 @@
       <workItem from="1523016852152" duration="26000" />
       <workItem from="1523019678519" duration="826000" />
       <workItem from="1523037339989" duration="3916000" />
-      <workItem from="1523043631560" duration="1379000" />
+      <workItem from="1523043631560" duration="1450000" />
     </task>
     <task id="LOCAL-00001" summary="test2">
       <created>1522945158166</created>
@@ -479,11 +477,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523041394859</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commiting modif covoiturage">
+      <created>1523045062312</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1523045062328</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214044000" />
+    <option name="totallyTimeSpent" value="214115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -521,7 +526,8 @@
     <MESSAGE value="commiting Babysitting bundle" />
     <MESSAGE value="commiting entity Voiture" />
     <MESSAGE value="commiting modif covoiturage" />
-    <option name="LAST_COMMIT_MESSAGE" value="commiting modif covoiturage" />
+    <MESSAGE value="commiting modif" />
+    <option name="LAST_COMMIT_MESSAGE" value="commiting modif" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
