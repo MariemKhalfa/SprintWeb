@@ -82,9 +82,10 @@ class Covoiturage
     /**
      * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="covoitureur", referencedColumnName="id")
+     * @ORM\JoinColumn(name="covoitureur", referencedColumnName="id")
      * })
      */
+
     private $covoitureur;
 
     /**

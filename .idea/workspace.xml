@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bc05050-bc0d-460f-b213-135f88966292" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2018_12_23__Default_.xml" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2018_12_23__Default_.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Default/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/BabysittingBundle/Resources/config/doctrine/Babysitting.orm.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/CovoiturageBundle/Controller/CovoiturageController.php" afterPath="$PROJECT_DIR$/src/CovoiturageBundle/Controller/CovoiturageController.php" />
+      <change beforePath="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php" afterPath="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php" />
+      <change beforePath="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Voiture.php" afterPath="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Voiture.php" />
+      <change beforePath="$PROJECT_DIR$/src/CovoiturageBundle/Resources/config/doctrine/Covoiturage.orm.yml" afterPath="" />
     </list>
     <ignored path="C:\wamp64\www\GitHub\SprintWeb\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +23,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VoitureRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Repository/VoitureRepository.php">
+      <file leaf-file-name="GarderiesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="41" />
+              <folding>
+                <marker date="1523014064645" expanded="true" signature="1904:1944" ph="Select m fro... GarderieBundle" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CovoiturageController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Controller/CovoiturageController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="e#48#89#0#PHP" expanded="true" />
+                <element signature="e#704#722#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GarderiesType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="32" column="81" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="32" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -32,60 +61,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Controller/DefaultController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Enfant.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FrontBundle/Entity/Enfant.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="134" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BabysittingRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Repository/BabysittingRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1183">
-              <caret line="354" column="22" lean-forward="false" selection-start-line="354" selection-start-column="22" selection-end-line="354" selection-end-column="22" />
+            <state relative-caret-position="1451">
+              <caret line="222" column="0" lean-forward="false" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -94,30 +71,38 @@
       <file leaf-file-name="Babysitting.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Entity/Babysitting.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+            <state relative-caret-position="286">
+              <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FrontBundle/Repository/UserRepository.php">
+      <file leaf-file-name="Voiture.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Entity/Voiture.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="34" />
-              <folding>
-                <marker date="1523012848272" expanded="true" signature="326:409" ph="select u fro... FrontBundle" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="53" column="32" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CovoiturageRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php">
+      <file leaf-file-name="Covoiturage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="192">
+              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BabysittingBundle.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/BabysittingBundle.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Register</find>
       <find>wrapper</find>
       <find>slider_</find>
       <find>contact</find>
@@ -154,20 +138,14 @@
       <find>content</find>
       <find>envelop</find>
       <find>login</find>
-      <find>pro</find>
       <find>enfant</find>
       <find>nbrenfants</find>
+      <find>cart</find>
+      <find>pro</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="c update " />
-      <command text="s server:run " />
-      <command text="s generate:bundle" />
-      <command text="c dump-autoload" />
-      <command text="s cache:clear" />
-      <command text="s generate:bundle" />
-      <command text="php bin/console generate:bundle" />
       <command text="s generate:bundle" />
       <command text="s doctrine:schema:update --force" />
       <command text="s cache:clear" />
@@ -186,6 +164,13 @@
       <command text="s doctrine:generate:entity " />
       <command text="s doctrine:schema:update --force " />
       <command text="s generate:controller" />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s cache:clear" />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s doctrine:mapping:import --force BabysittingBundle xml  --filter=Babysitting" />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s doctrine:mapping:import --force BabysittingBundle xml  --filter=Babysitting" />
+      <command text="s doctrine:schema:update --force " />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -206,7 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ELearningBundle/Entity/EnfantMalade.php" />
         <option value="$PROJECT_DIR$/src/ELearningBundle/Resources/views/EnfantMalade/AffecterEnfant.html.twig" />
         <option value="$PROJECT_DIR$/src/ELearningBundle/Form/EnfantMaladeType.php" />
         <option value="$PROJECT_DIR$/src/ELearningBundle/Controller/EnfantMaladeController.php" />
@@ -248,15 +232,16 @@
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Voiture.php" />
         <option value="$PROJECT_DIR$/src/CovoiturageBundle/Repository/VoitureRepository.php" />
-        <option value="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php" />
         <option value="$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Entity/Inscription.php" />
         <option value="$PROJECT_DIR$/src/BabysittingBundle/Repository/BabysittingRepository.php" />
         <option value="$PROJECT_DIR$/src/BabysittingBundle/Entity/Babysitting.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php" />
+        <option value="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Voiture.php" />
+        <option value="$PROJECT_DIR$/src/CovoiturageBundle/Controller/CovoiturageController.php" />
       </list>
     </option>
   </component>
@@ -347,42 +332,13 @@
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="bin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -396,13 +352,6 @@
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -412,23 +361,6 @@
               <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="BabysittingBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Default" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -448,7 +380,7 @@
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="CovoiturageBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -456,6 +388,14 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="CovoiturageBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="CovoiturageBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -478,21 +418,22 @@
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ELearningBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ELearningBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="ELearningBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -505,7 +446,21 @@
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="GarderieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GarderieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GarderieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -517,47 +472,28 @@
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GarderieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Twig" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="twig" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Twig" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Loader" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="orm" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -5432,11 +5368,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522977795086</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commiting modif covoiturage">
+      <created>1523016252874</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1523016252874</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207579000" />
+    <option name="totallyTimeSpent" value="212301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -5494,62 +5437,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ELearningBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ELearningBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ELearningBundle/Resources/views/EnfantMalade/AffecterEnfant.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/backLogin_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/backLogin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="69" column="30" lean-forward="false" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="109" column="64" lean-forward="false" selection-start-line="109" selection-start-column="64" selection-end-line="109" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -5618,6 +5505,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5632,6 +5520,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5689,6 +5578,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5752,14 +5642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Entity/Voiture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Repository/VoitureRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -5768,24 +5650,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9486">
-          <caret line="558" column="27" lean-forward="false" selection-start-line="558" selection-start-column="27" selection-end-line="558" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Vote.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-510">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5793,13 +5662,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Resources/config/doctrine/Babysitting.orm.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -5837,14 +5700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Entity/Babysitting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FrontBundle/FrontBundle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -5857,6 +5712,115 @@
         <state relative-caret-position="272">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5202">
+          <caret line="558" column="27" lean-forward="false" selection-start-line="558" selection-start-column="27" selection-end-line="558" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/views/GarderieBase.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="874" column="16" lean-forward="false" selection-start-line="874" selection-start-column="16" selection-end-line="874" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="41" />
+          <folding>
+            <marker date="1523014064645" expanded="true" signature="1904:1944" ph="Select m fro... GarderieBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1451">
+          <caret line="222" column="0" lean-forward="false" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="32" column="81" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="32" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/BabysittingBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Entity/Babysitting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Entity/Voiture.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="53" column="32" lean-forward="false" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Resources/config/doctrine/Babysitting.orm.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Resources/config/doctrine/Babysitting.orm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Controller/CovoiturageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#89#0#PHP" expanded="true" />
+            <element signature="e#704#722#1#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
