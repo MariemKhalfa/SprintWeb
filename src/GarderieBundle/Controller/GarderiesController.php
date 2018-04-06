@@ -84,6 +84,7 @@ class GarderiesController extends Controller
     function DeleteAction(Request $request){
         $em=$this->getDoctrine()->getManager();
         $garderie=$em->getRepository('GarderieBundle:Garderies')->find($request->get('id'));
+        $vote=$em->getRepository('GarderieBundle:Vote')->RemoveVote($garderie->getId());
         $em->remove($garderie);
         $em->flush();
         return $this->redirectToRoute("garderie_liste");
