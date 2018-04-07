@@ -31,7 +31,7 @@ class ModificationEnseignant extends AbstractType
 
 
     }
-    public function getParent()
+     public function getParent()
     {
         return BaseRegistrationFormType::class;
     }
