@@ -11,4 +11,29 @@ use Doctrine\ORM\EntityRepository;
  */
 class BabysittingRepository extends EntityRepository
 {
+    public function MesBabysittings($id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery("SELECT c FROM BabysittingBundle:Babysitting c WHERE c.babysitteur=:i AND c.date > CURRENT_DATE()")
+            ->setParameter('i', $id);
+
+        return $result = $query->getResult();
+    }
+
+    public function MesAnciensBabysittings($id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery("SELECT c FROM BabysittingBundle:Babysittinge c WHERE c.babysitteur=:i AND c.date < CURRENT_DATE()")
+            ->setParameter('i', $id);
+
+        return $result = $query->getResult();
+    }
+    public function AutresBabysittings($id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery("SELECT c FROM BabysittingBundle:Babysitting c WHERE c.babysitteur<>:i AND c.date > CURRENT_DATE()")
+            ->setParameter('i', $id);
+
+        return $result = $query->getResult();
+    }
 }

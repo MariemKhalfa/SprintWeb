@@ -1,0 +1,67 @@
+{% extends "base.html.twig" %}
+ {% block container %}
+     <section class="contact__box section-padding--lg bg-image--27">
+     <section>
+         <div class="container">
+
+             <div class="section-content">
+                 <div class="row">
+                     <div class="container">
+                         <h2 class="text-theme-color-sky line-bottom"><span class="text-theme-color-red">Détails babysitting</span>
+                         </h2>
+
+     <div class="row">
+     <div class="col-lg-9">
+     <div class="event-content-wrapper">
+
+     <div class="event-section">
+     <div class="enent__thumb">
+         <img src="{{ asset('images/event/big-img/1.jpg') }}" alt="big images">
+         <div class="box-timer">
+             <div class="countbox timer-grid">
+                 <div  data-countdown="2021/03/01"></div>
+             </div>
+         </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+                 </div></div></div></section>
+
+
+<div class="event-section">
+
+    <div class="event__location">
+     {% for b in bab %}
+        <ul>
+            <li><span class="ti-user"></span>Colin Marks, Organizer <br> Head of the Department of engineering</li>
+            <li><span class="ti-location-pin"></span>{{ b.adresse }}</li>
+            <li><span class="ti-time"></span>9.00 am - 5.00 pm</li>
+            <li><span class="ti-mobile"></span>Phone : +660 256 24857 </li>
+            <li><span class="ti-email"></span>Email : username@email.com,</li>
+            <li><span class="ti-dribbble"></span>http:// tutoring education theme.com</li>
+        </ul>
+        <div class="event_map_marker">
+            <div id="evnetmap"></div>
+        </div>
+         {% endfor %}
+    </div>
+</div>
+     </section>
+     <!-- Start Sidebar -->
+     <div class="col-lg-3">
+         <div class="sidebar__widgets sidebar--right">
+
+             <!-- Single Widget -->
+             <div class="single__widget search">
+                 <h4>Search</h4>
+                 <form action="#">
+                     <input type="text" placeholder="Search keyword">
+                     <button type="submit"><i class="fa fa-search"></i></button>
+                 </form>
+             </div>
+         </div>
+     </div>
+ {% endblock %}

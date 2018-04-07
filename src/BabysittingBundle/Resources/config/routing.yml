@@ -29,3 +29,7 @@ chercher_babysitting:
 distance_babysitting:
     path:     /distanceBabysitting
     defaults: { _controller: BabysittingBundle:Babysitting:distanceBabysitting }
+
+details_babysitting:
+    path:     /detailsBabysitting/{id}
+    defaults: { _controller: BabysittingBundle:Babysitting:detailsBabysitting }

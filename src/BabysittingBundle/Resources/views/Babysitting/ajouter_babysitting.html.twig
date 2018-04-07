@@ -1,81 +1,80 @@
 {% extends "base.html.twig" %}
  {% block container %}
 
-     <section class="contact__box section-padding--lg bg-image--27">
-<section>
-    <div class="container">
+     <section class="contact__box bg-image--27">
 
-        <div class="section-content">
-            <div class="row">
-                <div class="container">
-                    <h2 class="text-theme-color-sky line-bottom"><span class="text-theme-color-red">Formulaire d'ajout de babysitting</span>
-                    </h2>
-                    <h4 class="text-theme-color-blue">Vous êtes sur le point de proposer un babysitting</h4>
-                    <p>En remplissant le formulaire ci-dessous, vous vous engagez à offrir un babysitting à tout
-                        enfant dont le parent a effectué une reservation .</p>
-                    <p>Veuillez remplir tous les champs pour le bon déroulement du processus de babysitting et des réservations .</p>
-                </div>
+         <div class="container">
 
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Start  Form -->
+             <div class="section-content">
+                 <div class="row">
+                     <div class="container">
+                         <h2 class="text-theme-color-sky line-bottom">Formulaire d'ajout d'un <span
+                                     class="text-theme-color-red">babysitting</span></h2>
+                         </h2>
+                         <h4 class="text-theme-color-blue">Vous êtes sur le point de proposer un babysitting</h4>
+                         <p>En remplissant le formulaire ci-dessous, vous vous engagez à offrir un babysitting à tout
+                             enfant dont le parent a effectué une reservation .</p>
+                         <p>Veuillez remplir tous les champs pour le bon déroulement du processus de babysitting et des
+                             réservations .</p>
+                     </div>
 
+                 </div>
+             </div>
 
-        <div class="container">
-            <div class="row">
+             <form action="{{ path('ajouter_babysitting') }}" method="post">
+            {#     {{ form_start(form, {'method': 'post', 'action': path('ajouter_cov'), 'attr': {'class': 'ajouter_cov'}}) }}#}
 
-            </div>
-            <div class="row mt--80">
-                <div class="col-lg-12">
-                    <div class="contact-form-wrap">
+                 <div class="container">
 
-                        {#<h2 class="text-theme-color-sky line-bottom">Formulaire d'ajout d'un  <span class="text-theme-color-red">babysitting</span></h2>#}
-                        <form id="contact-form" action="{{ path('ajouter_babysitting') }}" method="post">
-                            {{ form_start(form) }}
-                            <div class="single-contact-form name">
-                                {{ form_widget(form.titre,{attr: {class: 'form-control'} })}}
-                              {#  <input type="text" name="titre" placeholder="Veuillez choisir le titre de l'annonce du babysitting">#}
-                            </div>
-                            <div class="single-contact-form name">
-                                {{ form_widget(form.date,{attr: {class: 'form-control'} })}}
-                               {# <input type="date" name="date" placeholder="Veuillez choisir la date du babysitting">#}
-                            </div>
-                            <div class="single-contact-form name">
-                                {{ form_widget(form.heureDeb,{attr: {class: 'form-control'} })}}
-                                {#<input type="time" name="heureDeb" placeholder="Veuillez choisir l'heure de début du babysitting  ">#}
-                            </div>
-                            <div class="single-contact-form name">
-                                {{ form_widget(form.heureFin,{attr: {class: 'form-control'} })}}
-                                {#<input type="time" name="heureFin" placeholder="Veuillez choisir l'heure limite  du babysitting  ">#}
-                            </div>
-                            <div class="single-contact-form name">
-                                {{ form_widget(form.adresse,{attr: {class: 'form-control'} })}}
-                                {#<input type="text" name="adresse" placeholder="Veuillez choisir l'adresse  du babysitting">#}
-                            </div>
-                            <div class="single-contact-form name">
-                                {{ form_widget(form.nbrEnfants)}}
-                               {# <input type="number" name="nbr_places" placeholder="Veuillez choisir le nombre de places disponibles du babysitting">#}
-                            </div>
+                     <div class="row mt--80">
+                         <div class="col-lg-12">
+                             <div class="contact-form-wrap">
 
-                            <div class="single-contact-form message">
-                                {{ form_widget(form.description,{attr: {class: 'form-control'} })}}
-                                {#<textarea name="description"  placeholder="description de l'annonce de babysitting.."></textarea>#}
-                            </div>
-                            <div class="contact-btn">
-                                {{ form_widget(form.Ajouter,{attr: {class: 'dcare__btn'}})}}
-                              {#  <button type="submit" class="dcare__btn">Ajouter</button>#}
-                            </div>
-                            {{ form_end(form) }}
-                        </form>
-                    </div>
-                    <div class="form-output">
-                        <p class="form-messege"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Contact Form -->
-    {% endblock %}
+                                 <form id="contact-form" action="https://devitems.com/preview/junior/mail.php"
+                                       method="post">
+                                     <div class="single-contact-form name">
+                                      {#   {{ form_widget(form.titre,{attr: {class: 'form-control'} }) }}#}
+                                         <input type="text" id="titre" name="titre" placeholder="titre de l'annonce de babysitting">
+
+                                     </div>
+                                     <div class="single-contact-form name">
+                                       {#  {{ form_widget(form.date,{attr: {class: 'form-control'} }) }}#}
+                                         <input type="date" id="date" name="date" placeholder="date du covoiturage">
+                                     </div>
+                                     <div class="single-contact-form name">
+                                     {#    {{ form_widget(form.heureDeb,{attr: {class: 'form-control'} }) }}#}
+                                         <input type="time" id="heureD" name="heureD" placeholder="heure début">
+                                     </div>
+                                     <div class="single-contact-form name">
+                                       {#  {{ form_widget(form.heureFin,{attr: {class: 'form-control'} }) }}#}
+                                         <input type="time" id="heureF" name="heureF" placeholder="heure fin">
+                                     </div>
+                                     <div class="single-contact-form name">
+                                        {# {{ form_widget(form.adresse,{attr: {class: 'form-control'} }) }}#}
+                                         <input type="text" id="adresse" name="adresse" placeholder="adresse">
+                                     </div>
+                                     <div class="single-contact-form name">
+                                        {# {{ form_widget(form.nbrEnfants,{attr: {class: 'form-control'} }) }}#}
+                                         <input type="number" id="nbr" name="nbr"
+                                                placeholder="nombre de places proposés">
+                                     </div>
+                                     <div class="single-contact-form name">
+                                        {# {{ form_widget(form.description,{attr: {class: 'form-control'} }) }}#}
+                                         <textarea name="description" id="description" placeholder="description de l'annonce de babysitting.."></textarea>
+                                     </div>
+                                     <div class="contact-btn">
+                                        {# {{ form_widget(form.Ajouter,{attr: {class: 'dcare__btn'} }) }}#}
+                                         <button type="submit" class="dcare__btn">Ajouter</button>
+                                     </div>
+                                 </form>
+                             </div>
+
+                         </div>
+                     </div>
+                 </div>
+               {#  {{ form_end(form) }}#}
+             </form>
+         </div>
+     </section>
+     <!-- End Contact Form -->
+ {% endblock %}
