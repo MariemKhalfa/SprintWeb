@@ -1,5 +1,5 @@
 activite_homepage:
-    path:     /
+    path:     /homepage
     defaults: { _controller: ActiviteBundle:Default:index }
 
 activite_viewActivite:

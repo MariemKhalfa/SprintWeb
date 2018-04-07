@@ -1,3 +1,15 @@
 medecin_homepage:
     path:     /
     defaults: { _controller: MedecinBundle:Default:index }
+medecin_ajout:
+    path:     /Ajoutmedecin
+    defaults: { _controller: MedecinBundle:Medecin:ajout }
+medecin_liste:
+    path:     /listesmedecins
+    defaults: { _controller: MedecinBundle:Medecin:list }
+medecin_modifier:
+    path:     /Modifiermedecins
+    defaults: { _controller: MedecinBundle:Medecin:Update }
+medecin_supprimer:
+    path:     /Supprimermedecin
+    defaults: { _controller: MedecinBundle:Medecin:Delete }
