@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bc05050-bc0d-460f-b213-135f88966292" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Form/ModificationActivite.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/ModificationActivite.html.twig" />
+    <list default="true" id="4bc05050-bc0d-460f-b213-135f88966292" name="Default" comment="commiting modif">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/backBase.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/backBase.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/ActiviteBundle/Controller/ActiviteController.php" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Controller/ActiviteController.php" />
-      <change beforePath="$PROJECT_DIR$/src/ActiviteBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/AfficherBackActivite.html.twig" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/AfficherBackActivite.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/update.html.twig" afterPath="$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/update.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/ELearningBundle/Form/ModificationEnseignant.php" afterPath="$PROJECT_DIR$/src/ELearningBundle/Form/ModificationEnseignant.php" />
     </list>
     <ignored path="C:\wamp64\www\GitHub\SprintWeb\.idea\shelf/" />
     <ignored path="C:\Users\Lynda\Documents\GitHub\SprintWeb\.idea\shelf/" />
@@ -39,8 +31,8 @@
       <file leaf-file-name="AfficherBackActivite.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/AfficherBackActivite.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="291">
+              <caret line="38" column="35" lean-forward="false" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
               <folding>
                 <element signature="e#12#30#0#Twig" expanded="true" />
               </folding>
@@ -52,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/src/ActiviteBundle/Form/ModificationActivite.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <caret line="20" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#39#79#0#PHP" expanded="true" />
               </folding>
@@ -578,7 +570,7 @@
       <workItem from="1523016852152" duration="26000" />
       <workItem from="1523019678519" duration="826000" />
       <workItem from="1523037339989" duration="3916000" />
-      <workItem from="1523043631560" duration="10883000" />
+      <workItem from="1523043631560" duration="11889000" />
     </task>
     <task id="LOCAL-00001" summary="test2">
       <created>1522945158166</created>
@@ -622,23 +614,29 @@
       <option name="project" value="LOCAL" />
       <updated>1523045128089</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commiting modif">
+      <created>1523061580369</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1523061580369</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223548000" />
+    <option name="totallyTimeSpent" value="224554000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19106881" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2836767" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2836767" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1031,7 +1029,7 @@
     <entry file="file://$PROJECT_DIR$/src/ActiviteBundle/Form/ModificationActivite.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="20" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#39#79#0#PHP" expanded="true" />
           </folding>
@@ -1056,8 +1054,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ActiviteBundle/Resources/views/pages/AfficherBackActivite.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="291">
+          <caret line="38" column="35" lean-forward="false" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
           <folding>
             <element signature="e#12#30#0#Twig" expanded="true" />
           </folding>
