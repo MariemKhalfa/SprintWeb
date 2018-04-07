@@ -8,6 +8,10 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('CovoiturageBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $covs = $em->getRepository("CovoiturageBundle:Covoiturage")->findCovoiturages();
+        return $this->render('CovoiturageBundle:Default:index.html.twig', array("covs" => $covs));
+
     }
 }
