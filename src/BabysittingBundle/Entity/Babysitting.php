@@ -35,13 +35,13 @@ class Babysitting
 
     /**
      * @var \DateTime
-     * @ORM\Column(name="heure_deb", type="date", nullable=false)
+     * @ORM\Column(name="heure_deb", type="time", nullable=false)
      */
     private $heureDeb;
 
     /**
      * @var \DateTime
-     * @ORM\Column(name="heure_fin", type="date", nullable=false)
+     * @ORM\Column(name="heure_fin", type="time", nullable=false)
      */
     private $heureFin;
 

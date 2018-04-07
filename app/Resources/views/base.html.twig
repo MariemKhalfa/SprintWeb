@@ -158,13 +158,13 @@
                                             <li><a href="#">Inscription garderie</a></li>
                                         </ul>
                                     </li>
-                                    <li class="drop"><a href="#">Covoiturage</a>
+                                    <li class="drop"><a href="{{ path('covoiturage_homepage') }}">Covoiturage</a>
                                         <ul class="dropdown__menu">
-                                            <li><a href="#">Trouver un covoiturage</a></li>
+                                            <li><a href="{{ path('chercher_cov') }}">Trouver un covoiturage</a></li>
                                             <li><a href="{{ path('ajouter_cov') }}">Proposer un covoiturage</a></li>
                                             <li><a href="{{ path('lister_des_cov') }}">Mes covoiturages correspondants</a></li>
                                             <li><a href="{{ path('lister_mes_cov') }}">Afficher mes covoiturages</a></li>
-                                            <li><a href="#">Historique covoiturages</a></li>
+                                            <li><a href="{{ path('historique_cov') }}">Historique covoiturages</a></li>
 
                                         </ul>
                                     </li>
@@ -173,12 +173,12 @@
                                         {% else %}
                                     <li class="drop"><a href="{{ path('covoiturage_afficherCov') }}">Covoiturages</a>
                                         {% endif %}#}
-                                    <li class="drop"><a href="#">Babysitting</a>
+                                    <li class="drop"><a href="{{ path('babysitting_homepage') }}">Babysitting</a>
                                         <ul class="dropdown__menu">
-                                            <li><a href="#">Trouver un babysittinge</a></li>
-                                             <li><a href="#">Proposer un babysitting</a></li>
-                                            <li><a href="#">Afficher mes babysittings</a></li>
-                                            <li><a href="#">Historique babysitting</a></li>
+                                            <li><a href="{{ path('chercher_babysitting') }}">Trouver un babysittinge</a></li>
+                                             <li><a href="{{ path('ajouter_babysitting') }}">Proposer un babysitting</a></li>
+                                            <li><a href="{{ path('lister_mes_babysittings') }}">Afficher mes babysittings</a></li>
+                                            <li><a href="{{ path('historique_babysitting') }}">Historique babysitting</a></li>
 
                                         </ul>
                                     </li>

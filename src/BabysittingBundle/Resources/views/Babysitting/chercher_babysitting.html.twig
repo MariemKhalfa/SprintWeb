@@ -1,7 +1,19 @@
-{% extends "::base.html.twig" %}
+{% extends "base.html.twig" %}
+ {% block container %}
+     <section>
+         <div class="container">
 
-{% block title %}BabysittingBundle:Babysitting:chercherBabysitting{% endblock %}
+             <div class="section-content">
+                 <div class="row">
+                     <div class="container">
+                         <h2 class="text-theme-color-sky line-bottom"><span class="text-theme-color-red">Formulaire de recherche de babysitting</span>
+                         </h2>
+                         <h4 class="text-theme-color-blue">Vous cherchez un babysitting ?</h4>
+                         <p>Veuillez saisir les critères que vous voulez afin d'avoir le meilleur résultat .</p>
+                     </div>
 
-{% block body %}
-<h1>Welcome to the Babysitting:chercherBabysitting page</h1>
+                 </div>
+             </div>
+         </div>
+     </section>
 {% endblock %}

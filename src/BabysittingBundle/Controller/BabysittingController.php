@@ -2,14 +2,30 @@
 
 namespace BabysittingBundle\Controller;
 
+use BabysittingBundle\Entity\Babysitting;
+use BabysittingBundle\Form\BabysittingType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class BabysittingController extends Controller
 {
-    public function ajouterBabysittingAction()
+    public function ajouterBabysittingAction(Request $request)
     {
+        $baby = new Babysitting();
+        $form = $this->createForm(BabysittingType::class, $baby);
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $user=$this->container->get('security.token_storage')->getToken()->getUser();
+            $baby->setBabysitteur($user);
+            $em->persist($baby);
+            $em->flush();
+            return $this->redirectToRoute("lister_mes_babysittings");
+
+        }
         return $this->render('BabysittingBundle:Babysitting:ajouter_babysitting.html.twig', array(
-            // ...
+            "form" => $form->createView()
         ));
     }
 

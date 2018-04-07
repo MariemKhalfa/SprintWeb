@@ -1,63 +1,72 @@
 {% extends "base.html.twig" %}
  {% block container %}
-<!-- Start Contact Form -->
-<form action="{{ path('ajouter_babysitting') }}" method="post">
-    <div class="tab-content">
-        <div class="tab-pane fade " id="tab_1_1">
-            <div class="container">
-                <div class="section-content">
-                    <div class="row">
-                        <div class="container">
-                            <h2 class="text-theme-color-sky line-bottom"><span class="text-theme-color-red">Formulaire d'ajout de covoiturage</span>
-                            </h2>
-                            <h4 class="text-theme-color-blue">Vous êtes sur le point de proposer un covoiturage</h4>
-                            <p>En remplissant le formulaire ci-dessous, vous vous engagez à offrir un covoiturage à tout
-                                enfant dont le parent a effectué une reservation .</p>
-                            <p>Veuillez remplir tous les champs .</p>
-                        </div>
+     <section class="contact__box section-padding--lg bg-image--27">
+<section>
+    <div class="container">
 
-                    </div>
+        <div class="section-content">
+            <div class="row">
+                <div class="container">
+                    <h2 class="text-theme-color-sky line-bottom"><span class="text-theme-color-red">Formulaire d'ajout de babysitting</span>
+                    </h2>
+                    <h4 class="text-theme-color-blue">Vous êtes sur le point de proposer un babysitting</h4>
+                    <p>En remplissant le formulaire ci-dessous, vous vous engagez à offrir un babysitting à tout
+                        enfant dont le parent a effectué une reservation .</p>
+                    <p>Veuillez remplir tous les champs pour le bon déroulement du processus de babysitting et des réservations .</p>
                 </div>
+
             </div>
         </div>
     </div>
-    <section class="contact__box section-padding--lg bg-image--27">
+</section>
+<!-- Start  Form -->
+
+
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-sm-12 col-md-12">
 
-                </div>
             </div>
             <div class="row mt--80">
                 <div class="col-lg-12">
                     <div class="contact-form-wrap">
-                        <h2 class="text-theme-color-sky line-bottom">Formulaire d'ajout d'un  <span class="text-theme-color-red">babysitting</span></h2>
-                        <form id="contact-form" action="https://devitems.com/preview/junior/mail.php" method="post">
-                            <div class="single-contact-form name">
 
-                                <input type="date" name="date" placeholder="date du covoiturage">
+                        {#<h2 class="text-theme-color-sky line-bottom">Formulaire d'ajout d'un  <span class="text-theme-color-red">babysitting</span></h2>#}
+                        <form id="contact-form" action="{{ path('ajouter_babysitting') }}" method="post">
+                            {{ form_start(form) }}
+                            <div class="single-contact-form name">
+                                {{ form_widget(form.titre,{attr: {class: 'form-control'} })}}
+                              {#  <input type="text" name="titre" placeholder="Veuillez choisir le titre de l'annonce du babysitting">#}
                             </div>
                             <div class="single-contact-form name">
-                                <input type="time" name="time" placeholder="heure départ">
+                                {{ form_widget(form.date,{attr: {class: 'form-control'} })}}
+                               {# <input type="date" name="date" placeholder="Veuillez choisir la date du babysitting">#}
                             </div>
                             <div class="single-contact-form name">
-                                <input type="text" name="lieu_dep" placeholder="lieu de départ">
+                                {{ form_widget(form.heureDeb,{attr: {class: 'form-control'} })}}
+                                {#<input type="time" name="heureDeb" placeholder="Veuillez choisir l'heure de début du babysitting  ">#}
                             </div>
                             <div class="single-contact-form name">
-                                <input type="text" name="lieu_dest" placeholder="lieu de destination">
+                                {{ form_widget(form.heureFin,{attr: {class: 'form-control'} })}}
+                                {#<input type="time" name="heureFin" placeholder="Veuillez choisir l'heure limite  du babysitting  ">#}
                             </div>
                             <div class="single-contact-form name">
-                                <input type="number" name="nbr_places" placeholder="nombre de places disponibles">
+                                {{ form_widget(form.adresse,{attr: {class: 'form-control'} })}}
+                                {#<input type="text" name="adresse" placeholder="Veuillez choisir l'adresse  du babysitting">#}
                             </div>
-                            <div class="single-contact-form subject">
-                                <input type="text" name="conteu" placeholder="lieu départ/lieu destination">
+                            <div class="single-contact-form name">
+                                {{ form_widget(form.nbrEnfants)}}
+                               {# <input type="number" name="nbr_places" placeholder="Veuillez choisir le nombre de places disponibles du babysitting">#}
                             </div>
+
                             <div class="single-contact-form message">
-                                <textarea name="description"  placeholder="description de l'annonce de covoiturage.."></textarea>
+                                {{ form_widget(form.description,{attr: {class: 'form-control'} })}}
+                                {#<textarea name="description"  placeholder="description de l'annonce de babysitting.."></textarea>#}
                             </div>
                             <div class="contact-btn">
-                                <button type="submit" class="dcare__btn">Ajouter</button>
+                                {{ form_widget(form.Ajouter,{attr: {class: 'dcare__btn'}})}}
+                              {#  <button type="submit" class="dcare__btn">Ajouter</button>#}
                             </div>
+                            {{ form_end(form) }}
                         </form>
                     </div>
                     <div class="form-output">
