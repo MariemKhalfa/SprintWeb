@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bc05050-bc0d-460f-b213-135f88966292" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_04_2018_13_15__Default_.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Entity/Demande.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/traiterDemandes.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Front/Inscription.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Front/afficherListesGarderies.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Front/annulerInscription.html.twig" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_04_2018_09_00__Default_.xml" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_04_2018_09_00__Default_.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/GarderieBundle/Repository/GarderieRepository.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/backBase.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/backBase.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php" afterPath="$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php" />
+      <change beforePath="$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php" afterPath="$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php" />
       <change beforePath="$PROJECT_DIR$/src/MedecinBundle/Controller/MedecinController.php" afterPath="$PROJECT_DIR$/src/MedecinBundle/Controller/MedecinController.php" />
-      <change beforePath="$PROJECT_DIR$/src/MedecinBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/MedecinBundle/Resources/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/src/MedecinBundle/Resources/views/Back/listesMedecins.html.twig" afterPath="$PROJECT_DIR$/src/MedecinBundle/Resources/views/Back/listesMedecins.html.twig" />
     </list>
     <ignored path="C:\wamp64\www\GitHub\SprintWeb\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,36 +20,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MedecinBundle/Resources/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MedecinController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MedecinBundle/Controller/MedecinController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="105" column="31" lean-forward="false" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
+            <state relative-caret-position="116">
+              <caret line="93" column="114" lean-forward="false" selection-start-line="93" selection-start-column="114" selection-end-line="93" selection-end-column="114" />
               <folding>
                 <element signature="e#3807#3831#1#PHP" expanded="true" />
-                <element signature="e#4223#4247#1#PHP" expanded="true" />
-                <marker date="1523103354424" expanded="true" signature="1752:1790" ph="Select m fro... MedecinBundle" />
+                <element signature="e#3917#3943#1#PHP" expanded="true" />
+                <element signature="e#4453#4477#1#PHP" expanded="true" />
+                <marker date="1523105840152" expanded="true" signature="1752:1790" ph="Select m fro... MedecinBundle" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajoutMedecin.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MedecinBundle/Resources/views/Back/ajoutMedecin.html.twig">
+      <file leaf-file-name="VoteRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Repository/VoteRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="117" column="87" lean-forward="false" selection-start-line="117" selection-start-column="87" selection-end-line="117" selection-end-column="101" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1523069787522" expanded="true" signature="289:346" ph="Delete from GarderieBundle... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vote.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Vote.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="74" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Demande.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Demande.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Garderies.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="428" column="24" lean-forward="false" selection-start-line="428" selection-start-column="20" selection-end-line="428" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GarderieRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Repository/GarderieRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <marker date="1523105050766" expanded="true" signature="293:350" ph="Delete from GarderieBundle... " />
+                <marker date="1523105050766" expanded="true" signature="515:578" ph="Select g fro... GarderieBundle" />
+                <marker date="1523105050766" expanded="true" signature="523:578" ph="Delete from GarderieBundle... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,16 +111,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/config/services.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="listesMedecins.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MedecinBundle/Resources/views/Back/listesMedecins.html.twig">
           <provider selected="true" editor-type-id="text-editor">
@@ -103,31 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GarderiesController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php">
+      <file leaf-file-name="Medecins.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MedecinBundle/Entity/Medecins.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backBase.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/backBase.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="289" column="59" lean-forward="false" selection-start-line="289" selection-start-column="59" selection-end-line="289" selection-end-column="59" />
+            <state relative-caret-position="393">
+              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,7 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>href</find>
       <find>.cs</find>
       <find>adm</find>
       <find>ENSEIGN</find>
@@ -167,6 +164,7 @@
       <find>Ens</find>
       <find>medecin</find>
       <find>medecin_</find>
+      <find>setE</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
@@ -219,7 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Security/UserProvider.php" />
         <option value="$PROJECT_DIR$/src/RecetteBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Security/AdminProvider.php" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/backLogin_content.html.twig" />
@@ -243,7 +240,6 @@
         <option value="$PROJECT_DIR$/src/CovoiturageBundle/Repository/VoitureRepository.php" />
         <option value="$PROJECT_DIR$/src/CovoiturageBundle/Entity/Covoiturage.php" />
         <option value="$PROJECT_DIR$/src/CovoiturageBundle/Repository/CovoiturageRepository.php" />
-        <option value="$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Entity/Inscription.php" />
         <option value="$PROJECT_DIR$/src/BabysittingBundle/Repository/BabysittingRepository.php" />
         <option value="$PROJECT_DIR$/src/BabysittingBundle/Entity/Babysitting.php" />
@@ -266,10 +262,12 @@
         <option value="$PROJECT_DIR$/src/GarderieBundle/Controller/GarderiesController.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/MedecinBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/MedecinBundle/Controller/MedecinController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/backBase.html.twig" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/traiterDemandes.html.twig" />
         <option value="$PROJECT_DIR$/src/MedecinBundle/Resources/views/Back/listesMedecins.html.twig" />
+        <option value="$PROJECT_DIR$/src/GarderieBundle/Repository/GarderieRepository.php" />
+        <option value="$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php" />
+        <option value="$PROJECT_DIR$/src/MedecinBundle/Controller/MedecinController.php" />
       </list>
     </option>
   </component>
@@ -360,30 +358,6 @@
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="bin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -395,50 +369,56 @@
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ActiviteBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GarderieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ActiviteBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GarderieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GarderieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GarderieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="GarderieBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="MedecinBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="MedecinBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ActiviteBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ActiviteBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="MedecinBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -456,17 +436,17 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\SprintWeb\src\MedecinBundle\Form" />
-      <recent name="C:\xampp\htdocs\SprintWeb\web" />
-      <recent name="C:\wamp64\www\FOSAjax\FrontOffice\src\AppBundle\Resources\views" />
-      <recent name="C:\wamp64\www\FrontOffice\app\Resources\views\default" />
-      <recent name="C:\wamp64\www\FrontOffice\vendor\friendsofsymfony\user-bundle\Resources\views\Security" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\FrontOffice\src\ELearningBundle\Form" />
       <recent name="C:\wamp64\www\FrontOffice\src\FrontBundle\Handler" />
       <recent name="C:\wamp64\www\FrontOffice\src\AppBundle\Resources\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\SprintWeb\src\GarderieBundle\Repository" />
+      <recent name="C:\xampp\htdocs\SprintWeb\src\MedecinBundle\Form" />
+      <recent name="C:\xampp\htdocs\SprintWeb\web" />
+      <recent name="C:\wamp64\www\FOSAjax\FrontOffice\src\AppBundle\Resources\views" />
+      <recent name="C:\wamp64\www\FrontOffice\app\Resources\views\default" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -1609,16 +1589,24 @@
       <option name="project" value="LOCAL" />
       <updated>1523028801495</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="committing demandes">
+      <created>1523103825809</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1523103825809</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234483000" />
+    <option name="totallyTimeSpent" value="236605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.193265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.193265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1691,34 +1679,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/views/GarderieBase.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="422" column="0" lean-forward="false" selection-start-line="422" selection-start-column="0" selection-end-line="422" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/contact.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/editUser.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/indexBack.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1877,14 +1837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MedecinBundle/Entity/Medecins.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ActiviteBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -2001,14 +1953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Demande.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2081,14 +2025,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MedecinBundle/Entity/Medecins.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Repository/VoteRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1523069787522" expanded="true" signature="289:346" ph="Delete from GarderieBundle... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Vote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Demande.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Repository/GarderieRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <marker date="1523105050766" expanded="true" signature="293:350" ph="Delete from GarderieBundle... " />
+            <marker date="1523105050766" expanded="true" signature="515:578" ph="Select g fro... GarderieBundle" />
+            <marker date="1523105050766" expanded="true" signature="523:578" ph="Delete from GarderieBundle... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Entity/Garderies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="428" column="24" lean-forward="false" selection-start-line="428" selection-start-column="20" selection-end-line="428" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MedecinBundle/Controller/MedecinController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="105" column="31" lean-forward="false" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
+        <state relative-caret-position="116">
+          <caret line="93" column="114" lean-forward="false" selection-start-line="93" selection-start-column="114" selection-end-line="93" selection-end-column="114" />
           <folding>
             <element signature="e#3807#3831#1#PHP" expanded="true" />
-            <element signature="e#4223#4247#1#PHP" expanded="true" />
-            <marker date="1523103354424" expanded="true" signature="1752:1790" ph="Select m fro... MedecinBundle" />
+            <element signature="e#3917#3943#1#PHP" expanded="true" />
+            <element signature="e#4453#4477#1#PHP" expanded="true" />
+            <marker date="1523105840152" expanded="true" signature="1752:1790" ph="Select m fro... MedecinBundle" />
           </folding>
         </state>
       </provider>

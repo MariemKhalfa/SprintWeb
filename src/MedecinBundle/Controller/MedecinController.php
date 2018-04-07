@@ -91,10 +91,17 @@ class MedecinController extends Controller
         $em=$this->getDoctrine()->getManager();
         echo $request->get('id');
         $demande=$em->getRepository('GarderieBundle:Demande')->findOneBy(array('id'=> $request->get('id')));
+        $garderie=$em->getRepository('GarderieBundle:Garderies')->findOneBy(array('id'=> $demande->getIdGarderie()));
         echo $demande->getId();
 
 $demande->setEtat('true');
+echo $garderie->getEtat();
+$garderie->setEtat('true');
 $em->persist($demande);
+
+
+        $em->flush();
+        $em->persist($garderie);
         $em->flush();
         return $this->redirectToRoute("demande_afficher2");
 
