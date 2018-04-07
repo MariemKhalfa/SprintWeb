@@ -53,7 +53,7 @@ class Activite
     /**
      * @var string
      *
-     * @ORM\Column(name="heure", type="string", length=255)
+     * @ORM\Column(name="heure", type="time", length=255)
      */
     private $heure;
 

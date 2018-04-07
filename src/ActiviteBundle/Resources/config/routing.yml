@@ -8,7 +8,13 @@ activite_viewActivite:
 
 activite_createActivite:
     path:     /activite/create
+    defaults: { _controller: ActiviteBundle:Activite:createActivite }
+
+
+activite_afficherActivite:
+    path:     /activite/afficher
     defaults: { _controller: ActiviteBundle:Activite:afficheBack }
+
 
 activite_modifBackEnseignant:
     path:     /ModificationActivite/{id}
