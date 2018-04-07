@@ -5,8 +5,10 @@ namespace ActiviteBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\HttpFoundation\Request;
 use ActiviteBundle\Entity\Activite;
 
@@ -41,10 +43,10 @@ class ActiviteController extends Controller
             // adds a class that can be selected in JavaScript
             'attr' => ['class' => 'js-datepicker'],
         ))
-        ->add('heure',TextType::class,array('attr' => array('class'=>'form-control')))
-        ->add('agemin')
+        ->add('heure',TimeType::class,array('attr' => array('class'=>'form-control')))
+        ->add('agemin', NumberType::class,array('attr' => array('class'=>'form-control')))
 
-        ->add('save',SubmitType::Class,array('label'=>'Créer Activité', 'attr' =>array ('class'=>'btn btn-primary',
+        ->add('save',SubmitType::Class,array('label'=>'Créer Activité', 'attr' =>array ('class'=>'btn btn-warning',
             'style'=>'margin-top:10px')))
         ->getForm() ;
         $form->handleRequest($request);
@@ -67,7 +69,7 @@ class ActiviteController extends Controller
                 $em->persist($activite);
                 $em->flush();
                 $this->addFlash('message','Activité enregistrée avec succès');
-                return $this->redirectToRoute('view_activite_route');
+                return $this->redirectToRoute('activite_afficherActivite');
         }
 
 
@@ -102,7 +104,7 @@ return $this->render("@Activite/pages/create.html.twig",['form' =>$form->createV
             ->add('heure',TextType::class,array('attr' => array('class'=>'form-control')))
             ->add('agemin')
 
-            ->add('save',SubmitType::Class,array('label'=>'Créer Activité', 'attr' =>array ('class'=>'btn btn-primary',
+            ->add('save',SubmitType::Class,array('label'=>'Modifier Activité', 'attr' =>array ('class'=>'btn btn-primary',
                 'style'=>'margin-top:10px')))
             ->getForm() ;
 
@@ -126,7 +128,7 @@ return $this->render("@Activite/pages/create.html.twig",['form' =>$form->createV
 
             $em->flush();
             $this->addFlash('message','Activité modifiée avec succès');
-            return $this->redirectToRoute('activite_createActivite');
+            return $this->redirectToRoute('activite_afficherActivite');
 
         }
 
@@ -157,7 +159,7 @@ return $this->render("@Activite/pages/create.html.twig",['form' =>$form->createV
         $em->flush();
         $this->addFlash('message','Activité supprimée avec succès');
 
-        return $this->redirectToRoute('activite_createActivite');
+        return $this->redirectToRoute('activite_afficherActivite');
     }
 
     public function afficheBackAction()

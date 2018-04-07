@@ -10,18 +10,22 @@
             </div>
             <div class="panel-wrapper collapse in">
                 <div class="panel-body">
+                    {% for success_message in app.session.flashbag.get('message') %}
+                        <div class="alert alert-success">{{ success_message }}</div>
+                    {% endfor %}
+
                      <code>La table des Activités :</code>
-                    <a href="" class="btn" value="Ajouter un enseignant" style="color: #0e3e70;">Ajouter une activité </a>
+                    <a href="{{ path('activite_createActivite') }}" class="btn" value="Ajouter une activite" style="color: #0e3e70;">Ajouter une activité </a>
                     <div class="table-wrap mt-40">
                         <div class="table-responsive">
                             <table class="table table-hover table-bordered mb-0">
                                 <thead>
                                 <tr>
                                     <th>Type</th>
-                                    <th>Age minimal</th>
                                     <th>Adresse</th>
                                     <th>Date</th>
                                     <th>Heure</th>
+                                    <th>Age minimal</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -32,14 +36,20 @@
 
                                     <td>{{ a.type }}</td>
                                     <td>{{ a.adresse }}</td>
-                                    <td>{{ a.heure }}</td>
                                     <td>{{ a.date | date('d-m-y')}}</td>
+                                    <td>{{ a.heure | date('H:i') }}</td>
                                     <td>{{ a.ageMin }}</td>
 
-                                    <td class="text-nowrap"><a href="{{ path('activite_modifBackEnseignant',{'id':a.id }) }}"  class="mr-25" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a> <a href="{{ path('activite_deleteActivite',{'id':a.id  }) }}" > <i class="fa fa-close text-danger"></i> </a> </td>
+                                    <td class="text-nowrap"><a href="{{ path('activite_updateActivite',{'id':a.id }) }}"  class="mr-25" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a> <a href="{{ path('activite_deleteActivite',{'id':a.id  }) }}" > <i class="fa fa-close text-danger"></i> </a> </td>
 
 
                                 </tr>
+                                {% else %}
+                                    <tr>
+                                        <td>
+                                            Pas d'activités !
+                                        </td>
+                                    </tr>
                                 {% endfor %}
                                 </tbody>
                             </table>
