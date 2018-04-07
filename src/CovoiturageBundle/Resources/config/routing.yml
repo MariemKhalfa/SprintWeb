@@ -49,3 +49,11 @@ matching_cov:
 distance_cov:
     path:     /distanceCov
     defaults: { _controller: CovoiturageBundle:Covoiturage:distanceCov }
+
+details_cov:
+    path:     /detailsCov/{id}
+    defaults: { _controller: CovoiturageBundle:Covoiturage:detailsCov }
+
+reserver_cov:
+    path:     /reserverCov/{id}
+    defaults: { _controller: CovoiturageBundle:Covoiturage:reserverCov }

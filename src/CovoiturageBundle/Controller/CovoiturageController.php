@@ -21,10 +21,10 @@ class CovoiturageController extends Controller
             $d = $cov->getLieuDep();
             $s = $cov->getLieuDest();
             $cov->setTitre($d . ' vers ' . $s);
-            $user=$this->container->get('security.token_storage')->getToken()->getUser(); // $user is filled with the logged user
+            $user = $this->container->get('security.token_storage')->getToken()->getUser(); // $user is filled with the logged user
 
             $cov->setCovoitureur($user);
-            $voiture = $em->getRepository("CovoiturageBundle:Voiture")->findOneBy(  array('proprio' => $user->getId()));
+            $voiture = $em->getRepository("CovoiturageBundle:Voiture")->findOneBy(array('proprio' => $user->getId()));
             $cov->setVoiture($voiture);
 
             $em->persist($cov);
@@ -40,30 +40,56 @@ class CovoiturageController extends Controller
     {
         $covoiturage = new Covoiturage();
         $em = $this->getDoctrine()->getManager();
-        $Form=$this->createForm(CovoiturageType::class,$covoiturage);
-        return $this->render('CovoiturageBundle:Covoiturage:modifier_cov.html.twig', array('form'=>$Form->createView()
+        $Form = $this->createForm(CovoiturageType::class, $covoiturage);
+        return $this->render('CovoiturageBundle:Covoiturage:modifier_cov.html.twig', array('form' => $Form->createView()
         ));
     }
 
     public function listerMesCovAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-
-            $user=$this->container->get('security.token_storage')->getToken()->getUser();
-            $covs = $em->getRepository("CovoiturageBundle:Covoiturage")->MesCovoiturages($user->getId());
-            return $this->render('CovoiturageBundle:Covoiturage:lister_mes_cov.html.twig', array("covs" => $covs));
-
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $covs = $em->getRepository("CovoiturageBundle:Covoiturage")->MesCovoiturages($user->getId());
+        return $this->render('CovoiturageBundle:Covoiturage:lister_mes_cov.html.twig', array("covs" => $covs));
     }
 
     public function listerDesCovAction()
     {
-        return $this->render('CovoiturageBundle:Covoiturage:lister_des_cov.html.twig', array(// ...
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $covs = $em->getRepository("CovoiturageBundle:Covoiturage")->AutresCovoiturages($user->getId());
+        return $this->render('CovoiturageBundle:Covoiturage:lister_des_cov.html.twig', array("covs" => $covs));
+    }
+    public function detailsCovAction(Request $request,$id)
+    {
+        $em=$this->getDoctrine()->getManager();
+       $cov=$em->getRepository('CovoiturageBundle:Covoiturage')->findBy(array("id"=>$id));
+     /*   $cov=$em->getRepository('CovoiturageBundle:Covoiturage')->find($request->get($id));*/
+        return $this->render('CovoiturageBundle:Covoiturage:details_cov.html.twig',array(
+            'cov'=>$cov,
+        ));
+
+
+     /*   return $this->render('CovoiturageBundle:Covoiturage:details_cov.html.twig', array(
+            'co'=>$cov
+        ));*/
+
+    }
+    public function reserverCovAction($id)
+    {
+        return $this->render('CovoiturageBundle:Covoiturage:reserver_cov.html.twig', array(// ...
         ));
     }
 
     public function historiqueCovAction()
     {
-        return $this->render('CovoiturageBundle:Covoiturage:historique_cov.html.twig', array(// ...
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $covs = $em->getRepository("CovoiturageBundle:Covoiturage")->MesAnciensCovoiturages($user->getId());
+
+        return $this->render('CovoiturageBundle:Covoiturage:historique_cov.html.twig', array(
+            "covs" => $covs
         ));
     }
 

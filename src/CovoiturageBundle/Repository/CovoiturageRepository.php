@@ -16,9 +16,34 @@ class CovoiturageRepository extends EntityRepository
     public function MesCovoiturages($id)
     {
         $query = $this->getEntityManager()
-            ->createQuery("SELECT c FROM CovoiturageBundle:Covoiturage c where c.covoitureur=:id AND c.date > CURRENT_DATE()  ")
-            ->setParameter('id', '%'.$id.'%');
+            ->createQuery("SELECT c FROM CovoiturageBundle:Covoiturage c WHERE c.covoitureur=:i AND c.date > CURRENT_DATE()")
+            ->setParameter('i', $id);
 
         return $result = $query->getResult();
     }
+
+    public function MesAnciensCovoiturages($id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery("SELECT c FROM CovoiturageBundle:Covoiturage c WHERE c.covoitureur=:i AND c.date < CURRENT_DATE()")
+            ->setParameter('i', $id);
+
+        return $result = $query->getResult();
+    }
+    public function AutresCovoiturages($id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery("SELECT c FROM CovoiturageBundle:Covoiturage c WHERE c.covoitureur<>:i AND c.date > CURRENT_DATE()")
+            ->setParameter('i', $id);
+
+        return $result = $query->getResult();
+    }
+
+    /*public function findBesoin($p){
+        $em = $this->getEntityManager();
+        $query = $em->createQuery("SELECT s FROM bsitterBundle:besoin s WHERE s.idp like :e");
+        //AND c.date > CURRENT_DATE()
+        $query->setParameter('e', $p);
+        return $query->getResult();
+    }*/
 }

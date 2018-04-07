@@ -4,6 +4,7 @@ namespace CovoiturageBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -20,6 +21,7 @@ class CovoiturageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('date', DateType::class)
+            ->add('titre',HiddenType::class)
             ->add('nbPlaces', NumberType::class)
             ->add('heureDep', TimeType::class)
             ->add('lieuDep',TextType::class)
