@@ -22,3 +22,6 @@ demande_supprimer2:
 demande_accepter2:
     path:     /AccepterDemande
     defaults: { _controller: MedecinBundle:Medecin:AccepterDemande}
+garderie_listeFront2:
+    path:     /garderieList
+    defaults: { _controller: MedecinBundle:Medecin:listFront }

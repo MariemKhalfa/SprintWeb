@@ -117,5 +117,22 @@ $em->persist($demande);
         $em->flush();
         return $this->redirectToRoute("demande_afficher2");
     }
+    function listFrontAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $queryBuilder = $em->getRepository('GarderieBundle:Garderies')->createQueryBuilder('bp1');
+
+        $query = $queryBuilder->getQuery();
+        $paginator = $this->get('knp_paginator');
+
+        $result = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 2)
+        );
+        return $this->render('GarderieBundle:Front:afficherListesGarderies.html.twig', array("garderie" => $result));
+
+    }
 
 }

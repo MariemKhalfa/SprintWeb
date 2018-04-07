@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
-
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="utf-8">
@@ -153,11 +152,14 @@
 
                                     <li class="drop"><a href="#">Garderies</a>
                                         <ul class="dropdown__menu">
-                                            <li><a href="#">Liste des garderies</a></li>
+                                            {% if is_granted('ROLE_PARENT')  %}
+                                            <li><a href="{{ path('garderie_listeFront2') }}">Nos Garderies</a></li>
+                                            {% endif %}
                                             <li><a href="#">Trouver une garderie</a></li>
                                             <li><a href="#">Inscription garderie</a></li>
                                         </ul>
                                     </li>
+
                                     <li class="drop"><a href="{{ path('covoiturage_homepage') }}">Covoiturage</a>
                                         <ul class="dropdown__menu">
                                             <li><a href="{{ path('chercher_cov') }}">Trouver un covoiturage</a></li>
