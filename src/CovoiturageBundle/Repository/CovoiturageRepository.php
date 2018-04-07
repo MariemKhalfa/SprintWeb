@@ -11,4 +11,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class CovoiturageRepository extends EntityRepository
 {
+    //SELECT c.* FROM covoiturage c join user u on c.covoitureur=u.id where covoitureur=2
+
+    public function MesCovoiturages($id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery("SELECT c FROM CovoiturageBundle:Covoiturage c where c.covoitureur=:id AND c.date > CURRENT_DATE()  ")
+            ->setParameter('id', '%'.$id.'%');
+
+        return $result = $query->getResult();
+    }
 }

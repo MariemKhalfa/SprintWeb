@@ -14,8 +14,7 @@ class VoteRepository extends \Doctrine\ORM\EntityRepository
     public function RemoveVote($id)
     {
 
-        $query=$this->getEntityManager()->createQuery("Delete from GarderieBundle:Vote v
-where v.idgarderie =:id")->setParameter('id',$id);
+        $query=$this->getEntityManager()->createQuery("Delete from GarderieBundle:Vote v where v.idgarderie =:id")->setParameter('id',$id);
         return $query->getResult();
     }
 }
