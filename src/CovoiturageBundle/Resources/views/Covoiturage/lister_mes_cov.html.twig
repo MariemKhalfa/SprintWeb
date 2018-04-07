@@ -1,7 +1,121 @@
-{% extends "::base.html.twig" %}
+{% extends "base.html.twig" %}
+{% block container %}
+<!-- Stylesheet -->
+<link href="{{ asset('images/mariem/css/bootstrap.min.css" rel="stylesheet" type="text/css') }}">
+<link href="{{ asset('images/mariem/css/jquery-ui.min.css" rel="stylesheet" type="text/css') }}">
+<link href="{{ asset('images/mariem/css/animate.css" rel="stylesheet" type="text/css') }}">
+<link href="{{ asset('images/mariem/css/css-plugin-collections.css" rel="stylesheet') }}"/>
+<!-- CSS | menuzord megamenu skins -->
+<link id="menuzord-menu-skins" href="{{ asset('images/mariem/css/menuzord-skins/menuzord-rounded-boxed.css') }}"
+      rel="stylesheet"/>
+<!-- CSS | Main style file -->
+<link href="{{ asset('images/mariem/css/style-main.css') }}" rel="stylesheet" type="text/css">
+<!-- CSS | Preloader Styles -->
+<link href="{{ asset('images/mariem/css/preloader.css') }}" rel="stylesheet" type="text/css">
+<!-- CSS | Custom Margin Padding Collection -->
+<link href="{{ asset('images/mariem/css/custom-bootstrap-margin-padding.css') }}" rel="stylesheet" type="text/css">
+<!-- CSS | Responsive media queries -->
+<link href="{{ asset('images/mariem/css/responsive.css') }}" rel="stylesheet" type="text/css">
+<!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
+<!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
 
-{% block title %}CovoiturageBundle:Covoiturage:listerMesCov{% endblock %}
+<!-- Revolution Slider 5.x CSS settings -->
+<link href="{{ asset('images/mariem/js/revolution-slider/css/settings.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('images/mariem/js/revolution-slider/css/layers.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('images/mariem/js/revolution-slider/css/navigation.css') }}" rel="stylesheet"
+      type="text/css"/>
 
-{% block body %}
-<h1>Welcome to the Covoiturage:listerMesCov page</h1>
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css"/>
+
+<!--Font Awesome (added because you use icons in your prepend/append)-->
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css"/>
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #24a4be
+    }
+
+    .bootstrap-iso form button, .bootstrap-iso form button:hover {
+        color: #ffffff !important;
+    }
+
+    .bootstrap-iso .btn-custom {
+        background: #33b77e
+    }
+
+    .bootstrap-iso .btn-custom:hover {
+        background: #1fa36a;
+    }
+
+    .asteriskField {
+        color: red;
+    }</style>
+
+
+<!-- CSS | Theme Color -->
+<link href="{{ asset('images/mariem/css/colors/theme-skin-color-set-1.css') }}" rel="stylesheet" type="text/css">
+<!---Mariem -->
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                {% for c in covs %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="item">
+                        <div class="campaign bg-white maxwidth500 mb-30">
+                            <div class="thumb">
+                                <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+                                <div class="campaign-overlay"></div>
+                            </div>
+
+                            <div class="course-details clearfix p-20 pt-15">
+                                <h4 class="price-tag">Nouveau</h4>
+                                <h3 class="mt-0"><a class="text-theme-color-red" href="#">{{ c.titre }}</a></h3>
+                                <ul class="review_text list-inline">
+                                    <li>
+
+                                    </li>
+                                </ul>
+                                <p{{ c.description }} <a
+                                            class="text-theme-colored ml-5" href="#"> →</a></p>
+                                <div class="course-details-bottom mt-15">
+                                    <ul class="list-inline">
+                                        <li>Capacité<span>{{  c.nbPlaces}}</span></li>
+                                        <li>Horaires<span>{{ c.heureDep}}</span></li>
+                                        <li>Age<span>{{ c.lieuDep}}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {# <table border="2">
+         <th><b>Nom pharmacie</b></th>
+         <th><b>Num Tel Pharma</b></th>
+         <th><b>Email Pharma</b></th>
+         <th><b>Horaire Ouverture</b></th>
+         <th><b>Horaire Fermeture</b></th>
+         <th><b>Adresse</b></th>
+
+         {% for ph in pharmas %}
+             <tr>
+                 <td>{{ ph.nomPharma }}</td>
+                 <td>{{ ph.numTelPharma }}</td>
+                 <td>{{ ph.emailPharma }}</td>
+                 <td>{{ ph.horaireOuverturePharma }}</td>
+                 <td>{{ ph.horaireFermeturePharma }}</td>
+                 <td>{{ ph.adressePharma }}</td>
+                 <td><a href="{{ path('_modif',{"id":ph.idPharma}) }}">Modifier</a></td>
+                 <td><a href="{{ path('_supprimer',{"id":ph.idPharma}) }}">Supprimer</a></td>
+             </tr>
+         {% endfor %}
+     </table>#}
+
 {% endblock %}

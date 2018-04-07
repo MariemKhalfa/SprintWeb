@@ -22,15 +22,21 @@ class GarderiesUpdateType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('adresse')->add('telephone')->
-        add('image',FileType::class,array('data_class' => null,'label'=>"insérez une image"))->
-        add('email')->add('descriptif',TextareaType::class)->add('langues',ChoiceType::class, array(
-            'choices' => array('FR' => 'FR', 'EN' => 'EN')))->add('dateOuverture')->add('dateFermeture')->
-        add('rating',HiddenType::class)->add('cout')->add('heureDeb')->add('heureFin')
+        $builder->add('nom')->add('adresse')
+            ->add('telephone')
+            ->add('image',FileType::class,array('data_class' => null,'label'=>"insérez une image"))
+            ->add('email')
+            ->add('descriptif',TextareaType::class)
+            ->add('langues',ChoiceType::class, array('choices' => array('FR' => 'FR', 'EN' => 'EN')))
+            ->add('dateOuverture')
+            ->add('dateFermeture')
+            ->add('rating',HiddenType::class)
+            ->add('cout')
+            ->add('heureDeb')
+            ->add('heureFin')
             ->add('proprietaire',EntityType::class,array('class'=>'FrontBundle\Entity\User','choice_label'=>'username', 'query_builder' => function (\FrontBundle\Repository\UserRepository $ur)  {
-            return $ur->SelectPropGarderie();
-
-        },'multiple'=>false,))->add('Modifier',SubmitType::class);
+            return $ur->SelectPropGarderie();},'multiple'=>false,))
+            ->add('Modifier',SubmitType::class);
     }/**
      * {@inheritdoc}
      */

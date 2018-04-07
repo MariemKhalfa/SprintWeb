@@ -8,7 +8,11 @@ activite_viewActivite:
 
 activite_createActivite:
     path:     /activite/create
-    defaults: { _controller: ActiviteBundle:Activite:createActivite }
+    defaults: { _controller: ActiviteBundle:Activite:afficheBack }
+
+activite_modifBackEnseignant:
+    path:     /ModificationActivite/{id}
+    defaults: { _controller: ActiviteBundle:Activite:updateActivite  }
 
 activite_updateActivite:
     path:     /activite/update/{id}
@@ -22,7 +26,7 @@ activite_deleteActivite:
     path:     /activite/delete/{id}
     defaults: { _controller: ActiviteBundle:Activite:deleteActivite }
 
-e_learning_afficherBackEnseignant:
+activite_afficherBackEnseignant:
     path:     /affichbackEnseignant
     defaults: { _controller: ELearningBundle:Default:afficheBack }
 

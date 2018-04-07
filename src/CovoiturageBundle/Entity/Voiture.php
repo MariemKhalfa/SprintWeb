@@ -10,7 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="voiture")
  * @ORM\Entity(repositoryClass="CovoiturageBundle\Repository\VoitureRepository")
  */
-
 class Voiture
 {
     /**

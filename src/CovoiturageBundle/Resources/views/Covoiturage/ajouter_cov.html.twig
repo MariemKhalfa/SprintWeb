@@ -1,7 +1,165 @@
-{% extends "::base.html.twig" %}
+{% extends "base.html.twig" %}
+ {% block container %}
+     <!-- Stylesheet -->
+     <link href="{{ asset('images/mariem/css/bootstrap.min.css" rel="stylesheet" type="text/css') }}">
+     <link href="{{ asset('images/mariem/css/jquery-ui.min.css" rel="stylesheet" type="text/css') }}">
+     <link href="{{ asset('images/mariem/css/animate.css" rel="stylesheet" type="text/css') }}">
+     <link href="{{ asset('images/mariem/css/css-plugin-collections.css" rel="stylesheet') }}"/>
+     <!-- CSS | menuzord megamenu skins -->
+     <link id="menuzord-menu-skins" href="{{ asset('images/mariem/css/menuzord-skins/menuzord-rounded-boxed.css') }}"
+           rel="stylesheet"/>
+     <!-- CSS | Main style file -->
+     <link href="{{ asset('images/mariem/css/style-main.css') }}" rel="stylesheet" type="text/css">
+     <!-- CSS | Preloader Styles -->
+     <link href="{{ asset('images/mariem/css/preloader.css') }}" rel="stylesheet" type="text/css">
+     <!-- CSS | Custom Margin Padding Collection -->
+     <link href="{{ asset('images/mariem/css/custom-bootstrap-margin-padding.css') }}" rel="stylesheet" type="text/css">
+     <!-- CSS | Responsive media queries -->
+     <link href="{{ asset('images/mariem/css/responsive.css') }}" rel="stylesheet" type="text/css">
+     <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
+     <!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
 
-{% block title %}CovoiturageBundle:Covoiturage:ajouterCov{% endblock %}
+     <!-- Revolution Slider 5.x CSS settings -->
+     <link href="{{ asset('images/mariem/js/revolution-slider/css/settings.css') }}" rel="stylesheet" type="text/css"/>
+     <link href="{{ asset('images/mariem/js/revolution-slider/css/layers.css') }}" rel="stylesheet" type="text/css"/>
+     <link href="{{ asset('images/mariem/js/revolution-slider/css/navigation.css') }}" rel="stylesheet"
+           type="text/css"/>
 
-{% block body %}
-<h1>Welcome to the Covoiturage:ajouterCov page</h1>
-{% endblock %}
+     <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css"/>
+
+     <!--Font Awesome (added because you use icons in your prepend/append)-->
+     <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css"/>
+
+     <!-- Inline CSS based on choices in "Settings" tab -->
+     <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form {
+             font-family: Arial, Helvetica, sans-serif;
+             color: #24a4be
+         }
+
+         .bootstrap-iso form button, .bootstrap-iso form button:hover {
+             color: #ffffff !important;
+         }
+
+         .bootstrap-iso .btn-custom {
+             background: #33b77e
+         }
+
+         .bootstrap-iso .btn-custom:hover {
+             background: #1fa36a;
+         }
+
+         .asteriskField {
+             color: red;
+         }</style>
+
+
+     <!-- CSS | Theme Color -->
+     <link href="{{ asset('images/mariem/css/colors/theme-skin-color-set-1.css') }}" rel="stylesheet" type="text/css">
+     <!---Mariem -->
+     <!-- Datetimepicker Basic Example Script -->
+     <script type="text/javascript">
+         $(function () {
+             $('#datetimepicker1').datetimepicker();
+         });
+     </script>
+
+     <section>
+         <div class="container">
+             <div class="section-content">
+                 <div class="row">
+                     <div class="container">
+                         <h2 class="text-theme-color-sky line-bottom"><span class="text-theme-color-red">Formulaire d'ajout de covoiturage</span>
+                         </h2>
+                         <h4 class="text-theme-color-blue">Vous êtes sur le point de proposer un covoiturage</h4>
+                         <p>En remplissant le formulaire ci-dessous, vous vous engagez à offrir un covoiturage à tout
+                             enfant dont le parent a effectué une reservation .</p>
+                         <p>Veuillez remplir tous les champs .</p>
+                     </div>
+
+                 </div>
+             </div>
+         </div>
+
+         <div class="row upcomming__wrap mt--40">
+             <!-- Start Single Upcomming Event -->
+             <div class="col-lg-6 col-md-12 col-sm-12">
+                 <div class="upcomming__event">
+                     <div class="upcomming__thumb">
+                         <img src="{{ asset('images/upcomming/4.png') }}" alt="upcomming images">
+                     </div>
+                     <div class="upcomming__inner">
+
+                         <div class="form-group">
+
+                             {{ form_start(form, {'method': 'post', 'action': path('ajouter_cov'), 'attr': {'class': 'ajouter_cov'}}) }}
+                             <form class="form-horizontal">
+       {#                          {{ form_start(form) }}#}
+                                 <div class="row form-group">
+                                     <div class="col col-md-4"><label for="text-input"
+                                                                      class=" form-control-label">Date</label></div>
+                                     <div class="form-group">
+                                         <div class='input-group date'
+                                              id='datetimepicker1'>{{ form_widget(form.date,{attr: {class: 'form-control'} }) }}
+                                             <span class="input-group-addon">
+                  <span class="fa fa-calendar"></span>
+                </span>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="row form-group">
+                                     <div class="col col-md-4"><label for="text-input"
+                                                                      class=" form-control-label">Heure de départ</label></div>
+                                     <div class="form-group">
+                                         <div class='input-group date'
+                                              id='timepicker'>{{ form_widget(form.heureDep,{attr: {class: 'form-control'} }) }}
+                                             <span class="input-group-addon">
+                  <span class="fa fa-clock-o"></span>
+                </span>
+                                         </div>
+                                     </div>
+                                 </div>
+
+
+                                 <div class="row form-group">
+                                     <div class="col col-md-4"><label for="text-input" class=" form-control-label">Lieu de départ</label>
+                                     </div>
+                                     <div class="col-12 col-md-8">{{ form_widget(form.lieuDep,{attr: {class: 'form-control'} }) }}</div>
+                                 </div>
+                                 <div class="row form-group">
+                                     <div class="col col-md-4"><label for="text-input" class=" form-control-label">Lieu
+                                             de
+                                             destination</label></div>
+                                     <div class="col-12 col-md-8">{{ form_widget(form.lieuDest,{attr: {class: 'form-control'} }) }}</div>
+                                 </div>
+                                 <div class="row form-group">
+                                     <div class="col col-md-4"><label for="text-input" class=" form-control-label">Nombre
+                                             de
+                                             places</label></div>
+                                     <div class="col-12 col-md-9">{{ form_widget(form.nbPlaces,{attr: {class: 'form-control'} }) }}</div>
+                                 </div>
+                                 <div class="row form-group">
+                                     <div class="col col-xs-4"><label for="text-area" class=" form-control-label">Description</label>
+                                     </div>
+                                     <div class="col-12 col-md-8">{{ form_widget(form.description,{attr: {class: 'form-control'} }) }}</div>
+                                 </div>
+
+
+                                    {# {{ form_widget(form.Ajouter,{attr: {class: 'dcare__btn'}}) }}#}
+                                     <input type="submit"   class="dcare__btn" value="Ajouter" />
+                                        {{ form_end(form) }}
+
+                             </form>
+
+                         </div>
+
+                     </div>
+                 </div>
+
+
+             </div>
+         </div>
+
+     </section>
+ {% endblock %}
+
+

@@ -22,22 +22,23 @@
                                     <th>Adresse</th>
                                     <th>Date</th>
                                     <th>Heure</th>
+                                    <th>Action</th>
 
-                                    <th class="text-nowrap">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {% for a in Activite %}
                                 <tr>
 
-                                    <td>{{  }}</td>
-                                    <td>{{ m.nom }}</td>
-                                    <td>{{ m.prenom }}</td>
-                                    <td>{{ m.telephone}}</td>
-                                    <td>{{ m.email }}</td>
-                                    <td>{{ m.description }}</td>
-                                    <td>{{ m.specialite }}</td>
-                                    <td class="text-nowrap"><a href="{{ path('e_learning_modifBackEnseignant',{'id':m.id }) }}"  class="mr-25" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a> <a href="{{ path('e_learning_suppBackEnseignant',{'id':m.id  }) }}" > <i class="fa fa-close text-danger"></i> </a> </td>
+                                    <td>{{ a.type }}</td>
+                                    <td>{{ a.adresse }}</td>
+                                    <td>{{ a.heure }}</td>
+                                    <td>{{ a.date | date('d-m-y')}}</td>
+                                    <td>{{ a.ageMin }}</td>
+
+                                    <td class="text-nowrap"><a href="{{ path('activite_modifBackEnseignant',{'id':a.id }) }}"  class="mr-25" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a> <a href="{{ path('activite_deleteActivite',{'id':a.id  }) }}" > <i class="fa fa-close text-danger"></i> </a> </td>
+
+
                                 </tr>
                                 {% endfor %}
                                 </tbody>

@@ -126,7 +126,7 @@ return $this->render("@Activite/pages/create.html.twig",['form' =>$form->createV
 
             $em->flush();
             $this->addFlash('message','Activité modifiée avec succès');
-            return $this->redirectToRoute('view_activite_route');
+            return $this->redirectToRoute('activite_createActivite');
 
         }
 
@@ -157,7 +157,7 @@ return $this->render("@Activite/pages/create.html.twig",['form' =>$form->createV
         $em->flush();
         $this->addFlash('message','Activité supprimée avec succès');
 
-        return $this->redirectToRoute('view_activite_route');
+        return $this->redirectToRoute('activite_createActivite');
     }
 
     public function afficheBackAction()
