@@ -81,5 +81,34 @@ class MedecinController extends Controller
 
 
     }
+    function listeDemandesAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        $demande=$em->getRepository('GarderieBundle:Demande')->findAll();
+
+        return $this->render('GarderieBundle:Back:traiterDemandes.html.twig',array("demande"=>$demande));
+    }
+    function AccepterDemandeAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        echo $request->get('id');
+        $demande=$em->getRepository('GarderieBundle:Demande')->findOneBy(array('id'=> $request->get('id')));
+        echo $demande->getId();
+
+$demande->setEtat('true');
+$em->persist($demande);
+        $em->flush();
+        return $this->redirectToRoute("demande_afficher2");
+
+    }
+    function DeleteDemandeAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        echo $request->get('id');
+        $demande=$em->getRepository('GarderieBundle:Demande')->findOneBy(array('id'=> $request->get('id')));
+        echo $demande->getId();
+
+        $em->remove($demande);
+
+        $em->flush();
+        return $this->redirectToRoute("demande_afficher2");
+    }
 
 }

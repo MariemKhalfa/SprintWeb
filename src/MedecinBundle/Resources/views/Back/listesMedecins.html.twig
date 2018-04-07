@@ -73,8 +73,8 @@
                         <td>{{ m.specialite}}</td>
                         <td><img src="{{ asset('uploads/images/'~ m.image ) }}" width="100%"></td>
 
-                        <td> <a  class='btn btn-primary btn-warning' href="{{ path('medecin_modifier',{'id':m.id}) }}" >Modifier </a></td>
-                        <td><a class='btn btn-primary btn-danger' href="{{ path('medecin_supprimer',{'id':m.id}) }}" >supprimer</a><td>
+                        <td> <a  class='btn btn-primary btn-success' href="{{ path('medecin_modifier',{'id':m.id}) }}" >Modifier </a></td>
+                        <td><a class='btn btn-info' href="{{ path('medecin_supprimer',{'id':m.id}) }}" >supprimer</a><td>
                     </tr>
                 {% endfor %}
 

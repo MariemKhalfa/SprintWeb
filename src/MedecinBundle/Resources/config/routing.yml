@@ -13,3 +13,12 @@ medecin_modifier:
 medecin_supprimer:
     path:     /Supprimermedecin
     defaults: { _controller: MedecinBundle:Medecin:Delete }
+demande_afficher2:
+    path:     /listesgarderiesFront
+    defaults: { _controller: MedecinBundle:Medecin:listeDemandes}
+demande_supprimer2:
+    path:     /SupprimerDemande
+    defaults: { _controller: MedecinBundle:Medecin:DeleteDemande}
+demande_accepter2:
+    path:     /AccepterDemande
+    defaults: { _controller: MedecinBundle:Medecin:AccepterDemande}

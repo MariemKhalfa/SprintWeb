@@ -2,6 +2,7 @@
 
 namespace GarderieBundle\Controller;
 
+use GarderieBundle\Entity\Demande;
 use GarderieBundle\Entity\Garderies;
 use GarderieBundle\Form\GarderiesType;
 use GarderieBundle\Form\GarderiesUpdateType;
@@ -15,6 +16,8 @@ class GarderiesController extends Controller
 
 
         $garderie=new Garderies();
+        $demande=new Demande();
+        $demande->setEtat('false');
         $garderie->setEtat("No");
         $garderie->setLatitude(35);
         $garderie->setTelephone($this->getUser()->getId());
@@ -27,13 +30,15 @@ class GarderiesController extends Controller
              * Get image
              * @var UploadedFile $file
              */
-
+$demande->setIdGarderie($garderie);
             $file=$garderie->getImage();
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
             $file->move($this->getParameter('image_directory'), $fileName);
             $garderie->setImage($fileName);
             $em=$this->getDoctrine()->getManager();
             $em->persist($garderie);
+            $em->flush();
+            $em->persist($demande);
             $em->flush();
            return  $this->redirectToRoute("garderie_liste");
         }
