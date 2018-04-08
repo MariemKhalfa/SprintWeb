@@ -83,8 +83,8 @@ fos_user:
     firewall_name: main
     user_class: FrontBundle\Entity\User
     from_email:
-      address: 'Salut@gmail.com'
-      sender_name:  'salut@gmail.com'
+      address: 'allforkids.codeminers@gmail.com'
+      sender_name:  'All For Kids'
 knp_paginator:
     page_range:                 5          # default page range used in pagination control
     default_options:

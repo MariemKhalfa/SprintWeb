@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bc05050-bc0d-460f-b213-135f88966292" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_04_2018_19_45__Default_.xml" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_04_2018_19_45__Default_.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_04_2018_19_45__Default_1.xml" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_04_2018_19_45__Default_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_04_2018_20_56__Default_.xml" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_04_2018_20_56__Default_.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_04_2018_05_46__Default_.xml" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_04_2018_05_46__Default_.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_04_2018_05_46__Default_1.xml" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_04_2018_05_46__Default_1.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
       <change beforePath="$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/details_babysitting.html.twig" afterPath="$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/details_babysitting.html.twig" />
     </list>
     <ignored path="C:\wamp64\www\GitHub\SprintWeb\.idea\shelf/" />
@@ -76,23 +72,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details_babysitting.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="details_babysitting.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/details_babysitting.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="29" column="59" lean-forward="false" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="73" />
+              <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
               <folding>
-                <marker date="1523179133257" expanded="true" signature="11691:11711" ph="..." />
+                <marker date="1523179578441" expanded="true" signature="11738:11758" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reserver_cov.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/reserver_cov.html.twig">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="295">
+              <caret line="86" column="33" lean-forward="false" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -134,7 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>src</find>
       <find>href</find>
       <find>.cs</find>
       <find>adm</find>
@@ -164,6 +159,7 @@
       <find>trou</find>
       <find>cov_</find>
       <find>math</find>
+      <find>coun</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
@@ -239,7 +235,6 @@
         <option value="$PROJECT_DIR$/src/BabysittingBundle/Repository/BabysittingRepository.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesType.php" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesUpdateType.php" />
         <option value="$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/espaceGarderie.html.twig" />
@@ -263,6 +258,7 @@
         <option value="$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/details_cov.html.twig" />
         <option value="$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/details_babysitting.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
       </list>
     </option>
   </component>
@@ -349,6 +345,17 @@
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SprintWeb" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SprintWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -1463,11 +1470,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523131823392</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="committing forms">
+      <created>1523179523082</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1523179523082</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226307000" />
+    <option name="totallyTimeSpent" value="227115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1522,34 +1536,14 @@
     <MESSAGE value="committing babysittingRep" />
     <MESSAGE value="committing babysittingDet" />
     <MESSAGE value="committing CovRoute" />
-    <option name="LAST_COMMIT_MESSAGE" value="committing CovRoute" />
+    <MESSAGE value="committing forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="committing forms" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/espaceGarderie.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="36" column="110" lean-forward="false" selection-start-line="36" selection-start-column="110" selection-end-line="36" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Resources/views/Back/listeGarderies.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-591">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GarderieBundle/Form/GarderiesUpdateType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/backBase.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1888,6 +1882,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CovoiturageBundle/Resources/views/Covoiturage/reserver_cov.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BabysittingBundle/Resources/views/Babysitting/details_babysitting.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="32" column="47" lean-forward="true" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+          <folding>
+            <marker date="1523179578441" expanded="true" signature="11738:11758" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="86" column="33" lean-forward="false" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
           <folding />
         </state>
       </provider>
