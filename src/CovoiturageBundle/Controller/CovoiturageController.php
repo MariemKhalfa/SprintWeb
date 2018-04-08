@@ -36,6 +36,14 @@ class CovoiturageController extends Controller
         ));
     }
 
+    function supprimerCovAction($id){
+
+        $em=$this->getDoctrine()->getManager();
+        $cov=$em->getRepository("CovoiturageBundle:Covoiturage")->find($id);
+        $em->remove($cov);
+        $em->flush();
+        return $this->redirectToRoute("lister_mes_cov");
+    }
     public function modifierCovAction()
     {
         $covoiturage = new Covoiturage();

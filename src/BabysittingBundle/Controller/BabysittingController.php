@@ -61,8 +61,16 @@ class BabysittingController extends Controller
             'bab' => $bab,
         ));
     }
+    function supprimerBabysittingAction($id){
 
-    public function modifierBabysittingAction()
+        $em=$this->getDoctrine()->getManager();
+        $bab=$em->getRepository("BabysittingBundle:Babysitting")->find($id);
+        $em->remove($bab);
+        $em->flush();
+        return $this->redirectToRoute("lister_mes_babysittings");
+    }
+
+    public function modifierBabysittingAction($id)
     {
         return $this->render('BabysittingBundle:Babysitting:modifier_babysitting.html.twig', array(// ...
         ));

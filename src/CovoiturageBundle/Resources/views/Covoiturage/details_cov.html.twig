@@ -1,18 +1,13 @@
 {% extends "base.html.twig" %}
 {% block container %}
 
-    <!-- Start main-content -->
-    <!-- Start main-content -->
+
     <div class="main-content">
-        <!-- Section: inner-header -->
         <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="{{ asset('images/mariem//bg/bg3.jpg')}}">
-
         </section>
-
         <section>
             <div class="container">
                 <div class="row">
-
                     <div class="col-md-8 blog-pull-right">
                         <div class="single-service">
 
@@ -32,10 +27,10 @@
                                 <tr> <td class="bg-theme-color-red text-white"><i class="fa fa-map-marker text-theme-color-yellow pr-20"></i>Adresse de départ</td> <td class="bg-theme-color-sky text-white">{{ c.lieuDep }}</td> </tr>
                                 <tr> <td><i class="fa fa-fighter-jet text-theme-color-red pr-20"></i>Adresse destination</td> <td>{{ c.lieuDest }}</td> </tr>
                                 <tr> <td class="bg-theme-color-lemon text-white"><i class="fa fa-clock-o text-theme-color-red pr-20"></i>Heure départ</td> <td class="bg-theme-color-orange text-white">{{ c.heureDep|date('h:i') }}</td> </tr>
-                                <tr> <td><i class="fa fa-credit-card-alt text-theme-color-red pr-20"></i>Frais</td> <td>Gratuit</td> </tr>
+                                <tr> <td><i class="fa fa-euro text-theme-color-red pr-20"></i>Frais</td> <td>Gratuit</td> </tr>
 
                                 </tbody>
-    {% endfor %}
+
                             </table>
                         </div>
                     </div>
@@ -49,11 +44,12 @@
                         </div>
                         <br>
                         <div class="form-group">
-
-                            <div class="btn btn-flat btn-dark btn-theme-color-green mt-5">Modifier</div>
-                            <div class="btn btn-flat btn-dark btn-theme-color-red mt-5">Supprimer</div>
+                            <div class=" mt-5">
+                            <a class="btn btn-flat btn-dark btn-theme-color-green " href="{{ path('modifier_cov', {"id":c.id}) }}">Modifier</a>
+                           <a class="btn btn-flat btn-dark btn-theme-color-red " color="white" href="{{ path('supprimer_cov', {"id":c.id}) }}">Supprimer</a></div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -68,6 +64,7 @@
     <!-- Google Map js -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmGmeot5jcjdaJTvfCmQPfzeoG_pABeWo"></script>
     <script>
+
         // When the window has finished loading create our google map below
         google.maps.event.addDomListener(window, 'load', init);
 
@@ -81,7 +78,7 @@
                 scrollwheel: false,
 
                 // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(23.7286, 90.3854), // New York
+                center: new google.maps.LatLng(36.8762, 10.1143), // New York
 
                 // How you would like to style the map.
                 // This is where you would paste any style found on Snazzy Maps.
@@ -203,16 +200,17 @@
             var map = new google.maps.Map(mapElement, mapOptions);
 
             // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(23.7286, 90.3854),
+           /* var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(36.862499,10.195556),
                 map: map,
                 title: 'Dcare!',
                 icon: 'images/icons/map-2.png',
                 animation:google.maps.Animation.BOUNCE
 
-            });
+            });*/
         }
     </script>
+
 
 
     <script src="js/plugins.js"></script>

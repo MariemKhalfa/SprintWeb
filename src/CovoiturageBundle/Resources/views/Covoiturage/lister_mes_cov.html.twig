@@ -36,8 +36,8 @@
                                             class="text-theme-colored ml-5" href="{{ path('details_cov',{"id":c.id}) }}"> →</a></p>
                                 <div class="course-details-bottom mt-15">
                                     <ul class="list-inline">
-                                        <li>Capacité<span>{{  c.nbPlaces}}</span></li>
-                                        <li>Horaires<span>{{ c.heureDep|date("h:i")}}</span></li>
+                                        <li>Nombre de places<span>{{  c.nbPlaces}}</span></li>
+                                        <li>Heure de départ<span>{{ c.heureDep|date("h:i")}}</span></li>
                                         <li>Date<span>{{ c.date |date("d/m/y")}}</span></li>
                                     </ul>
                                 </div>
