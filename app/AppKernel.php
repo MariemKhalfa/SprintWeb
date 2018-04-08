@@ -28,6 +28,7 @@ class AppKernel extends Kernel
 
             new ActiviteBundle\ActiviteBundle(),
             new JeuxBundle\JeuxBundle(),
+            new BackOfficeBundle\BackOfficeBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
