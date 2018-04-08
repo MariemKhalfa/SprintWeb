@@ -2,6 +2,8 @@
 
 namespace GarderieBundle\Controller;
 
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\Histogram;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 use GarderieBundle\Entity\Demande;
 use GarderieBundle\Entity\Garderies;
 use GarderieBundle\Entity\Vote;
@@ -97,9 +99,6 @@ $demande->setIdGarderie($garderie);
         return $this->redirectToRoute("garderie_liste");
 
     }
-
-
-
 
 
     }

@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new EvenementBundle\EvenementBundle(),
             new JeuxBundle\JeuxBundle(),
             new BackOfficeBundle\BackOfficeBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

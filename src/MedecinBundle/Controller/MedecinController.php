@@ -2,6 +2,8 @@
 
 namespace MedecinBundle\Controller;
 
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\Histogram;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 use GarderieBundle\Entity\Garderies;
 use GarderieBundle\Entity\Inscription;
 use GarderieBundle\Entity\Vote;
@@ -252,5 +254,53 @@ $voitures=new Garderies();
 
         return $this->render('GarderieBundle:Front:MeilleursGarderies.html.twig',array("First"=>$a,"Second"=>$b,"Third"=>$c));
     }
+
+    public function StatistiquesAction()
+    {
+        $pieChart = new PieChart();
+        $em= $this->getDoctrine();
+        $ratings = $em->getRepository(Garderies::class)->findAll();
+        $totalRating=0;
+        foreach($ratings as $rating) {
+            $totalRating=$totalRating+$rating->getRating();
+        }
+        $data= array();
+        $stat=['Garderie', 'rating'];
+        $nb=0;
+        array_push($data,$stat);
+        foreach($ratings as $rating) {
+            $stat=array();
+            //     array_push($stat,$rating->getNom(),(($rating->getRating()) *100)/$totalRating);
+            $nb=($rating->getRating() *100)/$totalRating;
+            $stat=[$rating->getNom(),$nb];
+            array_push($data,$stat);
+        }
+        $pieChart->getData()->setArrayToDataTable(
+            $data
+        );
+        $pieChart->getOptions()->setTitle('Statistiques des garderies selon rating');
+        $pieChart->getOptions()->setHeight(500);
+        $pieChart->getOptions()->setWidth(900);
+        $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setColor('pink');
+        $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setFontName('Arial');
+        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
+        $histogram = new Histogram();
+        $histogram->getData()->setArrayToDataTable(
+            $data
+        );
+        $histogram->getOptions()->setTitle('Country Populations');
+        $histogram->getOptions()->setWidth(900);
+        $histogram->getOptions()->setHeight(500);
+        $histogram->getOptions()->getLegend()->setPosition('none');
+        $histogram->getOptions()->setColors(['#e7711c']);
+        $histogram->getOptions()->getHistogram()->setLastBucketPercentile(10);
+        $histogram->getOptions()->getHistogram()->setBucketSize(10000000);
+        return $this->render('GarderieBundle:Back:statistiques.html.twig', array('piechart' =>
+            $pieChart,'histogram'=>$histogram));
+    }
+
+
 
 }

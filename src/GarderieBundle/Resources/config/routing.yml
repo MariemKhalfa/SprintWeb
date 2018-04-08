@@ -13,3 +13,4 @@ garderie_modifier:
 garderie_supprimer:
     path:     /SupprimerGarderie
     defaults: { _controller: GarderieBundle:Garderies:Delete }
+
