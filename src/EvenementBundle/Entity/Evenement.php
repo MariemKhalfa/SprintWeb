@@ -22,27 +22,19 @@ class Evenement
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="intitule", type="string", length=255)
+     */
+    private $intitule;
+
+    /**
      * @var int
      *
-     * @ORM\Column(name="nb_participants", type="integer")
+     * @ORM\Column(name="nbParticipants", type="integer")
      */
     private $nbParticipants;
 
-    /**
-     * @return \DateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * @param \DateTime $date
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-    }
     /**
      * @var float
      *
@@ -51,22 +43,59 @@ class Evenement
     private $budget;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=255)
+     */
+    private $adresse;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="date")
      */
     private $date;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255)
+     */
+    private $image;
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set intitule
+     *
+     * @param string $intitule
+     *
+     * @return Evenement
+     */
+    public function setIntitule($intitule)
+    {
+        $this->intitule = $intitule;
+    
+        return $this;
+    }
+
+    /**
+     * Get intitule
+     *
+     * @return string
+     */
+    public function getIntitule()
+    {
+        return $this->intitule;
     }
 
     /**
@@ -79,14 +108,14 @@ class Evenement
     public function setNbParticipants($nbParticipants)
     {
         $this->nbParticipants = $nbParticipants;
-
+    
         return $this;
     }
 
     /**
      * Get nbParticipants
      *
-     * @return int
+     * @return integer
      */
     public function getNbParticipants()
     {
@@ -103,7 +132,7 @@ class Evenement
     public function setBudget($budget)
     {
         $this->budget = $budget;
-
+    
         return $this;
     }
 
@@ -117,6 +146,76 @@ class Evenement
         return $this->budget;
     }
 
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     *
+     * @return Evenement
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+    
+        return $this;
+    }
 
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Evenement
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Evenement
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }
 
