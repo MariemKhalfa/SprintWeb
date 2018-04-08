@@ -3,35 +3,36 @@ activite_homepage:
     defaults: { _controller: ActiviteBundle:Default:index }
 
 activite_viewActivite:
-    path:     /admin/activite/view
-    defaults: { _controller: ActiviteBundle:Activite:viewActivite }
+    path:     /activite/view
+    defaults: { _controller: ActiviteBundle:Activite:afficheBack }
 
 activite_createActivite:
-    path:     /admin/activite/create
+    path:     /activite/create
     defaults: { _controller: ActiviteBundle:Activite:createActivite }
 
 
 activite_afficherActivite:
-    path:     /admin/activite/afficher
+    path:     /activite/afficher
     defaults: { _controller: ActiviteBundle:Activite:afficheBack }
 
 
 activite_modifBackEnseignant:
-    path:     /admin/ModificationActivite/{id}
+    path:     /ModificationActivite/{id}
     defaults: { _controller: ActiviteBundle:Activite:updateActivite  }
 
 activite_updateActivite:
-    path:     /admin/activite/update/{id}
+    path:     /activite/update/{id}
     defaults: { _controller: ActiviteBundle:Activite:updateActivite }
 
-activite_showActivite:
-    path:     /admin/activite/show/{id}
-    defaults: { _controller: ActiviteBundle:Activite:showActivite }
 
 activite_deleteActivite:
-    path:     /admin/activite/delete/{id}
+    path:     /activite/delete/{id}
     defaults: { _controller: ActiviteBundle:Activite:deleteActivite }
 
+
+activite_afficherFrontctivite:
+    path:     /activite/affich
+    defaults: { _controller: ActiviteBundle:Activite:viewActivite }
 
 
 

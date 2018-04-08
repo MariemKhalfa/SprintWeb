@@ -27,7 +27,7 @@ class AppKernel extends Kernel
             new BabysittingBundle\BabysittingBundle(),
 
             new ActiviteBundle\ActiviteBundle(),
-
+            new JeuxBundle\JeuxBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

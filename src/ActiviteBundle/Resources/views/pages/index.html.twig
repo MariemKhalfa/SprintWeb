@@ -1,4 +1,4 @@
-{{ include ('@Activite/pages/inc/header.html.twig') }}
+
 
  <a href="{{ absolute_url(asset('')) }}app_dev.php/activite/create" class="btn btn-primary">Créer une nouvelle activité</a>
 
@@ -35,7 +35,7 @@
                <td>{{ activite.agemin }}</td>
                <td>{{ activite.adresse }}</td>
                <td>{{ activite.date | date('d-m-y') }}</td>
-               <td>{{ activite.heure }}</td>
+               <td>{{ activite.heure | date('H:i') }}</td>
               <td>
 
               <a href="{{ absolute_url(asset('')) }}app_dev.php/activite/show/{{ activite.id }}" class="btn btn-primary">Voir</a>
@@ -57,7 +57,6 @@
    </div>
 
 
-   {{ include ('@Activite/pages/inc/footer.html.twig') }}
    </body>
 
 </html>

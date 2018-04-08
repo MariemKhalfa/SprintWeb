@@ -197,23 +197,16 @@
                                         {% else %}
                                     <li class="drop"><a href="{{ path('e_learning_afficherEnseignant') }}">E-learning</a>
                                         {% endif %}
-                                    <li class="drop"><a href="#">Jeux</a>
+                                    <li class="drop"><a>Jeux</a>
                                         <ul class="dropdown__menu">
-                                            <li><a href="#">Shop Grid</a></li>
-                                            <li><a href="#">Shop Grid Left Sidebar</a></li>
-                                            <li><a href="#">Shop Grid right Sidebar</a></li>
-                                            <li><a href="#">Shop Single</a></li>
-                                            <li><a href="#">Shop Single Sidebar</a></li>
+                                            <li><a href="{{ path('jeu_memoire') }}">Jeu de mémoire</a></li>
+                                            <li><a href="{{ path('jeu_math') }}">Quizz pour enfants </a></li>
+
+
                                         </ul>
                                     </li>
-                                    <li class="drop"><a href="blog-grid.html">Activités</a>
-                                        <ul class="dropdown__menu">
-                                            <li><a href="blog-grid.html">S'inscrire à une activite</a></li>
-                                            <li><a href="blog-list.html">Blog List</a></li>
-                                            <li><a href="blog-list-right-sidebar.html">Blog List RightSidebar</a></li>
-                                            <li><a href="blog-list-left-sidebar.html">Blog List LeftSidebar</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
+                                    <li class="drop"><a href="{{ path('activite_viewActivite') }}">Activités</a>
+
                                     </li>
                                     <li><a href="{{ path('contactUs') }}">Contact</a></li>
                                 </ul>
