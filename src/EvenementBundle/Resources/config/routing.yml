@@ -1,3 +1,15 @@
 evenement_homepage:
     path:     /
     defaults: { _controller: EvenementBundle:Default:index }
+evenement_ajout:
+    path:     /AjoutEvenement
+    defaults: { _controller: EvenementBundle:Evenement:ajout }
+evenement_list:
+    path:     /listesEvenements
+    defaults: { _controller: EvenementBundle:Evenement:list }
+Evenement_modifier:
+    path:     /ModifierEvenement
+    defaults: { _controller: EvenementBundle:Evenement:Update }
+Evenement_supprimer:
+    path:     /SupprimerEvenement
+    defaults: { _controller: EvenementBundle:Evenement:Delete }

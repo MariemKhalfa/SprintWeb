@@ -27,9 +27,9 @@ class AppKernel extends Kernel
             new BabysittingBundle\BabysittingBundle(),
             new blackknight467\StarRatingBundle\StarRatingBundle(),
             new ActiviteBundle\ActiviteBundle(),
+            new EvenementBundle\EvenementBundle(),
             new JeuxBundle\JeuxBundle(),
             new BackOfficeBundle\BackOfficeBundle(),
-            new EvenementBundle\EvenementBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

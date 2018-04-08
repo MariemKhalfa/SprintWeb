@@ -41,7 +41,6 @@ class Evenement
      * @ORM\Column(name="budget", type="float")
      */
     private $budget;
-
     /**
      * @var string
      *
@@ -59,7 +58,7 @@ class Evenement
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=255)
+     * @ORM\Column(name="image", type="string", length=250, nullable=false)
      */
     private $image;
 
@@ -147,30 +146,6 @@ class Evenement
     }
 
     /**
-     * Set adresse
-     *
-     * @param string $adresse
-     *
-     * @return Evenement
-     */
-    public function setAdresse($adresse)
-    {
-        $this->adresse = $adresse;
-    
-        return $this;
-    }
-
-    /**
-     * Get adresse
-     *
-     * @return string
-     */
-    public function getAdresse()
-    {
-        return $this->adresse;
-    }
-
-    /**
      * Set date
      *
      * @param \DateTime $date
@@ -195,27 +170,37 @@ class Evenement
     }
 
     /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return Evenement
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-    
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
      * @return string
      */
     public function getImage()
     {
         return $this->image;
     }
+
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * @param string $adresse
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+    }
+
+
 }
 
