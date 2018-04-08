@@ -1,7 +1,8 @@
 {% extends "base.html.twig" %}
  {% block container %}
      <!-- Start Contact Form -->
- <form action="{{ path('covoiturage_ajoutCov') }}" method="post">
+     {% for b in bab %}
+ <form action="{{ path('modifier_cov', {"id":b.id}) }}" method="post">
      <div class="tab-content">
          <div class="tab-pane fade " id="tab_1_1">
              {{ form_start(form) }}
@@ -51,7 +52,7 @@
                                  <button type="submit" class="dcare__btn">Ajouter</button>
                              </div>
                          </form>
-                     </div>
+                     </div>{% endfor %}
                      <div class="form-output">
                          <p class="form-messege"></p>
                      </div>

@@ -46,11 +46,14 @@ class CovoiturageController extends Controller
     }
     public function modifierCovAction()
     {
-        $covoiturage = new Covoiturage();
+        $bab = new Covoiturage();
         $em = $this->getDoctrine()->getManager();
-        $Form = $this->createForm(CovoiturageType::class, $covoiturage);
-        return $this->render('CovoiturageBundle:Covoiturage:modifier_cov.html.twig', array('form' => $Form->createView()
-        ));
+        $Form = $this->createForm(CovoiturageType::class, $bab);
+       /* return $this->render('CovoiturageBundle:Covoiturage:modifier_cov.html.twig', array('form' => $Form->createView()
+        ));*/
+        return $this->render('CovoiturageBundle:Covoiturage:lister_mes_cov.html.twig', array("covs" => $bab));
+
+
     }
 
     public function listerMesCovAction(Request $request)

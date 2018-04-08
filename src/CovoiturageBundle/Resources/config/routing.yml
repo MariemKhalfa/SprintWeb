@@ -23,7 +23,7 @@ ajouter_cov:
     defaults: { _controller: CovoiturageBundle:Covoiturage:ajouterCov }
 
 modifier_cov:
-    path:     /modifierCov
+    path:     /modifierCov/{id}
     defaults: { _controller: CovoiturageBundle:Covoiturage:modifierCov }
 
 lister_mes_cov:
