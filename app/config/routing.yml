@@ -11,6 +11,10 @@ activite:
     resource: "@ActiviteBundle/Resources/config/routing.yml"
     prefix:   /
 
+evenement:
+    resource: "@EvenementBundle/Resources/config/routing.yml"
+    prefix:   /
+
 babysitting:
     resource: "@BabysittingBundle/Resources/config/routing.yml"
     prefix:   /babysitting
