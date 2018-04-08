@@ -23,5 +23,11 @@ class GarderieRepository extends \Doctrine\ORM\EntityRepository
         $query=$this->getEntityManager()->createQuery("Select g from GarderieBundle:Garderie g where g.idgarderie =:id")->setParameter('id',$id);
         return $query->getResult();
     }
+    public function Update($k,$serie)
+    {
 
+        $query=$this->getEntityManager()->createQuery("Update Garderie1Bundle:Garderies g set g.rating=g.rating+:k 
+where g.id =:serie")->setParameter('serie',$serie)->setParameter('k',$k);
+        return $query->getResult();
+    }
 }

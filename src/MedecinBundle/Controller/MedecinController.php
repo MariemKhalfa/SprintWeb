@@ -2,12 +2,19 @@
 
 namespace MedecinBundle\Controller;
 
+use GarderieBundle\Entity\Garderies;
+use GarderieBundle\Entity\Inscription;
+use GarderieBundle\Entity\Vote;
+use GarderieBundle\Form\VoteType;
 use MedecinBundle\Entity\Medecins;
 use MedecinBundle\Form\MedecinsType;
 use MedecinBundle\Form\MedecinsUpdateType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use \Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class MedecinController extends Controller
 {
@@ -133,6 +140,101 @@ $em->persist($demande);
         );
         return $this->render('GarderieBundle:Front:afficherListesGarderies.html.twig', array("garderie" => $result));
 
+    }
+    function  DetailsGarderiesAction(Request $request){
+$voitures=new Garderies();
+        $em=$this->getDoctrine()->getManager();
+        $garderie=$em->getRepository('GarderieBundle:Garderies')->find($request->get('id'));
+        $Modele=new Vote();
+        $Modele->setIdGarderie($garderie);
+        $Form=$this->createForm(VoteType::class,$Modele);
+        $Form->handleRequest($request);
+        if($Form->isValid()){
+
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($Modele);
+            $em->flush();
+            $garderie1=$em->getRepository('GarderieBundle:Garderies')->Update($Modele->getRating(),$garderie->getId());
+            //  return  $this->redirectToRoute("AffichageModele");
+        }
+$voiture=new Garderies();
+        if($request->isXmlHttpRequest()){
+            $serializer=new Serializer(array(new ObjectNormalizer()));
+            $serie=$voiture->getNom();
+            $voitures=$em->getRepository('EspritParcBundle:Voiture')->findOneBy(array('nom'=>$serie));
+            $data=$serializer->normalize($voitures);
+            return new JsonResponse($data);
+        }//
+        return $this->render('GarderieBundle:Front:GarderiesDetails.html.twig',array("modele"=>$garderie,'form'=>$Form->createView(),"garderie"=>$voitures));
+    }
+    function  InscriptionAction(Request $request){
+        $usr=$this->get('security.token_storage')->getToken()->getUser();
+        $em= $this->getDoctrine()->getManager();
+        $enfant1=$em->getRepository('FrontBundle:Enfant')->findEnfants($this->getUser()->getId());
+
+        $b=$request->get('id');
+        $garderie3=$em->getRepository('GarderieBundle:Garderies')->findOneBy(array('id'=>$b));
+
+        $inscription= new Inscription();
+
+        if($request->isMethod('Post')){
+
+            $a=$request->get('idenfant1');
+
+
+            $enfant=$em->getRepository('FrontBundle:Enfant')->findOneBy(array('pseudonyme'=>$a));
+            echo $enfant->getCin();
+            $inscription->setIdenfant($enfant);
+            $inscription->setEtat('attente');
+            $garderie3=$em->getRepository('GarderieBundle:Garderies')->findOneBy(array('id'=>$b));
+            $inscription->setIdgarderie($garderie3);
+            $date=$request->get('jourArriv');
+            $inscription->setJourArriv(new \DateTime("$date"));
+            $inscription->setIdparent($this->getUser());
+            $inscription->setCommentaires($request->get('commentaires'));
+            $inscription->setNurserie($request->get('nurserie'));
+            $inscription->setRepas($request->get('repas'));
+            $inscription->setAdresse($request->get('adresse'));
+            $inscription->setNomparent($this->getUser());
+            $em->persist($inscription);
+            $em->flush();
+            //      return  $this->redirectToRoute("AffichageModele");
+            /*  $inscription= new \Garderie1Bundle\Entity\Inscription();
+
+              $em = $this->getDoctrine()->getManager();
+              $date = $request->get('jourArriv');
+             // $r=$em->getRepository('Garderie1Bundle:Inscription')->Afficher($b);
+           /*   $date1= new \DateTime("$date");
+              $date2=strtotime(date_format($date1,"Y/m/d H:i:s"));
+
+              $trouve=0;
+              foreach( $r as $item2 )
+              {  if(strtotime($date2<date_format($item2->getDateOuverture(),"Y/m/d H:i:s")) && $date2>date_format($item2->getDateFermeture(),"Y/m/d H:i:s"))
+              {
+                  $trouve=1;
+                  break;
+              }
+              }
+
+              if($trouve==0)
+              {
+
+
+                  $em->persist($inscription);
+                  $em->flush();
+                  $a="votre rendez vous est disponible";
+                  return new JsonResponse(\Symfony\Component\HttpFoundation\Response::HTTP_OK);
+  */
+            /*     else{
+                     return new JsonResponse(\Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
+                 }*/
+
+        }
+
+
+
+        return $this->render('GarderieBundle:Front:Inscription.html.twig',array('enfant1' =>
+            $enfant1,'garderie'=>$garderie3));
     }
 
 }

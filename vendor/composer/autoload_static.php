@@ -241,6 +241,13 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
     );
 
     public static $prefixesPsr0 = array (
+        'b' => 
+        array (
+            'blackknight467\\StarRatingBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/blackknight467/star-rating-bundle',
+            ),
+        ),
         'T' => 
         array (
             'Twig_' => 

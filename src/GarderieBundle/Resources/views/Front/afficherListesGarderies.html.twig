@@ -43,8 +43,8 @@
                                 <p><a href="event-details.html">{{ m.descriptif }}</a></p>
                             </div>
                             <ul class="event__btn">
-                                <li><a href="#">S'inscrire</a></li>
-                                <li><a href="event-details.html">Details</a></li>
+                                <li><a href="{{ path('garderie_inscription',{'id':m.id}) }}">S'inscrire</a></li>
+                                <li><a href="{{ path('garderie_details',{'id':m.id}) }}">Details</a></li>
                             </ul>
                         </div>
                         <div class="event__thumb">

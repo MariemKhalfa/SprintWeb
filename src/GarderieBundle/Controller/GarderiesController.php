@@ -4,8 +4,10 @@ namespace GarderieBundle\Controller;
 
 use GarderieBundle\Entity\Demande;
 use GarderieBundle\Entity\Garderies;
+use GarderieBundle\Entity\Vote;
 use GarderieBundle\Form\GarderiesType;
 use GarderieBundle\Form\GarderiesUpdateType;
+use GarderieBundle\Form\VoteType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,9 +21,9 @@ class GarderiesController extends Controller
         $demande=new Demande();
         $demande->setEtat('false');
         $garderie->setEtat("No");
-        $garderie->setLatitude(35);
+        $garderie->setLatitude(36.81897);
         $garderie->setTelephone($this->getUser()->getId());
-        $garderie->setLongitude(10);
+        $garderie->setLongitude(10.16579);
         $garderie->setRating(0);
         $Form=$this->createForm(GarderiesType::class,$garderie);
         $Form->handleRequest($request);
@@ -96,4 +98,8 @@ $demande->setIdGarderie($garderie);
 
     }
 
-}
+
+
+
+
+    }

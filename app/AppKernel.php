@@ -25,7 +25,7 @@ class AppKernel extends Kernel
             new MedecinBundle\MedecinBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new BabysittingBundle\BabysittingBundle(),
-
+            new blackknight467\StarRatingBundle\StarRatingBundle(),
             new ActiviteBundle\ActiviteBundle(),
             new JeuxBundle\JeuxBundle(),
             new BackOfficeBundle\BackOfficeBundle(),

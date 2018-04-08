@@ -25,6 +25,9 @@ demande_accepter2:
 garderie_listeFront2:
     path:     /garderieList
     defaults: { _controller: MedecinBundle:Medecin:listFront }
-garderie_listeFront2:
-    path:     /garderieList
-    defaults: { _controller: MedecinBundle:Medecin:listFront }
+garderie_details:
+    path:     /garderiedetails
+    defaults: { _controller: MedecinBundle:Medecin:DetailsGarderies }
+garderie_inscription:
+    path:     /garderieinscription
+    defaults: { _controller: MedecinBundle:Medecin:Inscription }
