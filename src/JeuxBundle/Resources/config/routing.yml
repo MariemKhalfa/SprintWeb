@@ -1,5 +1,5 @@
 jeux_homepage:
-    path:     /
+    path:     /jeux
     defaults: { _controller: JeuxBundle:Default:index }
 
 jeu_memoire:

@@ -157,14 +157,6 @@ $voitures=new Garderies();
             $garderie1=$em->getRepository('GarderieBundle:Garderies')->Update($Modele->getRating(),$garderie->getId());
             //  return  $this->redirectToRoute("AffichageModele");
         }
-$voiture=new Garderies();
-        if($request->isXmlHttpRequest()){
-            $serializer=new Serializer(array(new ObjectNormalizer()));
-            $serie=$voiture->getNom();
-            $voitures=$em->getRepository('EspritParcBundle:Voiture')->findOneBy(array('nom'=>$serie));
-            $data=$serializer->normalize($voitures);
-            return new JsonResponse($data);
-        }//
         return $this->render('GarderieBundle:Front:GarderiesDetails.html.twig',array("modele"=>$garderie,'form'=>$Form->createView(),"garderie"=>$voitures));
     }
     function  InscriptionAction(Request $request){
@@ -235,6 +227,30 @@ $voiture=new Garderies();
 
         return $this->render('GarderieBundle:Front:Inscription.html.twig',array('enfant1' =>
             $enfant1,'garderie'=>$garderie3));
+    }
+
+    public function RatingGarderiesAction()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $garderies=$em->getRepository("GarderieBundle:Garderies")->First3Garderies();
+        $a=new Garderies();
+        $b=new Garderies();
+        $c=new Garderies();
+
+
+
+
+        $a=$garderies[0];
+        echo $a->getRating();
+        echo $a->getId();
+        $b=$garderies[1];
+
+        $c=$garderies[2];
+
+
+
+
+        return $this->render('GarderieBundle:Front:MeilleursGarderies.html.twig',array("First"=>$a,"Second"=>$b,"Third"=>$c));
     }
 
 }

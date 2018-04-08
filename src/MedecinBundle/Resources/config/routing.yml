@@ -31,3 +31,6 @@ garderie_details:
 garderie_inscription:
     path:     /garderieinscription
     defaults: { _controller: MedecinBundle:Medecin:Inscription }
+garderie_meilleur:
+    path:     /garderieMeilleur
+    defaults: { _controller: MedecinBundle:Medecin:RatingGarderies}
