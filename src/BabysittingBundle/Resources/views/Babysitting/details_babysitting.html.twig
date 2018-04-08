@@ -21,13 +21,13 @@
                          <div class="row">
                              <div class="col-lg-9">
                                  <div class="event-content-wrapper">
-
+                                     {% for b in bab %}
                                      <div class="event-section">
                                          <div class="enent__thumb">
                                              <img src="{{ asset('images/event/big-img/1.jpg') }}" alt="big images">
                                              <div class="box-timer">
                                                  <div class="countbox timer-grid">
-                                                     <div  data-countdown="2021/03/01"></div>
+                                                     <div  data-countdown="2018/04/30"></div>
                                                  </div>
                                              </div>
                                          </div>
@@ -37,12 +37,12 @@
                                          <div class="event-section">
 
                                              <div class="event__location">
-                                                 {% for b in bab %}
+
                                                      <ul>
                                                          <li><span class="ti-user"></span>{{ b.babysitteur }}</li>
                                                          <li><span class="ti-location-pin"></span>{{ b.adresse }}</li>
                                                          <li><span class="ti-time"></span>{{ b.heureDeb |date('h:i')}} - {{ b.heureFin |date('h:i')}}</li>
-                                                         <li><span class="ti-calendar"></span>{{ b.heureDeb |date('d/m/y')}} </li>
+                                                         <li><span class="ti-calendar"></span>{{ b.date |date('d/m/y')}} </li>
                                                          <li><span class="ti-mobile"></span>Phone : +660 256 24857 </li>
                                                          <li><span class="ti-email"></span>Email : username@email.com,</li>
                                                          <li><span class="ti-dribbble"></span>http:// tutoring education theme.com</li>
