@@ -68,3 +68,7 @@ reserver_cov:
 supprimer_cov:
     path:     /supprimerCov/{id}
     defaults: { _controller: CovoiturageBundle:Covoiturage:supprimerCov }
+
+list_cov_admin:
+    path:     /listCovAdmin
+    defaults: { _controller: CovoiturageBundle:Covoiturage:listCovAdmin }

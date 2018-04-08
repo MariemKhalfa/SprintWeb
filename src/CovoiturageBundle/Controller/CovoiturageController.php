@@ -118,5 +118,30 @@ class CovoiturageController extends Controller
         return $this->render('CovoiturageBundle:Covoiturage:distance_cov.html.twig', array(// ...
         ));
     }
+    public function listCovAdminAction(Request $request){
+
+       /* $em = $this->getDoctrine()->getManager();
+
+        $covoitureur = $em->getRepository("CovoiturageBundle:Covoiturage")->findCovoiturages();
+        return $this->render('@Covoiturage/Covoiturage/list_cov_admin.html.twig', array("covs" => $covoitureur));*/
+
+        $em = $this->getDoctrine()->getManager();
+        if ($request->query->getAlnum('filter')) {
+            $queryBuilder = $em->getRepository('CovoiturageBundle:Covoiturage')->createQueryBuilder('bp1');
+            $queryBuilder->where('bp1.nom like :nom')->setParameter('nom', '%' . $request->query->getAlnum('filter') . '%');
+            $query = $queryBuilder->getQuery();
+        } else {
+            $dql = "Select c from CovoiturageBundle:Covoiturage c";
+            $query = $em->createQuery($dql);
+        }
+        $paginator = $this->get('knp_paginator');
+
+        $result = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 4)
+        );
+        return $this->render('@Covoiturage/Covoiturage/list_cov_admin.html.twig', array("covoitureur" => $result));
+    }
 
 }
