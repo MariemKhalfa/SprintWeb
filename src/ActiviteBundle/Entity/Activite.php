@@ -28,6 +28,57 @@ class Activite
      */
     private $type;
 
+
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     */
+    private $description;
+
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=3000, nullable=false)
+     */
+    private $image;
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+
     /**
      * @var int
      *
@@ -56,6 +107,10 @@ class Activite
      * @ORM\Column(name="heure", type="time", length=255)
      */
     private $heure;
+
+
+
+
 
 
     /**
