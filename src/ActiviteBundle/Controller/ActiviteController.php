@@ -2,15 +2,22 @@
 
 namespace ActiviteBundle\Controller;
 
+use ActiviteBundle\Form\ActiviteUpdateType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use ActiviteBundle\Entity\Activite;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class ActiviteController extends Controller
 {
@@ -43,27 +50,43 @@ class ActiviteController extends Controller
             // adds a class that can be selected in JavaScript
             'attr' => ['class' => 'js-datepicker'],
         ))
+            ->add('description', TextareaType::class, array('label'=>'Ajouter une description'))
         ->add('heure',TimeType::class,array('attr' => array('class'=>'form-control')))
         ->add('agemin', NumberType::class,array('attr' => array('class'=>'form-control')))
-
+            ->add('image', FileType::class, array('label' => "insérez une image"))
         ->add('save',SubmitType::Class,array('label'=>'Créer Activité', 'attr' =>array ('class'=>'btn btn-warning',
             'style'=>'margin-top:10px')))
-        ->getForm() ;
+        ->getForm();
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
                 $type=$form['type']->getData();
+                $image=$form['image']->getData();
+                $description=$form['description']->getData();
                 $adresse=$form['adresse']->getData();
-                 $date=$form['date']->getData();
+                $date=$form['date']->getData();
                 $heure=$form['heure']->getData();
                 $agemin=$form['agemin']->getData();
+                $image=$form['image']->getData();
+                $description=$form['description']->getData();
+
 
 
                 $activite->setType($type);
+                $activite->setDescription($description);
+                $activite->setImage($image);
                 $activite->setAdresse($adresse);
                 $activite->setDate($date);
                 $activite->setHeure($heure);
                 $activite->setAgeMin($agemin);
+            /**
+             * Get image
+             * @var UploadedFile $file
+             */
+            $file=$activite->getImage();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('image_directory'), $fileName);
+            $activite->setImage($fileName);
 
                 $em =$this->getDoctrine()->getManager();
                 $em->persist($activite);
@@ -85,55 +108,23 @@ return $this->render("@Activite/pages/create.html.twig",['form' =>$form->createV
      */
     public function updateActiviteAction(Request $request,$id)
     {
-        $activite=$this->getDoctrine()->getRepository('ActiviteBundle:Activite')->find($id);
-            $activite->setType($activite->getType());
-            $activite->setAdresse($activite->getAdresse());
-            $activite->setDate($activite->getDate());
-            $activite->setAgemin($activite->getAgemin());
-            $activite->setHeure($activite->getHeure());
-
-        $form=$this->createFormBuilder($activite)
-            ->add ('type',TextType::class,array('attr' => array('class'=>'form-control')))
-            ->add('adresse',TextType::class,array('attr' => array('class'=>'form-control')))
-
-            ->add('date', DateType::class, array('attr' => 'single_text',
-
-                // adds a class that can be selected in JavaScript
-                'attr' => ['class' => 'js-datepicker'],
-            ))
-            ->add('heure',TextType::class,array('attr' => array('class'=>'form-control')))
-            ->add('agemin')
-
-            ->add('save',SubmitType::Class,array('label'=>'Modifier Activité', 'attr' =>array ('class'=>'btn btn-primary',
-                'style'=>'margin-top:10px')))
-            ->getForm() ;
-
-        $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()) {
-            $type = $form['type']->getData();
-            $adresse = $form['adresse']->getData();
-            $date = $form['date']->getData();
-            $heure = $form['heure']->getData();
-            $agemin = $form['agemin']->getData();
-
-            $em = $this->getDoctrine()->getManager();
-            $activite=$em->getRepository('ActiviteBundle:Activite')->find($id);
-
-
-            $activite->setType($type);
-            $activite->setAdresse($adresse);
-            $activite->setDate($date);
-            $activite->setHeure($heure);
-            $activite->setAgeMin($agemin);
-
+        $em=$this->getDoctrine()->getManager();
+        $activite=$em->getRepository('ActiviteBundle:Activite')->find($request->get('id'));
+        $Form=$this->createForm(ActiviteUpdateType::class,$activite);
+        $Form->handleRequest($request);
+        if($Form->isValid()){
+            $file=$activite->getImage();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('image_directory'), $fileName);
+            $activite->setImage($fileName);
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($activite);
             $em->flush();
             $this->addFlash('message','Activité modifiée avec succès');
             return $this->redirectToRoute('activite_afficherActivite');
 
         }
-
-
-        return $this->render('@Activite/pages/update.html.twig', ['form'=>$form->createView()]) ;
+        return $this->render('ActiviteBundle:pages:ModificationActivite.html.twig', array('form'=>$Form->createView()));
     }
 
 
@@ -168,4 +159,28 @@ return $this->render("@Activite/pages/create.html.twig",['form' =>$form->createV
         $Activite = $em->getRepository("ActiviteBundle:Activite")->findAll();
         return $this->render("ActiviteBundle:pages:AfficherBackActivite.html.twig", array("Activite" => $Activite));
     }
+
+    function listFrontAction(Request $request)
+    {
+        $activite=$this->getDoctrine()->getRepository('ActiviteBundle:Activite')->findAll();
+        return $this->render('ActiviteBundle:pages:AfficherFrontActivite.html.twig',['activite'=>$activite]) ;
+
+    }
+
+    function  ActiviteDetailsAction(Request $request){
+
+        $voitures=new Activite();
+        $em=$this->getDoctrine()->getManager();
+        $activite=$em->getRepository('ActiviteBundle:Activite')->findAll();
+
+        if($request->isXmlHttpRequest()){
+            $serializer=new Serializer(array(new ObjectNormalizer()));
+            $serie=$voiture->getDescription();
+            $voitures=$em->getRepository('ActiviteBundle:Activite')->findOneBy(array('description'=>$serie));
+            $data=$serializer->normalize($voitures);
+            return new JsonResponse($data);
+        }//
+        return $this->render('ActiviteBundle:pages:ActiviteDetails.html.twig',array("modele"=>$activite,"activite"=>$voitures));
+    }
+
 }

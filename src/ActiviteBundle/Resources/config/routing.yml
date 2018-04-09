@@ -6,6 +6,17 @@ activite_viewActivite:
     path:     /activite/view
     defaults: { _controller: ActiviteBundle:Activite:afficheBack }
 
+
+activite_detailsActivite:
+    path:     /activite/details
+    defaults: { _controller: ActiviteBundle:Activite:ActiviteDetails }
+
+
+activite_list:
+    path:     /activite/liste
+    defaults: { _controller: ActiviteBundle:Activite:listFront }
+
+
 activite_createActivite:
     path:     /activite/create
     defaults: { _controller: ActiviteBundle:Activite:createActivite }
