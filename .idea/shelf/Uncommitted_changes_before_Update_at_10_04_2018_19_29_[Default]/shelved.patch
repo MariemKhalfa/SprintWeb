@@ -1,0 +1,1270 @@
+Index: src/MessageBundle/Resources/views/Message/inbox.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Resources/views/Message/inbox.html.twig	(date 1523357759882)
++++ src/MessageBundle/Resources/views/Message/inbox.html.twig	(date 1523357759882)
+@@ -0,0 +1,11 @@
++{% extends 'FOSMessageBundle::layout.html.twig' %}
++
++{% block fos_message_content %}
++
++<h2>{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</h2>
++
++<a href="{{ url('fos_message_thread_new' )}}">{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</a>
++
++{% include 'FOSMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}
++
++{% endblock %}
+Index: src/MessageBundle/MessageBundle.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/MessageBundle.php	(date 1523375901788)
++++ src/MessageBundle/MessageBundle.php	(date 1523375901788)
+@@ -0,0 +1,13 @@
++<?php
++
++namespace MessageBundle;
++
++use Symfony\Component\HttpKernel\Bundle\Bundle;
++
++class MessageBundle extends Bundle
++{
++    public function getParent()
++    {
++        return "FOSMessageBundle";
++    }
++}
+Index: app/config/routing.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>back_office:\n    resource: \"@BackOfficeBundle/Resources/config/routing.yml\"\n    prefix:   /admin\n\njeux:\n    resource: \"@JeuxBundle/Resources/config/routing.yml\"\n    prefix:   /\n\n\nactivite:\n    resource: \"@ActiviteBundle/Resources/config/routing.yml\"\n    prefix:   /\n\nevenement:\n    resource: \"@EvenementBundle/Resources/config/routing.yml\"\n    prefix:   /\n\nbabysitting:\n    resource: \"@BabysittingBundle/Resources/config/routing.yml\"\n    prefix:   /babysitting\n\nmedecin:\n    resource: \"@MedecinBundle/Resources/config/routing.yml\"\n    prefix:   /medecin\n\ncovoiturage:\n    resource: \"@CovoiturageBundle/Resources/config/routing.yml\"\n    prefix:   /covoiturage\n\ngarderie:\n    resource: \"@GarderieBundle/Resources/config/routing.yml\"\n    prefix:   /garderie\n\nrecette:\n    resource: \"@RecetteBundle/Resources/config/routing.yml\"\n    prefix:   /\n\ne_learning:\n    resource: \"@ELearningBundle/Resources/config/routing.yml\"\n    prefix:   /\n\nfront:\n    resource: \"@FrontBundle/Resources/config/routing.yml\"\n    prefix:   /\n\napp:\n    resource: '@AppBundle/Controller/'\n    type: annotation\n\nfos_user_security:\n    resource: \"@FOSUserBundle/Resources/config/routing/security.xml\"\n\nfos_user_profile:\n    resource: \"@FOSUserBundle/Resources/config/routing/profile.xml\"\n    prefix: /profile\n\nfos_user_register:\n    resource: \"@FOSUserBundle/Resources/config/routing/registration.xml\"\n    prefix: /register\n\nfos_user_resetting:\n    resource: \"@FOSUserBundle/Resources/config/routing/resetting.xml\"\n    prefix: /resetting\n\nfos_user_change_password:\n    resource: \"@FOSUserBundle/Resources/config/routing/change_password.xml\"\n    prefix: /profile\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/config/routing.yml	(revision fe892c031e313853e4de2ae00064aa59091add3c)
++++ app/config/routing.yml	(date 1523374423298)
+@@ -1,3 +1,7 @@
++message:
++    resource: "@MessageBundle/Resources/config/routing.yml"
++    prefix:   /
++
+ back_office:
+     resource: "@BackOfficeBundle/Resources/config/routing.yml"
+     prefix:   /admin
+@@ -66,3 +70,7 @@
+     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+     prefix: /profile
+ 
++fos_message:
++    resource: "@FOSMessageBundle/Resources/config/routing.xml"
++    prefix: /msg
++
+Index: vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Entity/MessageMetadata.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace BabysittingBundle\\Entity;\n\nuse Doctrine\\ORM\\Mapping as ORM;\nuse FOS\\MessageBundle\\Entity\\MessageMetadata as BaseMessageMetadata;\n\n/**\n * @ORM\\Entity\n */\nclass MessageMetadata extends BaseMessageMetadata\n{\n    /**\n     * @ORM\\Id\n     * @ORM\\Column(type=\"integer\")\n     * @ORM\\GeneratedValue(strategy=\"AUTO\")\n     */\n    protected $id;\n\n    /**\n     * @ORM\\ManyToOne(\n     *   targetEntity=\"BabysittingBundle\\Entity\\Message\",\n     *   inversedBy=\"metadata\"\n     * )\n     * @var \\FOS\\MessageBundle\\Model\\MessageInterface\n     */\n    protected $message;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"FrontBundle\\Entity\\User\")\n     * @var \\FOS\\MessageBundle\\Model\\ParticipantInterface\n     */\n    protected $participant;\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Entity/MessageMetadata.php	(revision fe892c031e313853e4de2ae00064aa59091add3c)
++++ vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Entity/MessageMetadata.php	(date 1519250830000)
+@@ -1,34 +1,33 @@
+ <?php
+ 
+-namespace BabysittingBundle\Entity;
++namespace FOS\MessageBundle\Entity;
+ 
+-use Doctrine\ORM\Mapping as ORM;
+-use FOS\MessageBundle\Entity\MessageMetadata as BaseMessageMetadata;
++use FOS\MessageBundle\Model\MessageMetadata as BaseMessageMetadata;
++use FOS\MessageBundle\Model\MessageInterface;
+ 
+-/**
+- * @ORM\Entity
+- */
+-class MessageMetadata extends BaseMessageMetadata
++abstract class MessageMetadata extends BaseMessageMetadata
+ {
+-    /**
+-     * @ORM\Id
+-     * @ORM\Column(type="integer")
+-     * @ORM\GeneratedValue(strategy="AUTO")
+-     */
+     protected $id;
+-
+-    /**
+-     * @ORM\ManyToOne(
+-     *   targetEntity="BabysittingBundle\Entity\Message",
+-     *   inversedBy="metadata"
+-     * )
+-     * @var \FOS\MessageBundle\Model\MessageInterface
+-     */
+     protected $message;
+ 
+     /**
+-     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
+-     * @var \FOS\MessageBundle\Model\ParticipantInterface
++     * @return int
+      */
+-    protected $participant;
+-}
+\ No newline at end of file
++    public function getId()
++    {
++        return $this->id;
++    }
++
++    /**
++     * @return MessageInterface
++     */
++    public function getMessage()
++    {
++        return $this->message;
++    }
++
++    public function setMessage(MessageInterface $message)
++    {
++        $this->message = $message;
++    }
++}
+Index: src/CovoiturageBundle/Resources/views/Covoiturage/front/reserver_cov.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n{% extends \"base.html.twig\" %}\n {% block container %}\n<!-- Main wrapper -->\n\n<!-- End Bradcaump area -->\n<section class=\"junior__service bg-image--1\">\n    <div class=\"container\">\n            <h2 class=\"text-theme-color-sky line-bottom\"><span class=\"text-theme-color-red\">Détails babysitting</span>\n            </h2>\n    </div>\n</section>\n\n<!-- Start Class Babysitting -->\n<div class=\"section-content\">\n    <div class=\"row\">\n        <div class=\"container\">\n\n            <section class=\"page-event-details\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-lg-9\">\n                            <div class=\"event-content-wrapper\">\n\n                                <div class=\"event-section\">\n                                    <div class=\"enent__thumb\">\n                                        <img src=\"{{ asset('images/event/big-img/1.jpg') }}\" alt=\"big images\">\n                                        <div class=\"box-timer\">\n                                            <div class=\"countbox timer-grid\">\n                                                <div  data-countdown=\"2021/03/01\"></div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>\n                                    <div class=\"event-section\">\n\n                                        <div class=\"event-section\">\n\n                                            <div class=\"event__location\">\n                                                {% for b in bab %}\n                                                    <ul>\n                                                        <li><span class=\"ti-user\"></span>{{ b.babysitteur }}</li>\n                                                        <li><span class=\"ti-location-pin\"></span>{{ b.adresse }}</li>\n                                                        <li><span class=\"ti-time\"></span>{{ b.heureDeb |date('h:i')}} - {{ b.heureFin |date('h:i')}}</li>\n                                                        <li><span class=\"ti-calendar\"></span>{{ b.heureDeb |date('d/m/y')}} </li>\n                                                        <li><span class=\"ti-mobile\"></span>Phone : +660 256 24857 </li>\n                                                        <li><span class=\"ti-email\"></span>Email : username@email.com,</li>\n                                                        <li><span class=\"ti-dribbble\"></span>http:// tutoring education theme.com</li>\n                                                    </ul>\n                                                    <div class=\"event_map_marker\">\n                                                        <div id=\"evnetmap\"></div>\n                                                    </div>\n                                                {% endfor %}\n                                            </div>\n                                        </div>\n                                    </div>\n\n                            </div></div></div></div>\n            </section>\n\n            <!-- End Class Babysitting -->\n\n\n            <!-- JS Files -->\n            <script src=\"js/vendor/jquery-3.2.1.min.js\"></script>\n            <script src=\"js/popper.min.js\"></script>\n            <script src=\"js/bootstrap.min.js\"></script>\n\n            <!-- Google Map js -->\n            <script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBmGmeot5jcjdaJTvfCmQPfzeoG_pABeWo\"></script>\n            <script>\n                // When the window has finished loading create our google map below\n                google.maps.event.addDomListener(window, 'load', init);\n\n                function init() {\n                    // Basic options for a simple Google Map\n                    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions\n                    var mapOptions = {\n                        // How zoomed in you want the map to start at (always required)\n                        zoom: 12,\n\n                        scrollwheel: false,\n\n                        // The latitude and longitude to center the map (always required)\n                        center: new google.maps.LatLng(23.7286, 90.3854), // New York\n\n                        // How you would like to style the map.\n                        // This is where you would paste any style found on Snazzy Maps.\n                        styles:\n                            [\n\n                                {\n                                    \"featureType\": \"administrative\",\n                                    \"stylers\": [\n                                        {\n                                            \"visibility\": \"off\"\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"featureType\": \"poi\",\n                                    \"stylers\": [\n                                        {\n                                            \"visibility\": \"simplified\"\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"featureType\": \"road\",\n                                    \"elementType\": \"labels\",\n                                    \"stylers\": [\n                                        {\n                                            \"visibility\": \"simplified\"\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"featureType\": \"water\",\n                                    \"stylers\": [\n                                        {\n                                            \"visibility\": \"simplified\"\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"featureType\": \"transit\",\n                                    \"stylers\": [\n                                        {\n                                            \"visibility\": \"simplified\"\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"featureType\": \"landscape\",\n                                    \"stylers\": [\n                                        {\n                                            \"visibility\": \"simplified\"\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"featureType\": \"road.highway\",\n                                    \"stylers\": [\n                                        {\n                                            \"visibility\": \"off\"\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"featureType\": \"road.local\",\n                                    \"stylers\": [\n                                        {\n                                            \"visibility\": \"on\"\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"featureType\": \"road.highway\",\n                                    \"elementType\": \"geometry\",\n                                    \"stylers\": [\n                                        {\n                                            \"visibility\": \"on\"\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"featureType\": \"water\",\n                                    \"stylers\": [\n                                        {\n                                            \"color\": \"#84afa3\"\n                                        },\n                                        {\n                                            \"lightness\": 52\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"stylers\": [\n                                        {\n                                            \"saturation\": -17\n                                        },\n                                        {\n                                            \"gamma\": 0.36\n                                        }\n                                    ]\n                                },\n                                {\n                                    \"featureType\": \"transit.line\",\n                                    \"elementType\": \"geometry\",\n                                    \"stylers\": [\n                                        {\n                                            \"color\": \"#3f518c\"\n                                        }\n                                    ]\n                                }\n                            ]\n                    };\n\n                    // Get the HTML DOM element that will contain your map\n                    // We are using a div with id=\"map\" seen below in the <body>\n                    var mapElement = document.getElementById('evnetmap');\n\n                    // Create the Google Map using our element and options defined above\n                    var map = new google.maps.Map(mapElement, mapOptions);\n\n                    // Let's also add a marker while we're at it\n                    var marker = new google.maps.Marker({\n                        position: new google.maps.LatLng(23.7286, 90.3854),\n                        map: map,\n                        title: 'Dcare!',\n                        icon: 'images/icons/map-2.png',\n                        animation:google.maps.Animation.BOUNCE\n\n                    });\n                }\n            </script>\n\n\n            <script src=\"js/plugins.js\"></script>\n            <script src=\"js/active.js\"></script>\n        </div>\n    </div>\n</div>\n {% endblock %}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/CovoiturageBundle/Resources/views/Covoiturage/front/reserver_cov.html.twig	(revision fe892c031e313853e4de2ae00064aa59091add3c)
++++ src/CovoiturageBundle/Resources/views/Covoiturage/front/reserver_cov.html.twig	(date 1523381923174)
+@@ -37,12 +37,12 @@
+                                         <div class="event-section">
+ 
+                                             <div class="event__location">
+-                                                {% for b in bab %}
++                                                {% for c in cov %}
+                                                     <ul>
+-                                                        <li><span class="ti-user"></span>{{ b.babysitteur }}</li>
+-                                                        <li><span class="ti-location-pin"></span>{{ b.adresse }}</li>
+-                                                        <li><span class="ti-time"></span>{{ b.heureDeb |date('h:i')}} - {{ b.heureFin |date('h:i')}}</li>
+-                                                        <li><span class="ti-calendar"></span>{{ b.heureDeb |date('d/m/y')}} </li>
++                                                        <li><span class="ti-user"></span>{{ c.titre }}</li>
++                                                        <li><span class="ti-location-pin"></span>{{ c.lieuDep}}v-> {{ c.lieuDest }}</li>
++                                                        <li><span class="ti-time"></span>{{ c.heureDep |date('h:i')}} </li>
++                                                        <li><span class="ti-calendar"></span>{{ c.date |date('d/m/y')}} </li>
+                                                         <li><span class="ti-mobile"></span>Phone : +660 256 24857 </li>
+                                                         <li><span class="ti-email"></span>Email : username@email.com,</li>
+                                                         <li><span class="ti-dribbble"></span>http:// tutoring education theme.com</li>
+Index: src/MessageBundle/Resources/config/routing.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Resources/config/routing.yml	(date 1523374422948)
++++ src/MessageBundle/Resources/config/routing.yml	(date 1523374422948)
+@@ -0,0 +1,3 @@
++message_homepage:
++    path:     /
++    defaults: { _controller: MessageBundle:Default:index }
+Index: src/MessageBundle/Resources/views/Message/thread.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Resources/views/Message/thread.html.twig	(date 1523357759923)
++++ src/MessageBundle/Resources/views/Message/thread.html.twig	(date 1523357759923)
+@@ -0,0 +1,27 @@
++{% extends 'FOSMessageBundle::layout.html.twig' %}
++
++{% block fos_message_content %}
++
++<h2>{{ thread.subject }}</h2>
++
++{% for message in thread.messages %}
++    <div class="messenger_thread_message">
++        <div class="messenger_thread_message_info">
++            {% trans with {'%sender%': message.sender|e, '%date%': message.createdAt|date} from 'FOSMessageBundle' %}message_info{% endtrans %}
++        </div>
++
++        <div class="messenger_thread_message_body" id="message_{{ message.id }}">
++            {{ message.body }}
++        </div>
++    </div>
++{% endfor %}
++
++<h3>{% trans from 'FOSMessageBundle' %}reply{% endtrans %}</h3>
++
++<form action="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}" method="post">
++    {{ form_widget(form) }}
++
++    <input type="submit" />
++</form>
++
++{% endblock %}
+Index: src/MessageBundle/Entity/ThreadMetadata.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Entity/ThreadMetadata.php	(date 1523375690537)
++++ src/MessageBundle/Entity/ThreadMetadata.php	(date 1523375690537)
+@@ -0,0 +1,35 @@
++<?php
++
++namespace MessageBundle\Entity;
++
++use Doctrine\ORM\Mapping as ORM;
++use FOS\MessageBundle\Entity\ThreadMetadata as BaseThreadMetadata;
++
++/**
++ * @ORM\Entity
++ * @ORM\Table(name="message_thread_metadata")
++ */
++class ThreadMetadata extends BaseThreadMetadata
++{
++    /**
++     * @ORM\Id
++     * @ORM\Column(type="integer")
++     * @ORM\GeneratedValue(strategy="AUTO")
++     */
++    protected $id;
++
++    /**
++     * @ORM\ManyToOne(
++     *   targetEntity="MessageBundle\Entity\Thread",
++     *   inversedBy="metadata"
++     * )
++     * @var \FOS\MessageBundle\Model\ThreadInterface
++     */
++    protected $thread;
++
++    /**
++     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
++     * @var \FOS\MessageBundle\Model\ParticipantInterface
++     */
++    protected $participant;
++}
+\ No newline at end of file
+Index: src/MessageBundle/Resources/views/Message/threads_list.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Resources/views/Message/threads_list.html.twig	(date 1523357759936)
++++ src/MessageBundle/Resources/views/Message/threads_list.html.twig	(date 1523357759936)
+@@ -0,0 +1,75 @@
++<table>
++
++    <thead>
++        <tr>
++            <th>{% trans from 'FOSMessageBundle' %}subject{% endtrans %}</th>
++            <th>{% trans from 'FOSMessageBundle' %}starter{% endtrans %}</th>
++            <th>{% trans from 'FOSMessageBundle' %}startdate{% endtrans %}</th>
++            <th>{% trans from 'FOSMessageBundle' %}messages{% endtrans %}</th>
++            <th>{% trans from 'FOSMessageBundle' %}last_message{% endtrans %}</th>
++            <th>{% trans from 'FOSMessageBundle' %}actions{% endtrans %}</th>
++        </tr>
++    </thead>
++
++    <tbody>
++
++    {% if threads %}
++        {% for thread in threads %}
++            <tr>
++                <td>
++                    <a href="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}">
++                        {{ thread.subject }}
++                    </a>
++
++                    {% if not fos_message_is_read(thread) %}
++                        ({% trans from 'FOSMessageBundle' %}new{% endtrans %})
++                    {% endif %}
++                </td>
++                <td>
++                    {{ thread.createdBy }}
++                </td>
++                <td>
++                    {{ thread.createdAt|date }}
++                </td>
++                <td>
++                    {{ thread.messages|length }}
++                </td>
++                <td>
++                    {% if thread.lastMessage %}
++                        <a href="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}#message_{{ thread.lastMessage.id }}" title="{% trans from 'FOSMessageBundle' %}goto_last{% endtrans %}">
++                            →
++                        </a>
++                        {% trans with {'%date%': thread.lastMessage.createdAt|date} from 'FOSMessageBundle' %}on{% endtrans %}
++                        <br />
++                        {% trans with {'%sender%': thread.lastMessage.sender|e } from 'FOSMessageBundle' %}by{% endtrans %}
++                    {% else %}
++                        ----
++                    {% endif %}
++                </td>
++                <td>
++                    {% if fos_message_can_delete_thread(thread) %}
++                        {% if fos_message_deleted_by_participant(thread) %}
++                            {% set formAction %}{{ url('fos_message_thread_undelete', {'threadId': thread.id}) }}{% endset %}
++                            {% set submitValue %}{% trans from 'FOSMessageBundle' %}undelete{% endtrans %}{% endset %}
++                        {% else %}
++                            {% set formAction %}{{ url('fos_message_thread_delete', {'threadId': thread.id}) }}{% endset %}
++                            {% set submitValue %}{% trans from 'FOSMessageBundle' %}delete{% endtrans %}{% endset %}
++                        {% endif %}
++                        <form action="{{ formAction }}" method="post">
++                                <input type="submit" value="{{ submitValue }}" />
++                        </form>
++                    {% endif %}
++                </td>
++            </tr>
++        {% endfor %}
++    {% else %}
++        <tr>
++            <td colspan="6">
++                {% trans from 'FOSMessageBundle' %}no_thread{% endtrans %}.
++            </td>
++        </tr>
++    {% endif %}
++
++    </tbody>
++
++</table>
+Index: src/MessageBundle/Controller/DefaultController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Controller/DefaultController.php	(date 1523374422788)
++++ src/MessageBundle/Controller/DefaultController.php	(date 1523374422788)
+@@ -0,0 +1,13 @@
++<?php
++
++namespace MessageBundle\Controller;
++
++use Symfony\Bundle\FrameworkBundle\Controller\Controller;
++
++class DefaultController extends Controller
++{
++    public function indexAction()
++    {
++        return $this->render('MessageBundle:Default:index.html.twig');
++    }
++}
+Index: src/MessageBundle/Resources/views/Message/deleted.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Resources/views/Message/deleted.html.twig	(date 1523357759857)
++++ src/MessageBundle/Resources/views/Message/deleted.html.twig	(date 1523357759857)
+@@ -0,0 +1,9 @@
++{% extends 'FOSMessageBundle::layout.html.twig' %}
++
++{% block fos_message_content %}
++
++<h2>{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</h2>
++
++{% include 'FOSMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}
++
++{% endblock %}
+Index: src/MessageBundle/Resources/views/Message/sent.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Resources/views/Message/sent.html.twig	(date 1523357759916)
++++ src/MessageBundle/Resources/views/Message/sent.html.twig	(date 1523357759916)
+@@ -0,0 +1,9 @@
++{% extends 'FOSMessageBundle::layout.html.twig' %}
++
++{% block fos_message_content %}
++
++<h2>{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</h2>
++
++{% include 'FOSMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}
++
++{% endblock %}
+Index: app/AppKernel.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nuse Symfony\\Component\\HttpKernel\\Kernel;\nuse Symfony\\Component\\Config\\Loader\\LoaderInterface;\n\nclass AppKernel extends Kernel\n{\n    public function registerBundles()\n    {\n        $bundles = [\n            new Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle(),\n            new Symfony\\Bundle\\SecurityBundle\\SecurityBundle(),\n            new Symfony\\Bundle\\TwigBundle\\TwigBundle(),\n            new Symfony\\Bundle\\MonologBundle\\MonologBundle(),\n            new Symfony\\Bundle\\SwiftmailerBundle\\SwiftmailerBundle(),\n            new Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle(),\n            new Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle(),\n            new AppBundle\\AppBundle(),\n            new FrontBundle\\FrontBundle(),\n            new FOS\\UserBundle\\FOSUserBundle(),\n            new ELearningBundle\\ELearningBundle(),\n            new RecetteBundle\\RecetteBundle(),\n            new GarderieBundle\\GarderieBundle(),\n            new CovoiturageBundle\\CovoiturageBundle(),\n            new MedecinBundle\\MedecinBundle(),\n            new Knp\\Bundle\\PaginatorBundle\\KnpPaginatorBundle(),\n            new BabysittingBundle\\BabysittingBundle(),\n            new blackknight467\\StarRatingBundle\\StarRatingBundle(),\n            new ActiviteBundle\\ActiviteBundle(),\n            new EvenementBundle\\EvenementBundle(),\n            new JeuxBundle\\JeuxBundle(),\n            new BackOfficeBundle\\BackOfficeBundle(),\n            new CMEN\\GoogleChartsBundle\\CMENGoogleChartsBundle(),\n        ];\n\n        if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {\n            $bundles[] = new Symfony\\Bundle\\DebugBundle\\DebugBundle();\n            $bundles[] = new Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle();\n            $bundles[] = new Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle();\n\n            if ('dev' === $this->getEnvironment()) {\n                $bundles[] = new Sensio\\Bundle\\GeneratorBundle\\SensioGeneratorBundle();\n                $bundles[] = new Symfony\\Bundle\\WebServerBundle\\WebServerBundle();\n            }\n        }\n\n        return $bundles;\n    }\n\n    public function getRootDir()\n    {\n        return __DIR__;\n    }\n\n    public function getCacheDir()\n    {\n        return dirname(__DIR__).'/var/cache/'.$this->getEnvironment();\n    }\n\n    public function getLogDir()\n    {\n        return dirname(__DIR__).'/var/logs';\n    }\n\n    public function registerContainerConfiguration(LoaderInterface $loader)\n    {\n        $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/AppKernel.php	(revision fe892c031e313853e4de2ae00064aa59091add3c)
++++ app/AppKernel.php	(date 1523374423108)
+@@ -31,6 +31,8 @@
+             new JeuxBundle\JeuxBundle(),
+             new BackOfficeBundle\BackOfficeBundle(),
+             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
++            new FOS\MessageBundle\FOSMessageBundle(),
++            new MessageBundle\MessageBundle(),
+         ];
+ 
+         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
+Index: src/MessageBundle/Entity/Thread.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Entity/Thread.php	(date 1523375519118)
++++ src/MessageBundle/Entity/Thread.php	(date 1523375519118)
+@@ -0,0 +1,46 @@
++<?php
++
++namespace MessageBundle\Entity;
++
++use Doctrine\ORM\Mapping as ORM;
++use Doctrine\Common\Collections\Collection;
++use FOS\MessageBundle\Entity\Thread as BaseThread;
++
++/**
++ * @ORM\Entity
++ * @ORM\Table(name="message_thread")
++ */
++class Thread extends BaseThread
++{
++    /**
++     * @ORM\Id
++     * @ORM\Column(type="integer")
++     * @ORM\GeneratedValue(strategy="AUTO")
++     */
++    protected $id;
++
++    /**
++     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
++     * @var \FOS\MessageBundle\Model\ParticipantInterface
++     */
++    protected $createdBy;
++
++    /**
++     * @ORM\OneToMany(
++     *   targetEntity="MessageBundle\Entity\Message",
++     *   mappedBy="thread"
++     * )
++     * @var Message[]|Collection
++     */
++    protected $messages;
++
++    /**
++     * @ORM\OneToMany(
++     *   targetEntity="MessageBundle\Entity\ThreadMetadata",
++     *   mappedBy="thread",
++     *   cascade={"all"}
++     * )
++     * @var ThreadMetadata[]|Collection
++     */
++    protected $metadata;
++}
+\ No newline at end of file
+Index: src/CovoiturageBundle/Form/CovoiturageRType.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/CovoiturageBundle/Form/CovoiturageRType.php	(date 1523381093822)
++++ src/CovoiturageBundle/Form/CovoiturageRType.php	(date 1523381093822)
+@@ -0,0 +1,44 @@
++<?php
++
++namespace CovoiturageBundle\Form;
++
++use Symfony\Component\Form\AbstractType;
++use Symfony\Component\Form\Extension\Core\Type\DateType;
++use Symfony\Component\Form\Extension\Core\Type\HiddenType;
++use Symfony\Component\Form\Extension\Core\Type\NumberType;
++use Symfony\Component\Form\Extension\Core\Type\SubmitType;
++use Symfony\Component\Form\Extension\Core\Type\TextareaType;
++use Symfony\Component\Form\Extension\Core\Type\TextType;
++use Symfony\Component\Form\Extension\Core\Type\TimeType;
++use Symfony\Component\Form\FormBuilderInterface;
++use Symfony\Component\OptionsResolver\OptionsResolver;
++
++class CovoiturageRType extends AbstractType
++{
++    /**
++     * {@inheritdoc}
++     */
++    public function buildForm(FormBuilderInterface $builder, array $options)
++    {
++        $builder->add('lieuDep', TextType::class);
++
++    }
++
++    /**
++     * {@inheritdoc}
++     */
++    public function configureOptions(OptionsResolver $resolver)
++    {
++        $resolver->setDefaults(array(
++            'data_class' => 'CovoiturageBundle\Entity\Covoiturage'
++        ));
++    }
++
++    /**
++     * {@inheritdoc}
++     */
++    public function getBlockPrefix()
++    {
++        return 'covoituragebundle_covoiturage';
++    }
++}
+Index: src/CovoiturageBundle/Controller/CovoiturageController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace CovoiturageBundle\\Controller;\n\nuse CovoiturageBundle\\Entity\\Covoiturage;\nuse CovoiturageBundle\\Form\\CovoiturageType;\nuse CovoiturageBundle\\Form\\CovoiturageMType;\nuse FrontBundle\\Entity\\User;\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller;\nuse Symfony\\Component\\HttpFoundation\\Request;\nuse Knp\\Bundle\\SnappyBundle\\Snappy\\Response\\PdfResponse;\n\nclass CovoiturageController extends Controller\n{\n    public function ajouterCovAction(Request $request)\n    {\n        $cov = new Covoiturage();\n        $form = $this->createForm(CovoiturageType::class, $cov);\n        if ( $request->isMethod('post')  ) {\n\n            $em = $this->getDoctrine()->getManager();\n\n            $date=new \\DateTime($request->get(\"date\"));\n            $cov->setDate($date);\n\n            $d = $request->get(\"lieuDep\");\n            $s = $request->get(\"lieuDest\");\n\n            $cov->setLieuDep($d);\n            $cov->setLieuDest($s);\n\n            $cov->setTitre($d . ' vers ' . $s);\n\n            $time=new \\DateTime($request->get(\"heureDep\"));\n            $cov->setHeureDep($time);\n\n            $cov->setNbPlaces($request->get(\"nbr\"));\n            $cov->setDescription($request->get(\"description\"));\n\n            $user = $this->container->get('security.token_storage')->getToken()->getUser(); // $user is filled with the logged user\n            $cov->setCovoitureur($user);\n            $voiture = $em->getRepository(\"CovoiturageBundle:Voiture\")->findOneBy(array('proprio' => $user->getId()));\n            $cov->setVoiture($voiture);\n\n            $em->persist($cov);\n            $em->flush();\n            return $this->redirectToRoute(\"lister_mes_cov\");\n        }\n        return $this->render('@Covoiturage/Covoiturage/front/ajouter_cov.html.twig');\n    }\n\n    function supprimerCovAction($id){\n\n        $em=$this->getDoctrine()->getManager();\n        $cov=$em->getRepository(\"CovoiturageBundle:Covoiturage\")->find($id);\n        $em->remove($cov);\n        $em->flush();\n        return $this->redirectToRoute(\"lister_mes_cov\");\n    }\n    public function modifierCovAction(Request $request)\n    {\n        $em = $this->getDoctrine()->getManager();\n        $cov = $em->getRepository('CovoiturageBundle:Covoiturage')->find($request->get('id'));\n        $titre=$cov->getTitre();\n        $form = $this->createForm(CovoiturageMType::class,$cov);\n        $form->handleRequest($request);\n        if ($form->isValid()) {\n\n            $em = $this->getDoctrine()->getManager();\n            $em->persist($cov);\n            $em->flush();\n            $id=$cov->getId();\n            return $this->redirectToRoute('details_cov',array(\n                'id'=>$id,\n            ));\n        }\n        return $this->render('@Covoiturage/Covoiturage/front/modifier_cov.html.twig', array(\n            'form' => $form->createView(),\n            'tit'=>$titre));\n    }\n\n    public function listerMesCovAction(Request $request)\n    {\n        $em = $this->getDoctrine()->getManager();\n        $user = $this->container->get('security.token_storage')->getToken()->getUser();\n        $covs = $em->getRepository(\"CovoiturageBundle:Covoiturage\")->MesCovoiturages($user->getId());\n        return $this->render('@Covoiturage/Covoiturage/front/lister_mes_cov.html.twig', array(\"covs\" => $covs));\n    }\n\n    public function listerDesCovAction()\n    {\n        $em = $this->getDoctrine()->getManager();\n        $user = $this->container->get('security.token_storage')->getToken()->getUser();\n        $covs = $em->getRepository(\"CovoiturageBundle:Covoiturage\")->CovoituragesPotentiels($user->getId(),$user->getVille());\n        return $this->render('@Covoiturage/Covoiturage/front/lister_des_cov.html.twig', array(\"covs\" => $covs));\n    }\n    public function detailsCovAction(Request $request,$id)\n    {\n        $em=$this->getDoctrine()->getManager();\n        $cov=$em->getRepository('CovoiturageBundle:Covoiturage')->findBy(array(\"id\"=>$id));\n        /*   $cov=$em->getRepository('CovoiturageBundle:Covoiturage')->find($request->get($id));*/\n        return $this->render('@Covoiturage/Covoiturage/front/details_cov.html.twig',array(\n            'cov'=>$cov,\n        ));\n    }\n    public function reserverCovAction($id)\n    {\n        $em=$this->getDoctrine()->getManager();\n        $cov=$em->getRepository('CovoiturageBundle:Covoiturage')->findBy(array(\"id\"=>$id));\n        $covoitureuN=$cov->getCovoitureur();\n        return $this->render('@Covoiturage/Covoiturage/front/reserver_cov.html.twig', array(\n            'cov'=>$cov,\n            'covoitureuN'=>$covoitureuN\n        ));\n    }\n\n    public function historiqueCovAction()\n    {\n        $em = $this->getDoctrine()->getManager();\n\n        $user = $this->container->get('security.token_storage')->getToken()->getUser();\n        $covs = $em->getRepository(\"CovoiturageBundle:Covoiturage\")->MesAnciensCovoiturages($user->getId());\n\n        return $this->render('@Covoiturage/Covoiturage/front/historique_cov.html.twig', array(\n            \"covs\" => $covs\n        ));\n    }\n\n    public function chercherCovAction(Request $request)\n    {\n        $em = $this->getDoctrine()->getManager();\n        $covs=new Covoiturage();\n        if ( $request->isMethod('post')  ) {\n            $lieuDep=$request->get(\"lieuDep\");\n            $covs = $em->getRepository(\"CovoiturageBundle:Covoiturage\")->rechercheAvancee($lieuDep);\n            return $this->render('@Covoiturage/Covoiturage/front/chercher_cov.html.twig', array(\n                \"cov\" => $covs\n            ));}\n        return $this->render(\"@Covoiturage/Covoiturage/front/chercher_cov.html.twig\",array ( \"cov\" => $covs));\n    }\n\n    public function matchingCovAction()\n    {\n        return $this->render('@Covoiturage/Covoiturage/front/matching_cov.html.twig', array(// ...\n        ));\n    }\n\n    public function distanceCovAction()\n    {\n        return $this->render('@Covoiturage/Covoiturage/front/distance_cov.html.twig', array(// ...\n        ));\n    }\n    public function listCovAdminAction(Request $request){\n\n        /* $em = $this->getDoctrine()->getManager();\n\n         $covoitureur = $em->getRepository(\"CovoiturageBundle:Covoiturage\")->findCovoiturages();\n         return $this->render('@Covoiturage/Covoiturage/list_cov_admin.html.twig', array(\"covs\" => $covoitureur));*/\n\n        $em = $this->getDoctrine()->getManager();\n        if ($request->query->getAlnum('filter')) {\n            $queryBuilder = $em->getRepository('CovoiturageBundle:Covoiturage')->createQueryBuilder('bp1');\n            $queryBuilder->where('bp1.nom like :nom')->setParameter('nom', '%' . $request->query->getAlnum('filter') . '%');\n            $query = $queryBuilder->getQuery();\n        } else {\n            $dql = \"Select c from CovoiturageBundle:Covoiturage c\";\n            $query = $em->createQuery($dql);\n        }\n        $paginator = $this->get('knp_paginator');\n\n        $result = $paginator->paginate(\n            $query,\n            $request->query->getInt('page', 1),\n            $request->query->getInt('limit', 4)\n        );\n        return $this->render('@Covoiturage/Covoiturage/admin/list_cov_admin.html.twig', array(\"covoitureur\" => $result));\n    }\n\n    public function listCovoitureursAdminAction(Request $request)\n    {\n        $em = $this->getDoctrine()->getManager();\n        if ($request->query->getAlnum('filter')) {\n            $queryBuilder = $em->getRepository('FrontBundle:User')->createQueryBuilder('bp1');\n            $queryBuilder->where('bp1.ville like :ville')->setParameter('ville', '%' . $request->query->getAlnum('filter') . '%');\n            $query = $queryBuilder->getQuery();\n        } else {\n            $dql = \"Select b from FrontBundle:User b where b.covoiturage=1\";\n            $query = $em->createQuery($dql);\n        }\n        $paginator = $this->get('knp_paginator');\n\n        $result = $paginator->paginate(\n            $query,\n            $request->query->getInt('page', 1),\n            $request->query->getInt('limit', 2)\n        );\n        return $this->render('@Covoiturage/Covoiturage/admin/list_cov_admin.html.twig', array(\"covoitureur\" => $result));\n    }\n\n    public function pdfAction(Covoiturage $cov)\n    {\n\n        $snappy = $this->get('knp_snappy.pdf');\n        $snappy->setOption('no-outline', true);\n        $snappy->setOption('page-size','LETTER');\n        $snappy->setOption('encoding', 'UTF-8');\n        $html = $this->renderView('@Covoiturage/Covoiturage/front/reserver_cov.html.twig', array('cov' =>$cov\n\n        ));\n\n        $filename = 'myFirstSnappyPDF';\n\n        return new Response(\n            $snappy->getOutputFromHtml($html),\n            200,\n            array(\n                'Content-Type'          => 'application/pdf',\n                'Content-Disposition'   => 'inline; filename=\"'.$filename.'.pdf\"'\n            )\n        );\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/CovoiturageBundle/Controller/CovoiturageController.php	(revision fe892c031e313853e4de2ae00064aa59091add3c)
++++ src/CovoiturageBundle/Controller/CovoiturageController.php	(date 1523381923323)
+@@ -3,12 +3,16 @@
+ namespace CovoiturageBundle\Controller;
+ 
+ use CovoiturageBundle\Entity\Covoiturage;
++use CovoiturageBundle\Form\CovoiturageRType;
+ use CovoiturageBundle\Form\CovoiturageType;
+ use CovoiturageBundle\Form\CovoiturageMType;
+ use FrontBundle\Entity\User;
+ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
++use Symfony\Component\HttpFoundation\JsonResponse;
+ use Symfony\Component\HttpFoundation\Request;
+ use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
++use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
++use Symfony\Component\Serializer\Serializer;
+ 
+ class CovoiturageController extends Controller
+ {
+@@ -107,10 +111,10 @@
+     {
+         $em=$this->getDoctrine()->getManager();
+         $cov=$em->getRepository('CovoiturageBundle:Covoiturage')->findBy(array("id"=>$id));
+-        $covoitureuN=$cov->getCovoitureur();
++        //$covoitureuN=$cov->getCovoitureur();
+         return $this->render('@Covoiturage/Covoiturage/front/reserver_cov.html.twig', array(
+             'cov'=>$cov,
+-            'covoitureuN'=>$covoitureuN
++           // 'covoitureuN'=>$covoitureuN
+         ));
+     }
+ 
+@@ -128,15 +132,31 @@
+ 
+     public function chercherCovAction(Request $request)
+     {
+-        $em = $this->getDoctrine()->getManager();
+         $covs=new Covoiturage();
+-        if ( $request->isMethod('post')  ) {
+-            $lieuDep=$request->get("lieuDep");
++        $form=$this->createForm(CovoiturageRType::class,$covs);
++        $em = $this->getDoctrine()->getManager();
++        $covs=$em->getRepository('CovoiturageBundle:Covoiturage')->findAll();
++        $form->handleRequest($request);
++
++        if($request->isXmlHttpRequest()){
++            $serializer=new Serializer(array(new ObjectNormalizer()));
++            $adresse=$covs->getTitre();
++            echo $adresse;
++            $c=$em->getRepository('CovoiturageBundle:Covoiturage')->rechercheAvancee($adresse);
++            $data=$serializer->normalize($c);
++            return new JsonResponse($data);
++        }
++
++        return $this->render('@Covoiturage/Covoiturage/front/chercher_cov.html.twig',array('form'=>$form->createView(),"cov"=>$covs));
++        ///
++        ///    //     if($form->isValid()){
++        /*if ( $request->isMethod('post')  ) {*/
++        /*    $lieuDep=$request->get("lieuDep");
+             $covs = $em->getRepository("CovoiturageBundle:Covoiturage")->rechercheAvancee($lieuDep);
+             return $this->render('@Covoiturage/Covoiturage/front/chercher_cov.html.twig', array(
+                 "cov" => $covs
+-            ));}
+-        return $this->render("@Covoiturage/Covoiturage/front/chercher_cov.html.twig",array ( "cov" => $covs));
++            ));}*/
++       // return $this->render("@Covoiturage/Covoiturage/front/chercher_cov.html.twig",array ( "cov" => $covs));
+     }
+ 
+     public function matchingCovAction()
+Index: src/CovoiturageBundle/Resources/views/Covoiturage/front/details_cov.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends \"base.html.twig\" %}\n{% block container %}\n\n\n    <div class=\"main-content\">\n        <section class=\"inner-header divider parallax layer-overlay overlay-dark-5\" data-bg-img=\"{{ asset('images/mariem//bg/bg3.jpg')}}\">\n        </section>\n        <section>\n            <div class=\"container\">\n                <div class=\"row\">\n                    <div class=\"col-md-8 blog-pull-right\">\n                        <div class=\"single-service\">\n\n                            <ul class=\"review_text list-inline\">\n\n                            </ul>\n                            <h3 class=\"line-bottom mt-20 mb-20 text-theme-color-red\">Détails covoiturage</h3>\n                            <table class=\"table table-bordered\">\n                                {% for c in cov %}\n                                <tr>\n                                    <td class=\"text-center font-16 font-weight-600 bg-theme-color-blue text-white\" colspan=\"4\">{{ c.titre }}</td>\n                                </tr>\n                                <tbody>\n                                <tr> <td><i class=\"fa fa-calendar text-theme-color-red pr-20\"></i>Date</td> <td>{{ c.date |date(\"d/m/y\")}}</td> </tr>\n                                <tr> <td class=\"bg-theme-color-yellow text-white\"><i class=\"fa fa-birthday-cake text-theme-color-blue pr-20\"></i>Moyenne d'age</td> <td class=\"bg-theme-color-green text-white\">5-6 ans</td> </tr>\n                                <tr> <td><i class=\"fa fa-users text-theme-color-red pr-20\"></i>Nombre de places</td> <td>{{ c.nbPlaces }}</td> </tr>\n                                <tr> <td class=\"bg-theme-color-red text-white\"><i class=\"fa fa-map-marker text-theme-color-yellow pr-20\"></i>Adresse de départ</td> <td class=\"bg-theme-color-sky text-white\">{{ c.lieuDep }}</td> </tr>\n                                <tr> <td><i class=\"fa fa-fighter-jet text-theme-color-red pr-20\"></i>Adresse destination</td> <td>{{ c.lieuDest }}</td> </tr>\n                                <tr> <td class=\"bg-theme-color-lemon text-white\"><i class=\"fa fa-clock-o text-theme-color-red pr-20\"></i>Heure départ</td> <td class=\"bg-theme-color-orange text-white\">{{ c.heureDep|date('h:i') }}</td> </tr>\n                                <tr> <td><i class=\"fa fa-euro text-theme-color-red pr-20\"></i>Frais</td> <td>Gratuit</td> </tr>\n\n                                </tbody>\n\n                            </table>\n                        </div>\n                    </div>\n                    <!---- MAP --->\n                    <div class=\"col-sm-12 col-md-4\">\n                        <p><br><br><br></p>\n                        <div class=\"sidebar sidebar-left mt-sm-30\">\n                            <div class=\"event_map_marker\">\n                                <div id=\"evnetmap\"></div>\n                            </div>\n                        </div>\n                        <br>\n                        <div class=\"form-group\">\n                            <div class=\" mt-5\">\n                                <a class=\"btn btn-flat btn-dark btn-theme-color-green \" href=\"{{ path('modifier_cov', {\"id\":c.id}) }}\">Modifier</a>\n                                <a class=\"btn btn-flat btn-dark btn-theme-color-red \" color=\"white\" href=\"{{ path('supprimer_cov', {\"id\":c.id}) }}\">Supprimer</a></div>\n                        </div>\n                    </div>\n                    {% endfor %}\n                </div>\n            </div>\n        </section>\n    </div>\n    <!---- MAP --->\n\n    <!-- JS Files -->\n    <script src=\"js/vendor/jquery-3.2.1.min.js\"></script>\n    <script src=\"js/popper.min.js\"></script>\n    <script src=\"js/bootstrap.min.js\"></script>\n\n    <!-- Google Map js -->\n    <script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBmGmeot5jcjdaJTvfCmQPfzeoG_pABeWo\"></script>\n    <script>\n\n        // When the window has finished loading create our google map below\n        google.maps.event.addDomListener(window, 'load', init);\n\n        function init() {\n            // Basic options for a simple Google Map\n            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions\n            var mapOptions = {\n                // How zoomed in you want the map to start at (always required)\n                zoom: 12,\n\n                scrollwheel: false,\n\n                // The latitude and longitude to center the map (always required)\n                center: new google.maps.LatLng(36.8762, 10.1143), // New York\n\n                // How you would like to style the map.\n                // This is where you would paste any style found on Snazzy Maps.\n                styles:\n                    [\n\n                        {\n                            \"featureType\": \"administrative\",\n                            \"stylers\": [\n                                {\n                                    \"visibility\": \"off\"\n                                }\n                            ]\n                        },\n                        {\n                            \"featureType\": \"poi\",\n                            \"stylers\": [\n                                {\n                                    \"visibility\": \"simplified\"\n                                }\n                            ]\n                        },\n                        {\n                            \"featureType\": \"road\",\n                            \"elementType\": \"labels\",\n                            \"stylers\": [\n                                {\n                                    \"visibility\": \"simplified\"\n                                }\n                            ]\n                        },\n                        {\n                            \"featureType\": \"water\",\n                            \"stylers\": [\n                                {\n                                    \"visibility\": \"simplified\"\n                                }\n                            ]\n                        },\n                        {\n                            \"featureType\": \"transit\",\n                            \"stylers\": [\n                                {\n                                    \"visibility\": \"simplified\"\n                                }\n                            ]\n                        },\n                        {\n                            \"featureType\": \"landscape\",\n                            \"stylers\": [\n                                {\n                                    \"visibility\": \"simplified\"\n                                }\n                            ]\n                        },\n                        {\n                            \"featureType\": \"road.highway\",\n                            \"stylers\": [\n                                {\n                                    \"visibility\": \"off\"\n                                }\n                            ]\n                        },\n                        {\n                            \"featureType\": \"road.local\",\n                            \"stylers\": [\n                                {\n                                    \"visibility\": \"on\"\n                                }\n                            ]\n                        },\n                        {\n                            \"featureType\": \"road.highway\",\n                            \"elementType\": \"geometry\",\n                            \"stylers\": [\n                                {\n                                    \"visibility\": \"on\"\n                                }\n                            ]\n                        },\n                        {\n                            \"featureType\": \"water\",\n                            \"stylers\": [\n                                {\n                                    \"color\": \"#84afa3\"\n                                },\n                                {\n                                    \"lightness\": 52\n                                }\n                            ]\n                        },\n                        {\n                            \"stylers\": [\n                                {\n                                    \"saturation\": -17\n                                },\n                                {\n                                    \"gamma\": 0.36\n                                }\n                            ]\n                        },\n                        {\n                            \"featureType\": \"transit.line\",\n                            \"elementType\": \"geometry\",\n                            \"stylers\": [\n                                {\n                                    \"color\": \"#3f518c\"\n                                }\n                            ]\n                        }\n                    ]\n            };\n\n            // Get the HTML DOM element that will contain your map\n            // We are using a div with id=\"map\" seen below in the <body>\n            var mapElement = document.getElementById('evnetmap');\n\n            // Create the Google Map using our element and options defined above\n            var map = new google.maps.Map(mapElement, mapOptions);\n\n            // Let's also add a marker while we're at it\n            /* var marker = new google.maps.Marker({\n                 position: new google.maps.LatLng(36.862499,10.195556),\n                 map: map,\n                 title: 'Dcare!',\n                 icon: 'images/icons/map-2.png',\n                 animation:google.maps.Animation.BOUNCE\n\n             });*/\n        }\n    </script>\n\n\n\n    <script src=\"js/plugins.js\"></script>\n    <script src=\"js/active.js\"></script>\n\n\n{% endblock %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/CovoiturageBundle/Resources/views/Covoiturage/front/details_cov.html.twig	(revision fe892c031e313853e4de2ae00064aa59091add3c)
++++ src/CovoiturageBundle/Resources/views/Covoiturage/front/details_cov.html.twig	(date 1523377894975)
+@@ -53,6 +53,8 @@
+                 </div>
+             </div>
+         </section>
++        {{ render(controller('FOSMessageBundle:Message:newThread')) }}
++
+     </div>
+     <!---- MAP --->
+ 
+Index: tests/MessageBundle/Controller/DefaultControllerTest.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tests/MessageBundle/Controller/DefaultControllerTest.php	(date 1523374422842)
++++ tests/MessageBundle/Controller/DefaultControllerTest.php	(date 1523374422842)
+@@ -0,0 +1,17 @@
++<?php
++
++namespace MessageBundle\Tests\Controller;
++
++use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
++
++class DefaultControllerTest extends WebTestCase
++{
++    public function testIndex()
++    {
++        $client = static::createClient();
++
++        $crawler = $client->request('GET', '/');
++
++        $this->assertContains('Hello World', $client->getResponse()->getContent());
++    }
++}
+Index: src/MessageBundle/Resources/views/Message/search.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Resources/views/Message/search.html.twig	(date 1523357759905)
++++ src/MessageBundle/Resources/views/Message/search.html.twig	(date 1523357759905)
+@@ -0,0 +1,13 @@
++{% extends 'FOSMessageBundle::layout.html.twig' %}
++
++{% block fos_message_content %}
++
++<h2>{% trans from 'FOSMessageBundle' %}search{% endtrans %}</h2>
++
++<p>{% transchoice threads|length with {'%num%': threads|length } from 'FOSMessageBundle' %}
++    threads_found
++{% endtranschoice %}</p>
++
++{% include 'FOSMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}
++
++{% endblock %}
+Index: src/MessageBundle/Resources/config/services.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Resources/config/services.yml	(date 1523374422914)
++++ src/MessageBundle/Resources/config/services.yml	(date 1523374422914)
+@@ -0,0 +1,4 @@
++services:
++#    message.example:
++#        class: MessageBundle\Example
++#        arguments: ["@service_id", "plain_value", "%parameter%"]
+Index: src/MessageBundle/Resources/views/Message/newThread.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Resources/views/Message/newThread.html.twig	(date 1523377135104)
++++ src/MessageBundle/Resources/views/Message/newThread.html.twig	(date 1523377135104)
+@@ -0,0 +1,9 @@
++<div class="container">
++<h2>{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h2>
++
++<form action="{{ url('fos_message_thread_new') }}" method="post">
++    {{ form_widget(form) }}
++
++    <input type="submit" />
++</form>
++</div>
+\ No newline at end of file
+Index: src/MessageBundle/Entity/Message.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Entity/Message.php	(date 1523375519481)
++++ src/MessageBundle/Entity/Message.php	(date 1523375519481)
+@@ -0,0 +1,45 @@
++<?php
++
++namespace MessageBundle\Entity;
++
++use Doctrine\ORM\Mapping as ORM;
++use Doctrine\Common\Collections\Collection;
++use FOS\MessageBundle\Entity\Message as BaseMessage;
++
++/**
++ * @ORM\Entity
++ */
++class Message extends BaseMessage
++{
++    /**
++     * @ORM\Id
++     * @ORM\Column(type="integer")
++     * @ORM\GeneratedValue(strategy="AUTO")
++     */
++    protected $id;
++
++    /**
++     * @ORM\ManyToOne(
++     *   targetEntity="MessageBundle\Entity\Thread",
++     *   inversedBy="messages"
++     * )
++     * @var \FOS\MessageBundle\Model\ThreadInterface
++     */
++    protected $thread;
++
++    /**
++     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
++     * @var \FOS\MessageBundle\Model\ParticipantInterface
++     */
++    protected $sender;
++
++    /**
++     * @ORM\OneToMany(
++     *   targetEntity="MessageBundle\Entity\MessageMetadata",
++     *   mappedBy="message",
++     *   cascade={"all"}
++     * )
++     * @var MessageMetadata[]|Collection
++     */
++    protected $metadata;
++}
+\ No newline at end of file
+Index: src/CovoiturageBundle/Resources/views/Covoiturage/front/chercher_cov.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends \"base.html.twig\" %}\n {% block container %}\n\n     <section class=\"junior__welcome__area bg-image--26\">\n         <div class=\"container\">\n             <div class=\"row\">\n                 <div class=\"col-lg-12\">\n                     <div class=\"section__title text-center\">\n                         <h2 class=\"title__line\"><span class=\"text-theme-color-blue\">Recherche covoiturage </span></h2>\n                         <p>Trouver un covoiturage pour vos enfants est\n                             désormais un jeu d'enfants!</p>\n                     </div>\n                 </div>\n             </div>\n             <div class=\"row jn__welcome__wrapper align-items-center\">\n                 <div class=\"col-md-12 col-lg-6 col-sm-12\">\n                     <div class=\"welcome__juniro__inner\">\n                         <h3>Covoiturage <span class=\"theme-color\">All</span><span>For</span>Kids</h3>\n                         <p>All For Kids est l'unique plateforme en Tunisie destinée aux parents qui veulent\n                             proposer des covoiturages pour des enfants et qui cherchent à leur tour des covoiturages\n                             pour leurs enfants.</p>\n                         <div class=\"single__widget search\">\n                             <h4>Trouver</h4>\n                             <form action=\"#\">\n                                 <input type=\"text\" id=\"adresse\" name=\"adresse\" placeholder=\"adresse\">\n\n                             </form>\n                         </div>\n                         <div class=\"wel__btn\">\n                             <a class=\"dcare__btn\" href=\"{{ path('chercher_cov') }}\"><span class=\"fa fa-search\"></span></a>\n                         </div>\n\n                             <table border=\"0px\">\n                                 {% for c in cov  %}\n                                     <tr>\n                                         <td>Titre</td>\n                                         <td>Date</td>\n                                         <td>Heure départ</td>\n                                         <td>Lieu départ</td>\n                                         <td>Destination </td>\n\n                                     </tr>\n\n                                     <tr>\n                                         <td>{{ c.titre }}</td>\n                                         <td>{{ c.date |date(\"dd/mm/yyyy\") }}</td>\n                                         <td>{{ c.heureDep |date (\"h:i\") }}</td>\n                                         <td>{{c.adresse}}</td>\n                                     </tr>\n                                 {% endfor %}\n                             </table>\n\n                     </div>\n                 </div>\n                 <div class=\"col-md-12 col-lg-6 col-sm-12 md-mt-40 sm-mt-40\">\n                     <div class=\"jnr__Welcome__thumb\">\n                         <img src=\"{{ asset('images/mariem/6.png') }}\" alt=\"\" class=\"img-fullwidth\">\n                         <a class=\"play__btn\" href=\"https://www.youtube.com/watch?v=MCJEkZtqlBk\"><i class=\"fa fa-play\"></i></a>\n                     </div>\n                 </div>\n             </div>\n         </div>\n     </section>\n {% endblock %}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/CovoiturageBundle/Resources/views/Covoiturage/front/chercher_cov.html.twig	(revision fe892c031e313853e4de2ae00064aa59091add3c)
++++ src/CovoiturageBundle/Resources/views/Covoiturage/front/chercher_cov.html.twig	(date 1523371563862)
+@@ -21,45 +21,68 @@
+                              pour leurs enfants.</p>
+                          <div class="single__widget search">
+                              <h4>Trouver</h4>
+-                             <form action="#">
+-                                 <input type="text" id="adresse" name="adresse" placeholder="adresse">
+-
+-                             </form>
++                             {{ form(form) }}
+                          </div>
+                          <div class="wel__btn">
+-                             <a class="dcare__btn" href="{{ path('chercher_cov') }}"><span class="fa fa-search"></span></a>
++                             <a class="dcare__btn" href="about-us.html"><span class="fa fa-search"></span></a>
+                          </div>
+ 
+-                             <table border="0px">
+-                                 {% for c in cov  %}
+-                                     <tr>
+-                                         <td>Titre</td>
+-                                         <td>Date</td>
+-                                         <td>Heure départ</td>
+-                                         <td>Lieu départ</td>
+-                                         <td>Destination </td>
+-
+-                                     </tr>
+-
+-                                     <tr>
+-                                         <td>{{ c.titre }}</td>
+-                                         <td>{{ c.date |date("dd/mm/yyyy") }}</td>
+-                                         <td>{{ c.heureDep |date ("h:i") }}</td>
+-                                         <td>{{c.adresse}}</td>
+-                                     </tr>
+-                                 {% endfor %}
+-                             </table>
+-
+                      </div>
+                  </div>
+                  <div class="col-md-12 col-lg-6 col-sm-12 md-mt-40 sm-mt-40">
+                      <div class="jnr__Welcome__thumb">
+                          <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+-                         <a class="play__btn" href="https://www.youtube.com/watch?v=MCJEkZtqlBk"><i class="fa fa-play"></i></a>
++                         <a class="play__btn" href="https://www.youtube.com/watch?v=Sl_fcDJVbgI"><i class="fa fa-play"></i></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
++     <div id="div">
++
++     </div>
++     <script src="{{ asset('jquery-3.2.1.js') }}"></script>
++     <script>
++         $("#rechercheCov").keyup(
++             function(){
++                 var adresse=$("#rechercheCov").val();
++
++                 var Data='adresse=' + adresse;
++                 console.log(Data);
++                 $.ajax({
++                     type:"POST",
++                     url: "{{ path('chercher_cov') }}",
++                     data: Data,
++                     success:function(data){
++                         console.log(data);
++
++                         $("#div").html("<table id='res' border='1'>" +
++                            " <td>Titre</td> <td>Date</td> <td>Heure départ</td> <td>Lieu départ</td> <td>Destination </td><td>Details</td></table>");
++                         $.each(data,function (k,e1) {
++
++
++                             $("#res").append(
++                                 "<tr>"+
++                                 "<td>"+e1.titre+"</td>"+
++                                 "<td>"+e1.date+"</td>"+
++                                 "<td>"+e1.heureDep +"</td>"+
++                                 "<td>"+e1.lieuDep +"</td>"+
++                                 "<td>"+e1.lieuDest +"</td>"+
++                                 "<td>"+e1.description +"</td>"+
++                                 "<td>"+
++                                 "<a href='{{ path('details_cov',{'id':"+e1.id+"}) }}'>Details"+
++                                 "</a>"+
++                                 "</td>"+
++                                 "</tr>");
++
++
++                         });
++                     }
++                 });
++
++             });
++
++
++
++     </script>
+  {% endblock %}
+-
+Index: app/config/config.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>imports:\n    - { resource: parameters.yml }\n    - { resource: security.yml }\n    - { resource: services.yml }\n    - { resource: \"@FrontBundle/Resources/config/services.yml\" }\n    - { resource: \"@ELearningBundle/Resources/config/services.yml\" }\n    - { resource: \"@RecetteBundle/Resources/config/services.yml\" }\n    - { resource: \"@GarderieBundle/Resources/config/services.yml\" }\n    - { resource: \"@CovoiturageBundle/Resources/config/services.yml\" }\n    - { resource: \"@MedecinBundle/Resources/config/services.yml\" }\n    - { resource: \"@BabysittingBundle/Resources/config/services.yml\" }\n    - { resource: \"@JeuxBundle/Resources/config/services.yml\" }\n    - { resource: \"@BackOfficeBundle/Resources/config/services.yml\" }\n\n# Put parameters here that don't need to change on each machine where the app is deployed\n# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration\nparameters:\n    locale: en\n    image_directory: '%kernel.project_dir%/web/uploads/images'\n    brochures_directory: uploads/brochures\n\nframework:\n    #esi: ~\n    translator: ~\n    secret: '%secret%'\n    router:\n        resource: '%kernel.project_dir%/app/config/routing.yml'\n        strict_requirements: ~\n    form: ~\n    csrf_protection: ~\n    validation: { enable_annotations: true }\n    #serializer: { enable_annotations: true }\n    templating:\n        engines: ['twig']\n    default_locale: '%locale%'\n    trusted_hosts: ~\n    session:\n        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id\n        handler_id: session.handler.native_file\n        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'\n    fragments: ~\n    http_method_override: true\n    assets: ~\n    php_errors:\n        log: true\n\n# Twig Configuration\ntwig:\n    debug: '%kernel.debug%'\n    strict_variables: '%kernel.debug%'\n\n# Doctrine Configuration\ndoctrine:\n    dbal:\n        driver: pdo_mysql\n        host: '%database_host%'\n        port: '%database_port%'\n        dbname: '%database_name%'\n        user: '%database_user%'\n        password: '%database_password%'\n        charset: UTF8\n        # if using pdo_sqlite as your database driver:\n        #   1. add the path in parameters.yml\n        #     e.g. database_path: '%kernel.project_dir%/var/data/data.sqlite'\n        #   2. Uncomment database_path in parameters.yml.dist\n        #   3. Uncomment next line:\n        #path: '%database_path%'\n\n    orm:\n        auto_generate_proxy_classes: '%kernel.debug%'\n        naming_strategy: doctrine.orm.naming_strategy.underscore\n        auto_mapping: true\n\n# Swiftmailer Configuration\nswiftmailer:\n    transport: '%mailer_transport%'\n    host: '%mailer_host%'\n    username: '%mailer_user%'\n    password: '%mailer_password%'\n    spool: { type: memory }\nfos_user:\n    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'\n    firewall_name: main\n    user_class: FrontBundle\\Entity\\User\n    from_email:\n      address: 'allforkids.codeminers@gmail.com'\n      sender_name:  'All For Kids'\nknp_paginator:\n    page_range:                 5          # default page range used in pagination control\n    default_options:\n        page_name:              page       # page query parameter name\n        sort_field_name:        sort       # sort field query parameter name\n        sort_direction_name:    direction  # sort direction query parameter name\n        distinct:               true       # ensure distinct results, useful when ORM queries are using GROUP BY statements\n    template:\n        pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig     # sliding pagination controls template\n        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/config/config.yml	(revision fe892c031e313853e4de2ae00064aa59091add3c)
++++ app/config/config.yml	(date 1523374423397)
+@@ -11,6 +11,7 @@
+     - { resource: "@BabysittingBundle/Resources/config/services.yml" }
+     - { resource: "@JeuxBundle/Resources/config/services.yml" }
+     - { resource: "@BackOfficeBundle/Resources/config/services.yml" }
++    - { resource: "@MessageBundle/Resources/config/services.yml" }
+ 
+ # Put parameters here that don't need to change on each machine where the app is deployed
+ # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+@@ -96,3 +97,8 @@
+         pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig     # sliding pagination controls template
+         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig
+ 
++fos_message:
++    db_driver: orm
++    thread_class: MessageBundle\Entity\Thread
++    message_class: MessageBundle\Entity\Message
++
+Index: src/MessageBundle/Resources/views/layout.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Resources/views/layout.html.twig	(date 1523376000238)
++++ src/MessageBundle/Resources/views/layout.html.twig	(date 1523376000238)
+@@ -0,0 +1,20 @@
++<!DOCTYPE html>
++<html lang="en">
++    <head>
++        <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}" />
++        <title>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</title>
++    </head>
++
++    <body>
++        <h1>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</h1>
++
++        <ul>
++            <li><a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
++            <li><a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></li>
++            <li><a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></li>
++        </ul>
++
++        {% block fos_message_content %}{% endblock %}
++
++    </body>
++</html>
+Index: src/MessageBundle/Controller/MessageController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Controller/MessageController.php	(date 1523377630828)
++++ src/MessageBundle/Controller/MessageController.php	(date 1523377630828)
+@@ -0,0 +1,177 @@
++<?php
++
++namespace MessageBundle\Controller;
++
++use Symfony\Component\DependencyInjection\ContainerAwareInterface;
++use Symfony\Component\DependencyInjection\ContainerInterface;
++use Symfony\Component\HttpFoundation\RedirectResponse;
++use FOS\MessageBundle\Provider\ProviderInterface;
++use Symfony\Component\HttpFoundation\Request;
++use Symfony\Component\HttpFoundation\Response;
++
++class MessageController implements ContainerAwareInterface
++{
++    /**
++     * @var ContainerInterface
++     */
++    protected $container;
++
++    /**
++     * Displays the authenticated participant inbox.
++     *
++     * @return Response
++     */
++    public function inboxAction()
++    {
++        $threads = $this->getProvider()->getInboxThreads();
++
++        return $this->container->get('templating')->renderResponse('FOSMessageBundle:Message:inbox.html.twig', array(
++            'threads' => $threads,
++        ));
++    }
++
++    /**
++     * Displays the authenticated participant messages sent.
++     *
++     * @return Response
++     */
++    public function sentAction()
++    {
++        $threads = $this->getProvider()->getSentThreads();
++
++        return $this->container->get('templating')->renderResponse('FOSMessageBundle:Message:sent.html.twig', array(
++            'threads' => $threads,
++        ));
++    }
++
++    /**
++     * Displays the authenticated participant deleted threads.
++     *
++     * @return Response
++     */
++    public function deletedAction()
++    {
++        $threads = $this->getProvider()->getDeletedThreads();
++
++        return $this->container->get('templating')->renderResponse('FOSMessageBundle:Message:deleted.html.twig', array(
++            'threads' => $threads,
++        ));
++    }
++
++    /**
++     * Displays a thread, also allows to reply to it.
++     *
++     * @param string $threadId the thread id
++     *
++     * @return Response
++     */
++    public function threadAction($threadId)
++    {
++        $thread = $this->getProvider()->getThread($threadId);
++        $form = $this->container->get('fos_message.reply_form.factory')->create($thread);
++        $formHandler = $this->container->get('fos_message.reply_form.handler');
++
++        if ($message = $formHandler->process($form)) {
++            return new RedirectResponse($this->container->get('router')->generate('fos_message_thread_view', array(
++                'threadId' => $message->getThread()->getId(),
++            )));
++        }
++
++        return $this->container->get('templating')->renderResponse('FOSMessageBundle:Message:thread.html.twig', array(
++            'form' => $form->createView(),
++            'thread' => $thread,
++        ));
++    }
++
++    /**
++     * Create a new message thread.
++     *
++     * @return Response
++     */
++    public function newThreadAction(Request $request)
++    {
++        $form = $this->container->get('fos_message.new_thread_form.factory')->create();
++        $formHandler = $this->container->get('fos_message.new_thread_form.handler');
++
++        $username = $request->get('username');
++        $subject = $request->get('subject');
++
++        if ($message = $formHandler->process($form)) {
++            return new RedirectResponse($this->container->get('router')->generate('fos_message_thread_view', array(
++                'threadId' => $message->getThread()->getId(),
++            )));
++        }
++
++        return $this->container->get('templating')->renderResponse('FOSMessageBundle:Message:newThread.html.twig', array(
++            'form' => $form->createView(),
++            'data' => $form->getData(),
++            'username' => $username,
++            'subject' => $subject
++        ));
++    }
++    /**
++     * Deletes a thread.
++     *
++     * @param string $threadId the thread id
++     *
++     * @return RedirectResponse
++     */
++    public function deleteAction($threadId)
++    {
++        $thread = $this->getProvider()->getThread($threadId);
++        $this->container->get('fos_message.deleter')->markAsDeleted($thread);
++        $this->container->get('fos_message.thread_manager')->saveThread($thread);
++
++        return new RedirectResponse($this->container->get('router')->generate('fos_message_inbox'));
++    }
++
++    /**
++     * Undeletes a thread.
++     *
++     * @param string $threadId
++     *
++     * @return RedirectResponse
++     */
++    public function undeleteAction($threadId)
++    {
++        $thread = $this->getProvider()->getThread($threadId);
++        $this->container->get('fos_message.deleter')->markAsUndeleted($thread);
++        $this->container->get('fos_message.thread_manager')->saveThread($thread);
++
++        return new RedirectResponse($this->container->get('router')->generate('fos_message_inbox'));
++    }
++
++    /**
++     * Searches for messages in the inbox and sentbox.
++     *
++     * @return Response
++     */
++    public function searchAction()
++    {
++        $query = $this->container->get('fos_message.search_query_factory')->createFromRequest();
++        $threads = $this->container->get('fos_message.search_finder')->find($query);
++
++        return $this->container->get('templating')->renderResponse('FOSMessageBundle:Message:search.html.twig', array(
++            'query' => $query,
++            'threads' => $threads,
++        ));
++    }
++
++    /**
++     * Gets the provider service.
++     *
++     * @return ProviderInterface
++     */
++    protected function getProvider()
++    {
++        return $this->container->get('fos_message.provider');
++    }
++
++    /**
++     * {@inheritdoc}
++     */
++    public function setContainer(ContainerInterface $container = null)
++    {
++        $this->container = $container;
++    }
++}
+Index: src/MessageBundle/Entity/MessageMetadata.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/MessageBundle/Entity/MessageMetadata.php	(date 1523375667513)
++++ src/MessageBundle/Entity/MessageMetadata.php	(date 1523375667513)
+@@ -0,0 +1,35 @@
++<?php
++// src/MessageBundle/Entity/MessageMetadata.php
++
++namespace MessageBundle\Entity;
++
++use Doctrine\ORM\Mapping as ORM;
++use FOS\MessageBundle\Entity\MessageMetadata as BaseMessageMetadata;
++
++/**
++ * @ORM\Entity
++ */
++class MessageMetadata extends BaseMessageMetadata
++{
++    /**
++     * @ORM\Id
++     * @ORM\Column(type="integer")
++     * @ORM\GeneratedValue(strategy="AUTO")
++     */
++    protected $id;
++
++    /**
++     * @ORM\ManyToOne(
++     *   targetEntity="MessageBundle\Entity\Message",
++     *   inversedBy="metadata"
++     * )
++     * @var \FOS\MessageBundle\Model\MessageInterface
++     */
++    protected $message;
++
++    /**
++     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
++     * @var \FOS\MessageBundle\Model\ParticipantInterface
++     */
++    protected $participant;
++}
+\ No newline at end of file
+Index: vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Entity/ThreadMetadata.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace BabysittingBundle\\Entity;\n\nuse Doctrine\\ORM\\Mapping as ORM;\nuse FOS\\MessageBundle\\Entity\\ThreadMetadata as BaseThreadMetadata;\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(name=\"message_thread_metadata\")\n */\nclass ThreadMetadata extends BaseThreadMetadata\n{\n    /**\n     * @ORM\\Id\n     * @ORM\\Column(type=\"integer\")\n     * @ORM\\GeneratedValue(strategy=\"AUTO\")\n     */\n    protected $id;\n\n    /**\n     * @ORM\\ManyToOne(\n     *   targetEntity=\"BabysittingBundle\\Entity\\Thread\",\n     *   inversedBy=\"metadata\"\n     * )\n     * @var \\FOS\\MessageBundle\\Model\\ThreadInterface\n     */\n    protected $thread;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"FrontBundle\\Entity\\User\")\n     * @var \\FOS\\MessageBundle\\Model\\ParticipantInterface\n     */\n    protected $participant;\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Entity/ThreadMetadata.php	(revision fe892c031e313853e4de2ae00064aa59091add3c)
++++ vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Entity/ThreadMetadata.php	(date 1519250830000)
+@@ -1,35 +1,35 @@
+ <?php
+ 
+-namespace BabysittingBundle\Entity;
++namespace FOS\MessageBundle\Entity;
+ 
+-use Doctrine\ORM\Mapping as ORM;
+-use FOS\MessageBundle\Entity\ThreadMetadata as BaseThreadMetadata;
++use FOS\MessageBundle\Model\ThreadInterface;
++use FOS\MessageBundle\Model\ThreadMetadata as BaseThreadMetadata;
+ 
+-/**
+- * @ORM\Entity
+- * @ORM\Table(name="message_thread_metadata")
+- */
+-class ThreadMetadata extends BaseThreadMetadata
++abstract class ThreadMetadata extends BaseThreadMetadata
+ {
+-    /**
+-     * @ORM\Id
+-     * @ORM\Column(type="integer")
+-     * @ORM\GeneratedValue(strategy="AUTO")
+-     */
+     protected $id;
+-
+-    /**
+-     * @ORM\ManyToOne(
+-     *   targetEntity="BabysittingBundle\Entity\Thread",
+-     *   inversedBy="metadata"
+-     * )
+-     * @var \FOS\MessageBundle\Model\ThreadInterface
+-     */
+     protected $thread;
+ 
+     /**
+-     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
+-     * @var \FOS\MessageBundle\Model\ParticipantInterface
++     * Gets the thread map id.
++     *
++     * @return int
+      */
+-    protected $participant;
++    public function getId()
++    {
++        return $this->id;
++    }
++
++    /**
++     * @return ThreadInterface
++     */
++    public function getThread()
++    {
++        return $this->thread;
++    }
++
++    public function setThread(ThreadInterface $thread)
++    {
++        $this->thread = $thread;
++    }
+ }
+Index: vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Entity/Message.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace BabysittingBundle\\Entity;\n\nuse Doctrine\\ORM\\Mapping as ORM;\nuse Doctrine\\Common\\Collections\\Collection;\nuse FOS\\MessageBundle\\Entity\\Message as BaseMessage;\n\n/**\n * @ORM\\Entity\n */\nclass Message extends BaseMessage\n{\n    /**\n     * @ORM\\Id\n     * @ORM\\Column(type=\"integer\")\n     * @ORM\\GeneratedValue(strategy=\"AUTO\")\n     */\n    protected $id;\n\n\n    /**\n     * @ORM\\ManyToOne(\n     *   targetEntity=\"BabysittingBundle\\Entity\\Thread\",\n     *   inversedBy=\"messages\"\n     * )\n     * @var \\FOS\\MessageBundle\\Model\\ThreadInterface\n     */\n\n    protected $thread;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"FrontBundle\\Entity\\User\")\n     * @var \\FOS\\MessageBundle\\Model\\ParticipantInterface\n     */\n    protected $sender;\n\n    /**\n     * @ORM\\OneToMany(\n     *   targetEntity=\"BabysittingBundle\\Entity\\MessageMetadata\",\n     *   mappedBy=\"message\",\n     *   cascade={\"all\"}\n     * )\n     * @var MessageMetadata[]|Collection\n     */\n    protected $metadata;\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Entity/Message.php	(revision fe892c031e313853e4de2ae00064aa59091add3c)
++++ vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Entity/Message.php	(date 1519250830000)
+@@ -1,47 +1,29 @@
+ <?php
+ 
+-namespace BabysittingBundle\Entity;
++namespace FOS\MessageBundle\Entity;
+ 
+-use Doctrine\ORM\Mapping as ORM;
+ use Doctrine\Common\Collections\Collection;
+-use FOS\MessageBundle\Entity\Message as BaseMessage;
++use FOS\MessageBundle\Model\Message as BaseMessage;
++use FOS\MessageBundle\Model\MessageMetadata as ModelMessageMetadata;
+ 
+-/**
+- * @ORM\Entity
+- */
+-class Message extends BaseMessage
++abstract class Message extends BaseMessage
+ {
+     /**
+-     * @ORM\Id
+-     * @ORM\Column(type="integer")
+-     * @ORM\GeneratedValue(strategy="AUTO")
+-     */
+-    protected $id;
+-
+-
+-    /**
+-     * @ORM\ManyToOne(
+-     *   targetEntity="BabysittingBundle\Entity\Thread",
+-     *   inversedBy="messages"
+-     * )
+-     * @var \FOS\MessageBundle\Model\ThreadInterface
+-     */
+-
+-    protected $thread;
+-
+-    /**
+-     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
+-     * @var \FOS\MessageBundle\Model\ParticipantInterface
++     * Get the collection of MessageMetadata.
++     *
++     * @return Collection
+      */
+-    protected $sender;
++    public function getAllMetadata()
++    {
++        return $this->metadata;
++    }
+ 
+     /**
+-     * @ORM\OneToMany(
+-     *   targetEntity="BabysittingBundle\Entity\MessageMetadata",
+-     *   mappedBy="message",
+-     *   cascade={"all"}
+-     * )
+-     * @var MessageMetadata[]|Collection
++     * {@inheritdoc}
+      */
+-    protected $metadata;
+-}
+\ No newline at end of file
++    public function addMetadata(ModelMessageMetadata $meta)
++    {
++        $meta->setMessage($this);
++        parent::addMetadata($meta);
++    }
++}
