@@ -38,3 +38,11 @@ details_babysitting:
 supprimer_babysitting:
     path:     /supprimerBabysitting/{id}
     defaults: { _controller: BabysittingBundle:Babysitting:supprimerBabysitting }
+
+list_babysittings_admin:
+    path:     /listBabysittingsAdmin
+    defaults: { _controller: BabysittingBundle:Babysitting:listBabysittingsAdmin }
+
+list_babysitters_admin:
+    path:     /listBabysittersAdmin
+    defaults: { _controller: BabysittingBundle:Babysitting:listBabysittersAdmin }

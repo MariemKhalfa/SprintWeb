@@ -8,13 +8,15 @@
 
 namespace FrontBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\MessageBundle\Model\ParticipantInterface;
 use FOS\UserBundle\Model\User as BaseUser;
+
 
 /**
  * @ORM\Entity(repositoryClass="FrontBundle\Repository\UserRepository")
  * @ORM\Table(name="`user`")
  */
-class User extends BaseUser
+class User extends BaseUser implements ParticipantInterface
 {
     /**
      * @ORM\Id

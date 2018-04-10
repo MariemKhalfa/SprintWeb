@@ -36,4 +36,11 @@ class BabysittingRepository extends EntityRepository
 
         return $result = $query->getResult();
     }
+
+    public function CurrentBabysittings()
+    {
+        $query = $this->getEntityManager()
+            ->createQuery("SELECT c FROM BabysittingBundle:Babysitting c WHERE  c.date > CURRENT_DATE()");
+        return $result = $query->getResult();
+    }
 }

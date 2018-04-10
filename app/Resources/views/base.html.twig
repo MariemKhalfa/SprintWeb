@@ -79,7 +79,7 @@
             color: red;
         }</style>
 
-
+    {% block stylesheets %}{% endblock %}
     <!-- CSS | Theme Color -->
     <link href="{{ asset('images/mariem/css/colors/theme-skin-color-set-1.css') }}" rel="stylesheet" type="text/css">
     <!---Mariem -->
@@ -161,28 +161,25 @@
                                     </li>
 
                                     <li class="drop"><a href="{{ path('covoiturage_homepage') }}">Covoiturage</a>
+                                        {% if is_granted('ROLE_PARENT')  %}
                                         <ul class="dropdown__menu">
                                             <li><a href="{{ path('chercher_cov') }}">Trouver un covoiturage</a></li>
                                             <li><a href="{{ path('ajouter_cov') }}">Proposer un covoiturage</a></li>
-                                            <li><a href="{{ path('lister_des_cov') }}">Mes covoiturages correspondants</a></li>
-                                            <li><a href="{{ path('lister_mes_cov') }}">Afficher mes covoiturages</a></li>
+                                            <li><a href="{{ path('lister_des_cov') }}">Covoiturages potentiels</a></li>
+                                            <li><a href="{{ path('lister_mes_cov') }}">Mes covoiturages</a></li>
                                             <li><a href="{{ path('historique_cov') }}">Historique covoiturages</a></li>
 
-                                        </ul>
+                                        </ul> {% endif %}
                                     </li>
-                               {#     {% if is_granted('ROLE_COVOITUREUR') %}
-                                    <li class="drop"><a href="">Classe</a>
-                                        {% else %}
-                                    <li class="drop"><a href="{{ path('covoiturage_afficherCov') }}">Covoiturages</a>
-                                        {% endif %}#}
                                     <li class="drop"><a href="{{ path('babysitting_homepage') }}">Babysitting</a>
+                                        {% if is_granted('ROLE_PARENT')  %}
                                         <ul class="dropdown__menu">
-                                            <li><a href="{{ path('chercher_babysitting') }}">Trouver un babysittinge</a></li>
-                                             <li><a href="{{ path('ajouter_babysitting') }}">Proposer un babysitting</a></li>
+                                            <li><a href="{{ path('chercher_babysitting') }}">Trouver un babysitting</a></li>
+                                            <li><a href="{{ path('ajouter_babysitting') }}">Proposer un babysitting</a></li>
                                             <li><a href="{{ path('lister_mes_babysittings') }}">Afficher mes babysittings</a></li>
                                             <li><a href="{{ path('historique_babysitting') }}">Historique babysitting</a></li>
 
-                                        </ul>
+                                        </ul> {% endif %}
                                     </li>
                                     <li class="drop"><a href="{{ path('evenement_homepage') }}">Evènements</a>
 

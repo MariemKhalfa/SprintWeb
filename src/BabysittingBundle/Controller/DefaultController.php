@@ -8,6 +8,9 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('BabysittingBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $bab = $em->getRepository("BabysittingBundle:Babysitting")->CurrentBabysittings();
+        return $this->render('BabysittingBundle:Default:index.html.twig', array("bab" => $bab));
     }
 }

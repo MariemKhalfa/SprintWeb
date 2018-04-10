@@ -72,3 +72,7 @@ supprimer_cov:
 list_cov_admin:
     path:     /listCovAdmin
     defaults: { _controller: CovoiturageBundle:Covoiturage:listCovAdmin }
+
+list_covoitureurs_admin:
+    path:     /listCovoitureursAdmin
+    defaults: { _controller: CovoiturageBundle:Covoiturage:listCovoitureursAdmin }

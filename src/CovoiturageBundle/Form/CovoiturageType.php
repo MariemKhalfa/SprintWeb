@@ -47,6 +47,4 @@ class CovoiturageType extends AbstractType
     {
         return 'covoituragebundle_covoiturage';
     }
-
-
 }
