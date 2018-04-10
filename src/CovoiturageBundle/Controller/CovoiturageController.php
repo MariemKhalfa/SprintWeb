@@ -132,6 +132,7 @@ class CovoiturageController extends Controller
 
     public function chercherCovAction(Request $request)
     {
+
         $covs=new Covoiturage();
         $form=$this->createForm(CovoiturageRType::class,$covs);
         $em = $this->getDoctrine()->getManager();
@@ -139,10 +140,11 @@ class CovoiturageController extends Controller
         $form->handleRequest($request);
 
         if($request->isXmlHttpRequest()){
+            echo "haifa1";
             $serializer=new Serializer(array(new ObjectNormalizer()));
-            $adresse=$covs->getTitre();
-            echo $adresse;
-            $c=$em->getRepository('CovoiturageBundle:Covoiturage')->rechercheAvancee($adresse);
+            $adresse=$covs->getTitre();  echo "haifa2";
+            echo $adresse;  echo "haifa3";
+            $c=$em->getRepository('CovoiturageBundle:Covoiturage')->rechercheAvancee($adresse);  echo "haifa4";
             $data=$serializer->normalize($c);
             return new JsonResponse($data);
         }
