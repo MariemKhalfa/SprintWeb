@@ -129,16 +129,14 @@ class CovoiturageController extends Controller
     public function chercherCovAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $covs=new Covoiturage();
         if ( $request->isMethod('post')  ) {
             $lieuDep=$request->get("lieuDep");
-
-            $user = $this->container->get('security.token_storage')->getToken()->getUser();
             $covs = $em->getRepository("CovoiturageBundle:Covoiturage")->rechercheAvancee($lieuDep);
-
             return $this->render('@Covoiturage/Covoiturage/front/chercher_cov.html.twig', array(
                 "cov" => $covs
             ));}
-        return $this->redirectToRoute("chercher_cov");
+        return $this->render("@Covoiturage/Covoiturage/front/chercher_cov.html.twig",array ( "cov" => $covs));
     }
 
     public function matchingCovAction()
