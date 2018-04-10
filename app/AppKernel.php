@@ -31,7 +31,7 @@ class AppKernel extends Kernel
             new JeuxBundle\JeuxBundle(),
             new BackOfficeBundle\BackOfficeBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
-            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

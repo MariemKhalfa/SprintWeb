@@ -3,12 +3,16 @@
 namespace CovoiturageBundle\Controller;
 
 use CovoiturageBundle\Entity\Covoiturage;
+use CovoiturageBundle\Form\CovoiturageRType;
 use CovoiturageBundle\Form\CovoiturageType;
 use CovoiturageBundle\Form\CovoiturageMType;
 use FrontBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class CovoiturageController extends Controller
 {
@@ -107,10 +111,10 @@ class CovoiturageController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $cov=$em->getRepository('CovoiturageBundle:Covoiturage')->findBy(array("id"=>$id));
-        $covoitureuN=$cov->getCovoitureur();
+        //$covoitureuN=$cov->getCovoitureur();
         return $this->render('@Covoiturage/Covoiturage/front/reserver_cov.html.twig', array(
             'cov'=>$cov,
-            'covoitureuN'=>$covoitureuN
+           // 'covoitureuN'=>$covoitureuN
         ));
     }
 
@@ -128,15 +132,31 @@ class CovoiturageController extends Controller
 
     public function chercherCovAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
         $covs=new Covoiturage();
-        if ( $request->isMethod('post')  ) {
-            $lieuDep=$request->get("lieuDep");
+        $form=$this->createForm(CovoiturageRType::class,$covs);
+        $em = $this->getDoctrine()->getManager();
+        $covs=$em->getRepository('CovoiturageBundle:Covoiturage')->findAll();
+        $form->handleRequest($request);
+
+        if($request->isXmlHttpRequest()){
+            $serializer=new Serializer(array(new ObjectNormalizer()));
+            $adresse=$covs->getTitre();
+            echo $adresse;
+            $c=$em->getRepository('CovoiturageBundle:Covoiturage')->rechercheAvancee($adresse);
+            $data=$serializer->normalize($c);
+            return new JsonResponse($data);
+        }
+
+        return $this->render('@Covoiturage/Covoiturage/front/chercher_cov.html.twig',array('form'=>$form->createView(),"cov"=>$covs));
+        ///
+        ///    //     if($form->isValid()){
+        /*if ( $request->isMethod('post')  ) {*/
+        /*    $lieuDep=$request->get("lieuDep");
             $covs = $em->getRepository("CovoiturageBundle:Covoiturage")->rechercheAvancee($lieuDep);
             return $this->render('@Covoiturage/Covoiturage/front/chercher_cov.html.twig', array(
                 "cov" => $covs
-            ));}
-        return $this->render("@Covoiturage/Covoiturage/front/chercher_cov.html.twig",array ( "cov" => $covs));
+            ));}*/
+       // return $this->render("@Covoiturage/Covoiturage/front/chercher_cov.html.twig",array ( "cov" => $covs));
     }
 
     public function matchingCovAction()

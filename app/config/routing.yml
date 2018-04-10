@@ -1,3 +1,7 @@
+message:
+    resource: "@MessageBundle/Resources/config/routing.yml"
+    prefix:   /
+
 back_office:
     resource: "@BackOfficeBundle/Resources/config/routing.yml"
     prefix:   /admin
@@ -65,4 +69,8 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
+
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /msg
 
