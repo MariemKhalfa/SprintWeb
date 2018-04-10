@@ -18,4 +18,8 @@ class DefaultController extends Controller
     {
         return $this->render('FrontBundle:Default:aboutUs.html.twig');
     }
+    public function registerAction()
+    {
+        return $this->render('@Front/register.html.twig');
+    }
 }

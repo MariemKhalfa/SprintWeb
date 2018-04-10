@@ -19,3 +19,6 @@ admin_login_check:
 admin_logout:
     path:  /admin/logout
     defaults: { _controller: FOSUserBundle:Security:logout }
+user_register:
+    path:  /register
+    defaults: { _controller: FrontBundle:Default:register }
