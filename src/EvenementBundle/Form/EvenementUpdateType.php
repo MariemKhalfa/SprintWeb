@@ -3,11 +3,12 @@
 namespace EvenementBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class EvenementUpdateType extends AbstractType
 {
@@ -16,9 +17,13 @@ class EvenementUpdateType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('intitule')->add('nbParticipants')->add('budget')->add('adresse')->add('date')->
-        add('image',FileType::class,array('data_class'=>null))->
-        add('Modifier',SubmitType::class);  ;
+        $builder->add('intitule')->add('nbParticipants')->add('budget')->add('adresse')->add('date',DateTimeType::class, array(
+            'placeholder' => array(
+                'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
+                'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second')))->
+        add('categorie',ChoiceType::class, array(
+            'choices' => array('parent' => 'parent', 'enfant' => 'enfant')))->add('image',FileType::class,array('label'=>"insérez une image"))->
+        add('Ajouter',SubmitType::class);
     }/**
  * {@inheritdoc}
  */

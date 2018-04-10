@@ -185,12 +185,7 @@
                                         </ul>
                                     </li>
                                     <li class="drop"><a href="{{ path('evenement_homepage') }}">Evènements</a>
-                                        <ul class="dropdown__menu">
-                                            <li><a href="{{ path('front_aboutUsPage') }}">about us</a></li>
-                                            <li><a href="#">Liste des évènements</a></li>
-                                            <li><a href="#">Trouver un évènement</a></li>
 
-                                        </ul>
                                     </li>
                                     {% if is_granted('ROLE_ENSEIGNANT') %}
                                     <li class="drop"><a href="">Classe</a>

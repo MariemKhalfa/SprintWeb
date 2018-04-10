@@ -13,3 +13,6 @@ Evenement_modifier:
 Evenement_supprimer:
     path:     /SupprimerEvenement
     defaults: { _controller: EvenementBundle:Evenement:Delete }
+evenement_parent:
+    path:     /evenementParent
+    defaults: { _controller: EvenementBundle:Evenement:listFront }

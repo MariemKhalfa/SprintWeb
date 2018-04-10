@@ -61,7 +61,12 @@ class Evenement
      * @ORM\Column(name="image", type="string", length=250, nullable=false)
      */
     private $image;
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categorie", type="string", length=250, nullable=false)
+     */
+    private $categorie;
 
     /**
      * Get id
@@ -199,6 +204,22 @@ class Evenement
     public function setAdresse($adresse)
     {
         $this->adresse = $adresse;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * @param string $categorie
+     */
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
     }
 
 

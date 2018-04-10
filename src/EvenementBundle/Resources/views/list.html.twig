@@ -46,8 +46,9 @@
                         <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Budget</th>
                         <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">adresse</th>
                         <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Date</th>
-
+                        <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Categorie</th>
                         <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Image</th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Options</th>
 
                     </tr>    </thead>
                     <tbody>
@@ -68,6 +69,7 @@
                             <td>{{ e.budget}}</td>
                             <td>{{ e.adresse }}</td>
                             <td>{{ e.date|date }}</td>
+                            <td>{{ e.categorie}}</td>
                             <td><img src="{{ asset('uploads/images/'~ e.image ) }}" width="100%"></td>
 
                             <td> <a  class='btn btn-primary btn-success' href="{{ path('Evenement_modifier',{'id':e.id}) }}" >Modifier </a></td>
