@@ -37,5 +37,25 @@ where g.id =:serie")->setParameter('serie',$serie)->setParameter('k',$k);
 ");
         return $query->getResult();
     }
+    function findSerieDQL($serie){
+        $query=$this->getEntityManager()->createQuery("select v from MedecinBundle:Medecin v 
+where v.adresse like :serie
+")->setParameter('serie','%'.$serie.'%');
+        return $query->getResult();
+    }
+    public function Update2($serie)
+    {
+
+        $query=$this->getEntityManager()->createQuery
+        ("Update GarderieBundle:Garderies g set g.nbInscriptions=g.nbInscriptions + 1
+where g.id =:serie")->setParameter('serie',$serie);
+        return $query->getResult();
+    }
+    function findDQL($serie){
+        $query=$this->getEntityManager()->createQuery("select v from GarderieBundle:Garderies v 
+where v.adresse like :serie
+")->setParameter('serie','%'.$serie.'%');
+        return $query->getResult();
+    }
 
 }

@@ -1,28 +1,27 @@
 {% extends 'backBase.html.twig' %}
+{% block btitle %}
+
+
+    <div class="row heading-bg bg-blue">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h5 class="txt-light">All For Kids admin</h5>
+        </div>
+
+        <!-- Breadcrumb -->
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="#"><span>Medecins</span></a></li>
+                <li class="active"><span>Ajouter Médecin</span></li>
+            </ol>
+        </div>
+        <!-- /Breadcrumb -->
+
+    </div>
+{% endblock %}
 {% block body %}
 {{ form_start(form) }}
-    <!-- Main Content -->
-    <div class="page-wrapper">
-        <div class="container-fluid">
 
-            <!-- Title -->
-            <div class="row heading-bg bg-pink">
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h5 class="txt-light">All For Kids</h5>
-                </div>
-
-                <!-- Breadcrumb -->
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                    <ol class="breadcrumb">
-                        <li><a href="index.html">Dashboard</a></li>
-                        <li><a href="#"><span>Medecins</span></a></li>
-                        <li class="active"><span>Ajout Medecin</span></li>
-                    </ol>
-                </div>
-                <!-- /Breadcrumb -->
-
-            </div>
-            <!-- /Title -->
 
     <!-- Row -->
     <div class="row">

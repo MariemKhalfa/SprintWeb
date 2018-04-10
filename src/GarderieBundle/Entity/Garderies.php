@@ -83,6 +83,12 @@ class Garderies
      * @ORM\Column(name="cout", type="integer", nullable=false)
      */
     private $cout;
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbInscriptions", type="integer", nullable=false)
+     */
+    private $nbInscriptions;
 
     /**
      * @var \DateTime
@@ -561,5 +567,29 @@ class Garderies
     public function getProprietaire()
     {
         return $this->proprietaire;
+    }
+
+    /**
+     * Set nbInscriptions
+     *
+     * @param integer $nbInscriptions
+     *
+     * @return Garderies
+     */
+    public function setNbInscriptions($nbInscriptions)
+    {
+        $this->nbInscriptions = $nbInscriptions;
+    
+        return $this;
+    }
+
+    /**
+     * Get nbInscriptions
+     *
+     * @return integer
+     */
+    public function getNbInscriptions()
+    {
+        return $this->nbInscriptions;
     }
 }

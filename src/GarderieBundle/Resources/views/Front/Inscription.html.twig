@@ -1,44 +1,14 @@
-
-{% extends 'GarderieBundle::GarderieBase.html.twig' %}
-{% block container %}
-    <script src="{{ asset('jquery-3.2.1.js') }}"></script>
-    <link rel="stylesheet" type="text/css" media="screen"
-          href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <script type="text/javascript"
-            src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
-    </script>
-    <script type="text/javascript"
-            src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
-    </script>
-    <script type="text/javascript"
-            src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
-    </script>
-    <script type="text/javascript"
-            src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
-    </script>
-
-    <!-- Start Bradcaump area -->
-    <div class="ht__bradcaump__area">
-        <div class="ht__bradcaump__container">
-            <img src="{{ asset('images/bg-png/6.png') }}" alt="bradcaump images">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="bradcaump__inner text-center">
-                            <h2 class="bradcaump-title">Nos Garderies</h2>
-                            <nav class="bradcaump-inner">
-                                <a class="breadcrumb-item" href="index-2.html">Home</a>
-                                <span class="brd-separetor"><img src="{{ asset('images/icons/brad.png') }}" alt="separator images"></span>
-                                <span class="breadcrumb-item active">Nos Garderies</span>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{% extends "base.html.twig" %}
+ {% block container %}
+    {% if app.session.flashBag.has('notice') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('notice') %}
+                {{ msg }}
+            {% endfor %}
         </div>
-    </div>
-    <!-- End Bradcaump area -->
+    {% endif %}
+
+
     <section class="page__contact bg--white pb--150 pt--180">
         <div class="container">
             <div class="row">

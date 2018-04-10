@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Medecins
  *
  * @ORM\Table(name="medecins")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MedecinBundle\Repository\MedecinRepository")
  */
 class Medecins
 {
@@ -248,5 +248,66 @@ class Medecins
     public function getImage()
     {
         return $this->image;
+    }
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="longitude", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $longitude;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="latitude", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $latitude;
+
+    /**
+     * Set longitude
+     *
+     * @param float $longitude
+     *
+     * @return Medecins
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
+    
+        return $this;
+    }
+
+    /**
+     * Get longitude
+     *
+     * @return float
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    /**
+     * Set latitude
+     *
+     * @param float $latitude
+     *
+     * @return Medecins
+     */
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+    
+        return $this;
+    }
+
+    /**
+     * Get latitude
+     *
+     * @return float
+     */
+    public function getLatitude()
+    {
+        return $this->latitude;
     }
 }

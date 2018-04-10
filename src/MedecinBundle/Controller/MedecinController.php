@@ -11,12 +11,15 @@ use GarderieBundle\Form\VoteType;
 use MedecinBundle\Entity\Medecins;
 use MedecinBundle\Form\MedecinsType;
 use MedecinBundle\Form\MedecinsUpdateType;
+use MedecinBundle\Form\RechercheGarderiesType;
+use MedecinBundle\Form\RechercheMedecinsType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use \Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+
 
 class MedecinController extends Controller
 {
@@ -32,6 +35,12 @@ class MedecinController extends Controller
              * Get image
              * @var UploadedFile $file
              */
+            $adresse=$medecin->getAdresse();
+            if($adresse=='tunis')
+                {
+                    $medecin->setLatitude(36.81897);
+
+                    $medecin->setLongitude(10.16579);                }
             $file=$medecin->getImage();
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
             $file->move($this->getParameter('image_directory'), $fileName);
@@ -131,7 +140,8 @@ $em->persist($demande);
         $em = $this->getDoctrine()->getManager();
 
         $queryBuilder = $em->getRepository('GarderieBundle:Garderies')->createQueryBuilder('bp1');
-
+        $queryBuilder->where(' bp1.etat=:id')
+            ->setParameter('id','true');
         $query = $queryBuilder->getQuery();
         $paginator = $this->get('knp_paginator');
 
@@ -222,7 +232,21 @@ $voitures=new Garderies();
             /*     else{
                      return new JsonResponse(\Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
                  }*/
+            $manager = $this->get('mgilet.notification');
+            $notif = $manager->createNotification('Hello world !');
+            $notif->setMessage('Votre demande dinscription a étè enregistrée');
+            $notif->setLink('http://symfony.com/');
+            // or the one-line method :
+            // $manager->createNotification('Notification subject','Some random text','http://google.fr');
 
+            // you can add a notification to a list of entities
+            // the third parameter `$flush` allows you to directly flush the entities
+            $manager->addNotification(array($this->getUser()), $notif, true);
+            $request->getSession()
+                ->getFlashBag()
+                ->add('notice', 'Welcome to the Death Star, have a magical day!')
+            ;
+         //   return  $this->redirectToRoute("garderie_listeFront2");
         }
 
 
@@ -300,7 +324,98 @@ $voitures=new Garderies();
         return $this->render('GarderieBundle:Back:statistiques.html.twig', array('piechart' =>
             $pieChart,'histogram'=>$histogram));
     }
+    function listMedecinFrontAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $queryBuilder = $em->getRepository('MedecinBundle:Medecins')->createQueryBuilder('bp1');
+
+        $query = $queryBuilder->getQuery();
+        $paginator = $this->get('knp_paginator');
+
+        $result = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            $request->query->getInt('limit', 2)
+        );
+        return $this->render('@Medecin/Front/afficherListesMedecins.html.twig', array("medecin" => $result));
+
+    }
+    function  DetailsMedecinsAction(Request $request){
+        $medecin=new Medecins();
+        $form=$this->createForm(RechercheMedecinsType::class,$medecin);
 
 
+        $em=$this->getDoctrine()->getManager();
+        $garderie=$em->getRepository('MedecinBundle:Medecins')->find($request->get('id'));
+        $medecins=$em->getRepository('MedecinBundle:Medecins')->findAll();
+        $form->handleRequest($request);
+
+        //     if($form->isValid()){
+        if($request->isXmlHttpRequest()){
+            $serializer=new Serializer(array(new ObjectNormalizer()));
+            $adresse=$medecin->getAdresse();
+            echo $adresse;
+            $medecins=$em->getRepository('MedecinBundle:Medecins')->findSerieDQL($adresse);
+            $data=$serializer->normalize($medecins);
+            return new JsonResponse($data);
+        }//
+
+        return $this->render('@Medecin/Front/DetailsMedecins.html.twig',array("modele"=>$garderie,'form'=>$form->createView(),"medecin"=>$medecins));
+    }
+
+    function notifAction(Request $request){
+
+        return $this->render('GarderieBundle:Front:notifications.html.twig');
+
+    }
+    function rechercherAction(Request $request){
+        $garderie=new Garderies();
+        $form=$this->createForm(\GarderieBundle\Form\RechercheGarderiesType::class,$garderie);
+
+
+        $em=$this->getDoctrine()->getManager();
+
+        $garderies=$em->getRepository('GarderieBundle:Garderies')->findAll();
+        $form->handleRequest($request);
+
+        //     if($form->isValid()){
+        if($request->isXmlHttpRequest()){
+            $serializer=new Serializer(array(new ObjectNormalizer()));
+            $adresse=$garderie->getAdresse();
+            echo $adresse;
+            $medecins=$em->getRepository('GarderieBundle:Garderies')->findDQL($adresse);
+            $data=$serializer->normalize($medecins);
+            return new JsonResponse($data);
+        }//
+
+
+        return $this->render('GarderieBundle:Front:rechercherGarderie.html.twig',array('form'=>$form->createView(),"garderie"=>$garderies));
+
+    }
+    function rechercherMedecinAction(Request $request){
+        $medecin=new Medecins();
+        $form=$this->createForm(RechercheMedecinsType::class,$medecin);
+
+
+        $em=$this->getDoctrine()->getManager();
+
+        $medecins=$em->getRepository('MedecinBundle:Medecins')->findAll();
+        $form->handleRequest($request);
+
+        //     if($form->isValid()){
+        if($request->isXmlHttpRequest()){
+            $serializer=new Serializer(array(new ObjectNormalizer()));
+            $adresse=$medecin->getAdresse();
+
+            $medecins=$em->getRepository('MedecinBundle:Medecins')->findSerieDQL($adresse);
+            $data=$serializer->normalize($medecins);
+            return new JsonResponse($data);
+        }//
+
+
+        return $this->render('MedecinBundle:Front:rechercherMedecin.html.twig',array('form'=>$form->createView(),"medecin"=>$medecins));
+
+    }
 
 }

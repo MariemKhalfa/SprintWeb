@@ -10,13 +10,16 @@ namespace FrontBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\MessageBundle\Model\ParticipantInterface;
 use FOS\UserBundle\Model\User as BaseUser;
+use Mgilet\NotificationBundle\Annotation\Notifiable;
+use Mgilet\NotificationBundle\NotifiableInterface;
+
 
 
 /**
  * @ORM\Entity(repositoryClass="FrontBundle\Repository\UserRepository")
  * @ORM\Table(name="`user`")
  */
-class User extends BaseUser implements ParticipantInterface
+class User extends BaseUser implements ParticipantInterface,NotifiableInterface
 {
     /**
      * @ORM\Id
@@ -181,21 +184,6 @@ class User extends BaseUser implements ParticipantInterface
         $this->babysitter = $babysitter;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getActivite()
-    {
-        return $this->activite;
-    }
-
-    /**
-     * @param mixed $activite
-     */
-    public function setActivite($activite)
-    {
-        $this->activite = $activite;
-    }
 
     /**
      * @return mixed

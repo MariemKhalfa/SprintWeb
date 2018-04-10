@@ -1,28 +1,17 @@
-{% extends 'GarderieBundle::GarderieBase.html.twig' %}
-{% block container %}
-    <!-- Start Bradcaump area -->
-    <div class="ht__bradcaump__area">
-        <div class="ht__bradcaump__container">
-            <img src="{{ asset('images/bg-png/6.png') }}" alt="bradcaump images">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="bradcaump__inner text-center">
-                            <h2 class="bradcaump-title">Nos Garderies</h2>
-                            <nav class="bradcaump-inner">
-                                <a class="breadcrumb-item" href="index-2.html">Home</a>
-                                <span class="brd-separetor"><img src="{{ asset('images/icons/brad.png') }}" alt="separator images"></span>
-                                <span class="breadcrumb-item active">Nos Garderies</span>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Start Our Event Area -->
-    <div class="dcare__event__area bg--white section-padding--lg">
-        <div class="container">
+{% extends "base.html.twig" %}
+ {% block container %}
+
+     <section class="junior__welcome__area bg-image--26">
+     <div class="container">
+     <div class="row">
+         <div class="col-lg-12">
+             <div class="section__title text-center">
+                 <h2 class="title__line"><span class="text-theme-color-blue">Nos Garderies</span></h2>
+
+             </div>
+         </div>
+     </div>
+
             <div class="row event-grid-page">
 
                {% for m in garderie %}
@@ -69,4 +58,5 @@
     </div><!-- .animated -->
     <!-- End Our Event Area -->
     <!-- End Bradcaump area -->
+     </section>
 {% endblock %}

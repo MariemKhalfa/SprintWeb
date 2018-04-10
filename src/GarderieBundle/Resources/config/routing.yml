@@ -13,4 +13,13 @@ garderie_modifier:
 garderie_supprimer:
     path:     /SupprimerGarderie
     defaults: { _controller: GarderieBundle:Garderies:Delete }
+garderie_inscriptionListe:
+    path:     /InscriptionListes
+    defaults: { _controller: GarderieBundle:Garderies:listesInscription }
+garderie_approuver:
+    path:     /InscriptionApprouver
+    defaults: { _controller: GarderieBundle:Garderies:Approuver }
+garderie_stat:
+    path:     /stat
+    defaults: { _controller: GarderieBundle:Garderies:StatistiquesInscripion}
 

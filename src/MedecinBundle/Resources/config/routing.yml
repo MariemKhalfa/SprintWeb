@@ -37,3 +37,18 @@ garderie_meilleur:
 garderie_statistiques2:
     path:     /StatistiquesGarderie
     defaults: { _controller: MedecinBundle:Medecin:Statistiques }
+medecin_affichageFront:
+    path:     /affichageFront
+    defaults: { _controller: MedecinBundle:Medecin:listMedecinFront }
+medecin_details:
+    path:     /detailsmedecin
+    defaults: { _controller: MedecinBundle:Medecin:DetailsMedecins }
+garderie_notif2:
+    path:     /notif2
+    defaults: { _controller: MedecinBundle:Medecin:notif}
+garderie_rechercher:
+    path:     /rechercher
+    defaults: { _controller: MedecinBundle:Medecin:rechercher}
+medecin_rechercher:
+    path:     /rechercherMedecin
+    defaults: { _controller: MedecinBundle:Medecin:rechercherMedecin}

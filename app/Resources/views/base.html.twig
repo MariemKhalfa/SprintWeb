@@ -150,13 +150,23 @@
 
                                     </li>
 
+                                    <li class="drop"><a href="#">Medecins</a>
+                                        <ul class="dropdown__menu">
+                                            {% if is_granted('ROLE_PARENT')  %}
+                                                <li><a href="{{ path('medecin_affichageFront') }}">Nos Medecins</a></li>
+                                                <li><a href="{{ path('medecin_rechercher') }}">Trouver un medecin</a></li>
+                                            {% endif %}
+
+                                        </ul>
+                                    </li>
+
                                     <li class="drop"><a href="#">Garderies</a>
                                         <ul class="dropdown__menu">
                                             {% if is_granted('ROLE_PARENT')  %}
-                                            <li><a href="{{ path('garderie_listeFront2') }}">Nos Garderies</a></li>
+                                                <li><a href="{{ path('garderie_listeFront2') }}">Nos Garderies</a></li>
+                                                <li><a href="{{ path('garderie_rechercher') }}">Trouver une garderie</a></li>
                                             {% endif %}
-                                            <li><a href="#">Trouver une garderie</a></li>
-                                            <li><a href="#">Inscription garderie</a></li>
+
                                         </ul>
                                     </li>
 

@@ -6,9 +6,11 @@ use CMEN\GoogleChartsBundle\GoogleCharts\Charts\Histogram;
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 use GarderieBundle\Entity\Demande;
 use GarderieBundle\Entity\Garderies;
+use GarderieBundle\Entity\Inscription;
 use GarderieBundle\Entity\Vote;
 use GarderieBundle\Form\GarderiesType;
 use GarderieBundle\Form\GarderiesUpdateType;
+use GarderieBundle\Form\Inscription2Type;
 use GarderieBundle\Form\VoteType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -21,6 +23,7 @@ class GarderiesController extends Controller
 
         $garderie=new Garderies();
         $demande=new Demande();
+        $garderie->setNbInscriptions(0);
         $demande->setEtat('false');
         $garderie->setEtat("No");
         $garderie->setLatitude(36.81897);
@@ -68,6 +71,7 @@ $demande->setIdGarderie($garderie);
             $request->query->getInt('page',1),
             $request->query->getInt('limit',2)
         );
+
         return $this->render('GarderieBundle:Back:listeGarderies.html.twig',array("garderie"=>$result));
     }
     function UpdateAction(Request $request){
@@ -94,10 +98,96 @@ $demande->setIdGarderie($garderie);
         $em=$this->getDoctrine()->getManager();
         $garderie=$em->getRepository('GarderieBundle:Garderies')->find($request->get('id'));
         $vote=$em->getRepository('GarderieBundle:Vote')->RemoveVote($garderie->getId());
+        $vote1=$em->getRepository('GarderieBundle:Vote')->RemoveInsc($garderie->getId());
         $em->remove($garderie);
         $em->flush();
         return $this->redirectToRoute("garderie_liste");
 
+    }
+    function listesInscriptionAction(Request $request){
+        $inscription1=new Inscription();
+        $em=$this->getDoctrine()->getManager();
+        $inscription=$em->getRepository('GarderieBundle:Inscription')->findAll();
+        $Form=$this->createForm(Inscription2Type::class,$inscription1);
+        $Form->handleRequest($request);
+        if($Form->isValid()){
+
+            $inscription=$em->getRepository('GarderieBundle:Inscription')->findBy(array('idGarderie'=>$inscription1->getIdGarderie()));
+        }
+        return $this->render('GarderieBundle:Back:listeInscription.html.twig',array('form'=>$Form->createView(),'inscription'=>$inscription));
+
+
+    }
+    function ApprouverAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        echo $request->get('id');
+        $inscription = $em->getRepository('GarderieBundle:Inscription')->findOneBy(array('id' => $request->get('id')));
+        $garderie = $em->getRepository('GarderieBundle:Garderies')->findOneBy(array('id' => $inscription->getIdGarderie()));
+
+        if ($garderie->getNbInscriptions() < 5) {
+            $inscription->setEtat('true');
+
+            $garderie1 = $em->getRepository('GarderieBundle:Garderies')->Update2($garderie->getId());
+            $manager = $this->get('mgilet.notification');
+            $notif = $manager->createNotification('Inscription!');
+            $notif->setMessage('Bonjour Mr Votre demande a étè accepté');
+            $notif->setLink('http://symfony.com/');
+            // or the one-line method :
+            // $manager->createNotification('Notification subject','Some random text','http://google.fr');
+
+            // you can add a notification to a list of entities
+            // the third parameter `$flush` allows you to directly flush the entities
+            $manager->addNotification(array($this->getUser()), $notif, true);
+        } else {
+            $manager = $this->get('mgilet.notification');
+            $notif = $manager->createNotification('Inscription !');
+            $notif->setMessage('Bonjour Mr Votre demande a étè refusé');
+            $notif->setLink('http://symfony.com/');
+            // or the one-line method :
+            // $manager->createNotification('Notification subject','Some random text','http://google.fr');
+
+            // you can add a notification to a list of entities
+            // the third parameter `$flush` allows you to directly flush the entities
+            $manager->addNotification(array($this->getUser()), $notif, true);
+        }
+
+
+        return $this->redirectToRoute("garderie_inscriptionListe");
+    }
+    public function StatistiquesInscripionAction()
+    {
+        $pieChart = new PieChart();
+        $em= $this->getDoctrine();
+        $garderies = $em->getRepository(Garderies::class)->findAll();
+        $total=0;
+        foreach($garderies as $garderie) {
+            $total=$total+$garderie->getNbInscriptions();
+        }
+        $data= array();
+        $stat=['Garderie', 'nbParticipants'];
+        $nb=0;
+        array_push($data,$stat);
+        foreach($garderies as $garderie) {
+            $stat=array();
+            //     array_push($stat,$rating->getNom(),(($rating->getRating()) *100)/$totalRating);
+            $nb=($garderie->getNbInscriptions()*100)/$total;
+            $stat=[$garderie->getNom(),$nb];
+            array_push($data,$stat);
+        }
+
+        $histogram = new Histogram();
+        $histogram->getData()->setArrayToDataTable(
+            $data
+        );
+        $histogram->getOptions()->setTitle('Statistiques selon le nbre des participants');
+        $histogram->getOptions()->setWidth(900);
+        $histogram->getOptions()->setHeight(500);
+        $histogram->getOptions()->getLegend()->setPosition('none');
+        $histogram->getOptions()->setColors(['#e7711c']);
+        $histogram->getOptions()->getHistogram()->setLastBucketPercentile(10);
+        $histogram->getOptions()->getHistogram()->setBucketSize(10000000);
+        return $this->render('GarderieBundle:Back:statistiquesNbInscriptions.html.twig', array('histogram'=>$histogram));
     }
 
 
