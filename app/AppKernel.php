@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new BackOfficeBundle\BackOfficeBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
+            new MessageBundle\MessageBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
