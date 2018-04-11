@@ -50,6 +50,7 @@ class DefaultController extends Controller
         $Form->handleRequest($request);
         if ($Form->isSubmitted()) {
             $em = $this->getDoctrine()->getManager();
+            $Enseignant->addRole('ROLE_ENSEIGNANT');
             $em->persist($Enseignant);
             $em->flush();
             return $this->redirectToRoute('e_learning_afficherBackEnseignant');
