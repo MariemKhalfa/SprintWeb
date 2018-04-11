@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block container %}
+    <center><a href="{{ path('Calendar') }} "class="btn btn-primary" >Mon Calendrier</a></center>
+{% for m in Demande %}
+    <div style="margin-left:auto; margin-right:auto; width:95%;"><br/>
+    <div class="col-md-12">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Demande d'inscription</h3>
+        </div>
+        <table class="table table-bordered">
+            <tr>
+                <td class="col-xs-3">Pseudonyme de l'enfant</td>
+                <td><input class="form-control" value="{{ m.enfantId.pseudonyme}}" disabled></td>
+            </tr>
+            <tr>
+                <td class="col-xs-3">age de l'enfant</td>
+                <td><input class="form-control" value="{{ m.enfantId.age }}" disabled></td>
+            </tr>
+            <tr>
+                <td class="col-xs-3">Date Debut de la formation :</td>
+                <td><input class="form-control" value="{{ m.dateDebut| date ('Y-m-d') }}" disabled></input></td>
+            </tr>
+            <tr>
+                <td class="col-xs-3">Heure de la formation</td>
+                <td><input class="form-control" value="{{ m.dateDebut| date ('H:i:s') }}" disabled></input></td>
+            </tr>
+            <tr>
+                <td class="col-xs-3">Description de la maladie :</td>
+                <td><textarea class="form-control"  disabled>{{ m.descriptionDifficulte }}</textarea></td>
+            </tr>
+            <tr>
+                <td </td>
+                <td><a href="{{ path('e_learning_RefuserDemande',{'id':m.id}) }}" style="float: right";><button class="btn btn-danger" >Refuser</button></a> <a href="{{ path('e_learning_accepterDemande',{'id':m.id}) }}" style="float: right; margin-right: 10px"><button class="btn btn-success">Accepter</button></a></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+{% endfor %}
+
+{% endblock %}

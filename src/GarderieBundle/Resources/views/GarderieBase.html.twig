@@ -57,7 +57,7 @@
                         <div class="jun__header__top__right">
                             <ul class="accounting d-flex justify-content-lg-end justify-content-md-end justify-content-start align-items-center">
 
-                                {% if is_granted('ROLE_USER') %}
+                                {% if is_granted('ROLE_USER') or  is_granted('ROLE_ENSEIGNANT')  %}
                                     <img src="{{ asset(app.user.photo) }} " width="50px" height="50px" style="margin-right: 15px"/>
 
                                     <li style="display: block"><a href="{{ path('fos_user_profile_edit') }}">{{ app.user.nom}}<br> {{ app.user.prenom }}</a></li>

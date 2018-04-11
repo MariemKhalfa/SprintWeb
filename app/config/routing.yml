@@ -73,4 +73,6 @@ fos_user_change_password:
 fos_message:
     resource: "@FOSMessageBundle/Resources/config/routing.xml"
     prefix: /msg
+ancarebeca_fullcalendar:
+    resource: "@FullCalendarBundle/Resources/config/routing.yml"
 

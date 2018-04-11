@@ -85,6 +85,10 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
             'Composer\\CaBundle\\' => 18,
             'CMEN\\GoogleChartsBundle\\' => 24,
         ),
+        'A' => 
+        array (
+            'AncaRebeca\\FullCalendarBundle\\' => 30,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -243,6 +247,10 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         'CMEN\\GoogleChartsBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/cmen/google-charts-bundle',
+        ),
+        'AncaRebeca\\FullCalendarBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ancarebeca/full-calendar-bundle',
         ),
     );
 

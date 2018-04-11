@@ -53,3 +53,7 @@ services:
               arguments:
                       - "@router"
                       - "@session"
+    app_bundle.service.listener:
+                class: ELearningBundle\Listener\LoadDataListener
+                tags:
+                - { name: 'kernel.event_listener', event: 'fullcalendar.set_data', method: loadData }

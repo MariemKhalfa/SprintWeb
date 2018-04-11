@@ -33,6 +33,8 @@ class AppKernel extends Kernel
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
             new MessageBundle\MessageBundle(),
+            new AncaRebeca\FullCalendarBundle\FullCalendarBundle()
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

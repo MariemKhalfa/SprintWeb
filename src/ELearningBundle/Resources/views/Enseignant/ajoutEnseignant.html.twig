@@ -1,31 +1,57 @@
-<form method="POST" action="{{ path('e_learning_ajouterEnseignant') }}">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Username</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Nom</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nom" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Prenom</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="prenom" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">adresse Email</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="mdp" placeholder="Password">
-    </div>
-    <div class="form-group">
-        <label for="exampleTextarea">Description</label>
-        <textarea class="form-control" id="exampleTextarea" name="description" rows="3"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">specialite</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="specialite" placeholder="Enter email">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+<div class="modal-header" style="padding:35px 50px; display: block;">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h3 style="text-align: center"><span class="icon-soccer"></span> Demande D'inscription : </h3>
+</div>
+<center><form method="POST" action="{{ path('e_learning_ajouterBackEnseignant') }}">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Pseudonyme</label>
+            <input type="text" class="form-control"  name="username" placeholder="Pseudonyme" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nom</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" name="nom" placeholder="Nom" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Prenom</label>
+            <input type="text" class="form-control"  aria-describedby="emailHelp" name="prenom" placeholder="Prenom" required>
+
+            <label for="exampleInputEmail1">adresse Email</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" name="email" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleTextarea" >numero de telephone</label>
+            <input type="number" name="tel" class="form-control"   rows="3" placeholder="Telephone" required>
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <label for="exampleInputEmail1">CIN</label>
+                <input type="text" class="form-control"  aria-describedby="emailHelp" name="cin" placeholder="CIN" required>
+            </div>
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control"  name="mdp" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+            <select for="exampleTextarea" name="sexe" required>Sexe
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleTextarea" >Ville</label>
+            <input type="text" name="ville" class="form-control"   rows="3" placeholder="Ville" required></input>
+        </div>
+        <div class="form-group">
+            <label for="exampleTextarea">Rue</label>
+            <input type="text" class="form-control" name="rue"  name="description" rows="3" placeholder="Rue" required></input>
+        </div>
+        <div class="form-group">
+            <label for="exampleTextarea">Description</label>
+            <textarea class="form-control"  name="description" placeholder="Description" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">specialite</label>
+            <input type="text" class="form-control"  aria-describedby="emailHelp" name="specialite" placeholder="Specialite">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button></center>
 </form>

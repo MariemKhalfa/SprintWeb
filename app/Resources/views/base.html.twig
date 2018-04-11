@@ -195,7 +195,7 @@
 
                                     </li>
                                     {% if is_granted('ROLE_ENSEIGNANT') %}
-                                    <li class="drop"><a href="">Classe</a>
+                                    <li class="drop"><a href="{{ path('e_learning_afficherDemande') }}">Classe</a>
                                         {% else %}
                                     <li class="drop"><a href="{{ path('e_learning_afficherEnseignant') }}">E-learning</a>
                                         {% endif %}

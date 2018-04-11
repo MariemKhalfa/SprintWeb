@@ -6,13 +6,28 @@ e_learning_afficherEnseignant:
     defaults: { _controller: ELearningBundle:Default:affiche }
 e_learning_affecterEnfant:
     path:     /affecterEnseignant/{idm}/{idp}
-    defaults: { _controller: ELearningBundle:EnfantMalade:ajout }
+    defaults: { _controller: ELearningBundle:DemandeInscription:ajout }
 e_learning_afficherBackEnseignant:
-    path:     /affichbackEnseignant
+    path:     /admin/affichbackEnseignant
     defaults: { _controller: ELearningBundle:Default:afficheBack }
+e_learning_ajouterBackEnseignant:
+    path:     /admin/ajoutbackEnseignant
+    defaults: { _controller: ELearningBundle:Default:Ajout }
 e_learning_modifBackEnseignant:
-    path:     /ModificationEnseignant
+    path:     /admin/ModificationEnseignant/{id}
     defaults: { _controller: ELearningBundle:Default:modif }
 e_learning_suppBackEnseignant:
-    path:     /SupprimerEnseignant
+    path:     /admin/SupprimerEnseignant
     defaults: { _controller: ELearningBundle:Default:supp }
+e_learning_afficherDemande:
+    path:     /afficherDemande
+    defaults: { _controller: ELearningBundle:DemandeInscription:afficheDemandeEnseignant}
+e_learning_accepterDemande:
+    path:     /accepterDemande
+    defaults: { _controller: ELearningBundle:DemandeInscription:AccepterDemande}
+e_learning_RefuserDemande:
+    path:     /refuserDemande
+    defaults: { _controller: ELearningBundle:DemandeInscription:RefuserDemande}
+Calendar:
+    path:     /calendar
+    defaults: { _controller: ELearningBundle:DemandeInscription:calendar}

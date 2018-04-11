@@ -20,7 +20,6 @@ class ModificationEnseignant extends AbstractType
     {
         $builder
             ->add('cin',TextType::class,array('label' => 'CIN'))
-            ->add('photo',TextType::class,array('label' => 'photo'))
             ->add('nom',TextType::class,array('label' => 'Nom'))
             ->add('prenom',TextType::class,array('label' => 'Prenom'))
             ->add('email',TextType::class,array('label' => 'Email'))
@@ -31,7 +30,7 @@ class ModificationEnseignant extends AbstractType
 
 
     }
-     public function getParent()
+    public function getParent()
     {
         return BaseRegistrationFormType::class;
     }

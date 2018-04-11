@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block container %}
+    <head>
+        <link rel="stylesheet" href="{{asset('bundles/fullcalendar/css/fullcalendar/fullcalendar.min.css')}}"/>
+        <link rel="stylesheet" href="{{asset('bundles/fullcalendar/css/fullcalendar/fullcalendar.print.css')}}" media="print"/>
+        <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/moment.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.default-settings.js') }}"></script>
+        <script>
+         $(document).ready(function() {
+
+
+             $('#calendar').fullCalendar({
+                 header: {
+                     left: 'prev, today',
+                     center: 'title',
+                     right: 'next'
+                 },
+                 defaultDate: '{{ 'now'|date('Y-m-d') }}',
+                 navLinks: true, // can click day/week names to navigate views
+                 editable: true,
+                 eventLimit: true, // allow "more" link when too many events
+                 events: [ ]
+
+             });
+             $('#calendar').fullCalendar('addEventSource',{{ render(controller("ELearningBundle:DemandeInscription:LoadCalendar")) }})
+
+         })
+                </script>
+    </head>
+    <body>
+    <div id="calendar">
+
+    </div>
+
+
+    </body>
+
+
+{% endblock %}
+{% block script %}
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.default-settings.js') }}"></script>
+{% endblock %}
