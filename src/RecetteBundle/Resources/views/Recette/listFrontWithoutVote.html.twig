@@ -1,0 +1,93 @@
+{% extends 'Base.html.twig' %}
+{% block container %}
+    <style>
+        @import "../../../../../web/fontawesome/scss/fontawesome.scss";
+        .vote{
+            width: 150px;
+            margin:50px 0 100px;
+            float: right;
+
+        }
+        .vote_bar{
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: #f2504b;
+        }
+        .vote_progress{
+            width: 0%;
+            height: 4px;
+            background-color: #63b96b;
+        }
+        .vote_btns{
+            margin-top: 10px;
+            text-align: right;
+        }
+        .vote_btn{
+            border: none;
+            padding: 0;
+            display: inline-block;
+            margin: 0 0 0 10px;
+            cursor: pointer;
+            background: transparent;
+            transition: 0.3s ;
+        }
+        .vote_like:hover , .is-liked .vote_like{
+            color:#63b96b;
+        }
+        .vote_dislike:hover, .is-disliked .vote_dislike{
+            color:#f2504b;
+        }
+    </style>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+<style>
+    .product_view .modal-dialog{max-width: 800px; width: 100%;}
+    .pre-cost{text-decoration: line-through; color: #a5a5a5;}
+    .space-ten{padding: 10px 0;}
+    p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+</style>
+    <div class="container">
+        <div class="row">
+            {% for m in Recette %}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <iframe width="350" height="200" src="{{ asset(m.video) }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="caption">
+                            <h4 class="pull-right"></h4>
+                            <h4><a data-toggle="modal" data-target="#myModal" id="myBtn"  href="#">{{ m.titre }}</a></h4>
+                            <p>{{ m.description }}</p>
+                        </div>
+                        <div class="vote">
+                            <div class="vote_bar">
+                                <div class="vote_progress" style="width: {{ ( m.likeCount + m.dislikeCount ) == 0 ? 100 : ( 100 * ( m.likeCount / ( m.likeCount + m.dislikeCount ))) }}%">
+                                </div>
+                            </div>
+                            <div class="vote_btns">
+                                <a href="{{ path('Like',{ 'recette_id':m.id , 'user_id':app.user.id , 'v':1 }) }}" style="color: black"> <button class="vote_btn vote_like"><i class="fa fa-thumbs-up" ></i>{{ m.likeCount }}</button></a>
+                                <a href="{{ path('dislike',{ 'recette_id':m.id , 'user_id':app.user.id , 'v':-1 }) }}" style="color: black"> <button class="vote_btn vote_dislike" ><i class="fa fa-thumbs-down"></i>{{  m.dislikeCount}}</button></a>
+                            </div>
+                        </div>
+                        <div class="space-ten"></div>
+                        <div class="btn-ground text-center">
+                            <a class="top-bar-label"  href="#"><button type="button" class="btn btn-primary " style="margin-bottom: 50px" > Voir plus</button></a>
+                        </div>
+                        <div class="space-ten"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script>
+        $("#myBtn").click(function () {
+            $("#myModal").modal('toggle');
+        });
+    </script>
+{% endblock %}

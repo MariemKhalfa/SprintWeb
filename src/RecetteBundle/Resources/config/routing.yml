@@ -1,3 +1,33 @@
 recette_homepage:
-    path:     /es
+    path:     /rs
     defaults: { _controller: RecetteBundle:Default:index }
+AfficheRecette:
+      path:     /admin/AfficheRecette
+      defaults: { _controller: RecetteBundle:Default:list }
+AfficheFrontRecette:
+      path:     /AfficherRecette
+      defaults: { _controller: RecetteBundle:Default:listFront }
+AjouterRecette:
+      path:     /admin/AjoutRecette
+      defaults: { _controller: RecetteBundle:Default:ajout }
+SupprimerRecette:
+      path:     /admin/SuppRecette
+      defaults: { _controller: RecetteBundle:Default:supp }
+ModifierRecette:
+      path:     /admin/ModifierRecette/
+      defaults: { _controller: RecetteBundle:Default:modif }
+RechercheRecette:
+      path:     /admin/Recherche
+      defaults: { _controller: RecetteBundle:Default:list }
+AfficherUn:
+      path:     /afficheUn/{id}
+      defaults: { _controller: RecetteBundle:Default:list }
+Like:
+      path:     /like/{recette_id}/{user_id}/{v}
+      defaults: { _controller: RecetteBundle:Vote:addLike }
+dislike:
+      path:     /dislike/{recette_id}/{user_id}/{v}
+      defaults: { _controller: RecetteBundle:Vote:addDislike }
+LikeAjax:
+      path:     /likeAjax
+      defaults: { _controller: RecetteBundle:Vote:addLikeAjax }

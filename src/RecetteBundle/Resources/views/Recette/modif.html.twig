@@ -1,0 +1,17 @@
+<div class="modal-header" style="padding:35px 50px; display: block;">
+    <h3 style="text-align: center"><span class="icon-soccer"></span> Modification d'une Recette </h3>
+</div>
+<center><form method="POST" action="{{ path('ModifierRecette' ) }}">
+    <div class="input-group mb-3">
+        <br>
+        <input name="id" type="text" value="{{ R.id }}" hidden="hidden"/>
+    {{ form_row(form.titre,{ 'attr': {} }) }}<br>
+    {{ form_row(form.titre,{ 'attr': {} }) }}<br>
+    {{ form_row(form.video,{ 'attr': {} }) }}<br>
+    {{ form_row(form.description,{ 'attr': {} }) }}<br><br>
+        <input type="submit" class="btn btn-pimary btn-block" style="color:white"  />
+    </div>
+
+        <br>
+        <br>
+    </form></center>

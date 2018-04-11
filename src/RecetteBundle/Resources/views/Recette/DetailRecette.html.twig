@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-6 product_img">
+        {{ Recette.id }}
+        <iframe width="350" height="200" src="{{ asset(Recette.video) }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-6 product_content">
+
+        <p>{{  Recette.description}}</p>
+        <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> 75.00 <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small></h3>
+        <div class="row">
+            <!-- end col -->
+
+            <!-- end col -->
+
+            <!-- end col -->
+        </div>
+        <div class="space-ten"></div>
+
+    </div>
+</div>
