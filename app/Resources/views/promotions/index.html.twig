@@ -1,42 +1,52 @@
 {% extends 'backBase.html.twig' %}
 
 {% block body %}
-    <h1>Promotions list</h1>
+
+<h1>Coupons list</h1>
 <div class="panel panel-default card-view">
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Intitule</th>
-                <th>Image</th>
-                <th>Ensegne</th>
-                <th>Type</th>
-                <th>Nomprod</th>
-                <th>Description</th>
-                <th>Datedebut</th>
-                <th>Datefin</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+    <table class="jsgrid-table">
+        <tbody>
+        <tr class="jsgrid-header-row">
+            <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 100px;"></th>
+            <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 50px;">Id</th>
+            <th class="jsgrid-header-cell jsgrid-align-right jsgrid-header-sortable" style="width: 100px;">Intitule</th>
+            <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 100px;">Imagecoupon</th>
+            <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">Ensegne</th>
+            <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">Type</th>
+            <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">Nom Produit</th>
+            <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">Description</th>
+            <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">Date Debut</th>
+            <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">Date Fin</th>
+            <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">Actions</th>
+            <th class="jsgrid-header-cell jsgrid-control-field jsgrid-align-center" style="width: 50px;">
+            <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 100px;"></th>
+
+            </th>
+
+        </tr>
         <tbody>
         {% for promotion in promotions %}
             <tr>
+                <td></td>
                 <td><a href="{{ path('promotions_show', { 'id': promotion.id }) }}">{{ promotion.id }}</a></td>
                 <td>{{ promotion.intitule }}</td>
-                <td><a href="{{ path('promotions_show', { 'id': promotion.id }) }}"><img style="width:60px" src="{{ asset('uploads/brochures/'~promotion.image) }}"></a></td>
+                <td><img style="width:60px " align="center" src="{{ asset('uploads/brochures/'~promotion.image) }}"</td>
                 <td>{{ promotion.ensegne }}</td>
                 <td>{{ promotion.type }}</td>
                 <td>{{ promotion.nomprod }}</td>
                 <td>{{ promotion.description }}</td>
                 <td>{% if promotion.datedebut %}{{ promotion.datedebut|date('Y-m-d') }}{% endif %}</td>
                 <td>{% if promotion.datefin %}{{ promotion.datefin|date('Y-m-d') }}{% endif %}</td>
+
+
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('promotions_show', { 'id': promotion.id }) }}">show</a>
+                            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('promotions_show', { 'id': promotion.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('promotions_edit', { 'id': promotion.id }) }}">edit</a>
+                            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('promotions_edit', { 'id': promotion.id }) }}">edit</a>
+
                         </li>
                     </ul>
                 </td>
@@ -44,6 +54,9 @@
         {% endfor %}
         </tbody>
     </table>
+
+
+
 
     <ul>
         <li>
