@@ -18,6 +18,7 @@ use Mgilet\NotificationBundle\NotifiableInterface;
 /**
  * @ORM\Entity(repositoryClass="FrontBundle\Repository\UserRepository")
  * @ORM\Table(name="`user`")
+ * @Notifiable(name="my_entity")
  */
 class User extends BaseUser implements ParticipantInterface,NotifiableInterface
 {

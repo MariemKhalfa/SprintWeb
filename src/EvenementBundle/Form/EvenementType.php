@@ -17,7 +17,7 @@ class EvenementType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('intitule')->add('nbParticipants')->add('budget')->add('adresse')->add('date',DateTimeType::class, array(
+        $builder->add('intitule')->add('nbParticipants')->add('budget')->add('date',DateTimeType::class, array(
         'placeholder' => array(
             'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
             'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second')))->

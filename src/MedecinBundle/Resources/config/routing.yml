@@ -52,3 +52,25 @@ garderie_rechercher:
 medecin_rechercher:
     path:     /rechercherMedecin
     defaults: { _controller: MedecinBundle:Medecin:rechercherMedecin}
+garderie_afficher6:
+    path:     /garderiesAll
+    defaults: { _controller: MedecinBundle:Medecin:allall}
+garderie_rate:
+    path:     /garderiesRating
+    defaults: { _controller: MedecinBundle:Medecin:new}
+garderie_inscription5:
+    path:     /garderiesInscription5
+    defaults: { _controller: MedecinBundle:Medecin:new1}
+ajouter_publication:
+    path:     /addPublication
+    defaults: { _controller: MedecinBundle:Publication:ajoutPublication}
+ajouter_commentaire:
+    path:     /addCommentaire
+    defaults: { _controller: MedecinBundle:Publication:ajoutCommentaire}
+rechercher_Medecin:
+    path:     /rechercherMedecin22
+    defaults: { _controller: MedecinBundle:Medecin:allallMedecins}
+medecin2_details:
+    path:     /detailsmedecin5
+    defaults: { _controller: MedecinBundle:Medecin:DetailsMedecins5 }
+

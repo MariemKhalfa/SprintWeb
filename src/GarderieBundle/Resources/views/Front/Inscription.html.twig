@@ -93,16 +93,16 @@
                             <option value="{{ m.pseudonyme}}">{{ m.pseudonyme }}</option>
                         {%  endfor %}</select>
             </div>
-            <div class="single-contact-form name">
-                    <label>choissisez la date du votre arrivée</label>
 
-                        <div id="date" class="input-append date">
-                            <input type="text"  name="jourArriv" id="jourArriv">
-                            <span class="add-on">
-                    <i date-time-icon="icon-time" date-date-icon="icon-calendar"></i>
-                </span>
-                        </div>
-            </div>
+
+
+                            <div class="single-contact-form name">
+                                <div class="col col-md-2">
+                                    <label for="text-input" class=" form-control-label">Date</label>
+                                </div>
+                                <input type="date" id="jourArriv" name="jourArriv" placeholder="jourArriv">
+                            </div>
+
             <div class="single-contact-form name">
                 <label>Nurserie</label>
                 <select name="nurserie" id="nurserie" class="form-control">

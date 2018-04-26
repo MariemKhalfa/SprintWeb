@@ -1,0 +1,105 @@
+<?php
+
+
+namespace GarderieBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Inscription
+ *
+ * @ORM\Table(name="inscription", indexes={@ORM\Index(name="IDX_5E90F6D61BB9D5A2", columns={"id_parent"}), @ORM\Index(name="IDX_5E90F6D63A245E7E", columns={"id_garderie"}), @ORM\Index(name="IDX_5E90F6D61280B94F", columns={"id_enfant"})})
+ * @ORM\Entity
+ */
+class Inscription
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomParent", type="string", length=250, nullable=false)
+     */
+    private $nomparent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Adresse", type="string", length=250, nullable=false)
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaires", type="string", length=250, nullable=false)
+     */
+    private $commentaires;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nurserie", type="string", length=20, nullable=false)
+     */
+    private $nurserie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="repas", type="string", length=20, nullable=false)
+     */
+    private $repas;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat", type="string", length=50, nullable=false)
+     */
+    private $etat;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="jour_arriv", type="datetime", nullable=false)
+     */
+    private $jourArriv;
+
+    /**
+     * @var \Enfant
+     *
+     * @ORM\ManyToOne(targetEntity="Enfant")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_enfant", referencedColumnName="pseudonyme")
+     * })
+     */
+    private $idEnfant;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_parent", referencedColumnName="id")
+     * })
+     */
+    private $idParent;
+
+    /**
+     * @var \Garderies
+     *
+     * @ORM\ManyToOne(targetEntity="Garderies")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_garderie", referencedColumnName="id")
+     * })
+     */
+    private $idGarderie;
+
+
+}
+

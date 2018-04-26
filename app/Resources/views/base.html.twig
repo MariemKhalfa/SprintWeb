@@ -138,7 +138,7 @@
                     <div class="col-sm-4 col-md-6 col-lg-2 order-1 order-lg-1">
                         <div class="logo">
                             <a href="{{ path('homepage') }}">
-                                <img src="{{ asset('images/logo/junior.png') }}" alt="logo images">
+                                <img src="{{ asset('images/kids2.png') }}" alt="logo images">
                             </a>
                         </div>
                     </div>
@@ -210,24 +210,27 @@
                                     <li class="drop"><a href="{{ path('activite_list') }}">Activités</a>
 
                                     </li>
-                                    <li><a href="{{ path('contactUs') }}">Contact</a></li>
+
                                 </ul>
                             </nav>
                         </div>
                     </div>
-                    <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
-                        <div class="shopbox d-flex justify-content-end align-items-center">
-                            <a class="minicart-trigger" href="#">
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                            <span>01</span>
+                    {% if is_granted('ROLE_PARENT')  %}
+                        <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+                            <div class="shopbox d-flex justify-content-end align-items-center">
+                                <a class="minicart-trigger">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a href="{{ path('garderie_notif2') }}">View</a>
+                                <span>{{ mgilet_notification_unseen_count(app.user) }} {# unseen notifications #}</span>
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
                 </div>
                 <!-- Mobile Menu -->
                 <div class="mobile-menu d-block d-lg-none">
                     <div class="logo">
-                        <a href="{{ path('homepage') }}"><img src="{{ asset('images/logo/junior.png') }}" alt="logo"></a>
+                        <a href="{{ path('homepage') }}"><img src="{{ asset('images/kids2.png') }}" alt="logo"></a>
                     </div>
                     <a class="minicart-trigger" href="#">
                         <i class="fa fa-envelope"></i>
@@ -252,7 +255,7 @@
                         <div class="footer__widget">
                             <div class="ft__logo">
                                 <a href="index-2.html">
-                                    <img src="{{ asset('images/logo/junior.png')}}" alt="logo images">
+                                    <img src="{{ asset('images/kids2.png')}}" alt="logo images">
                                 </a>
                             </div>
                             <div class="ftr__details">

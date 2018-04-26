@@ -14,7 +14,10 @@ use GarderieBundle\Form\Inscription2Type;
 use GarderieBundle\Form\VoteType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class GarderiesController extends Controller
 {
@@ -27,7 +30,7 @@ class GarderiesController extends Controller
         $demande->setEtat('false');
         $garderie->setEtat("No");
         $garderie->setLatitude(36.81897);
-        $garderie->setTelephone($this->getUser()->getId());
+
         $garderie->setLongitude(10.16579);
         $garderie->setRating(0);
         $Form=$this->createForm(GarderiesType::class,$garderie);
@@ -42,12 +45,21 @@ $demande->setIdGarderie($garderie);
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
             $file->move($this->getParameter('image_directory'), $fileName);
             $garderie->setImage($fileName);
+            $date1=$garderie->getDateOuverture();
+            $date2=$garderie->getDateFermeture();
+            if($date1>$date2 || $date2<$date1){
+                $request->getSession()
+                    ->getFlashBag()
+                    ->add('error', 'veuillez vérifier la date !');
+            }
+            else{
             $em=$this->getDoctrine()->getManager();
             $em->persist($garderie);
             $em->flush();
             $em->persist($demande);
             $em->flush();
-           return  $this->redirectToRoute("garderie_liste");
+
+           return  $this->redirectToRoute("garderie_liste");}
         }
         return $this->render('GarderieBundle:Back:ajoutGarderie.html.twig',array('form'=>$Form->createView()));
     }
@@ -99,6 +111,7 @@ $demande->setIdGarderie($garderie);
         $garderie=$em->getRepository('GarderieBundle:Garderies')->find($request->get('id'));
         $vote=$em->getRepository('GarderieBundle:Vote')->RemoveVote($garderie->getId());
         $vote1=$em->getRepository('GarderieBundle:Vote')->RemoveInsc($garderie->getId());
+        $vote2=$em->getRepository('GarderieBundle:Vote')->RemoveDemande($garderie->getId());
         $em->remove($garderie);
         $em->flush();
         return $this->redirectToRoute("garderie_liste");
@@ -191,4 +204,11 @@ $demande->setIdGarderie($garderie);
     }
 
 
+    public function allallAction(){
+        $tasks=$this->getDoctrine()->getManager()->getRepository('GarderieBundle:Garderies')->findAll();
+        $serializer=new
+        Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($tasks);
+        return new JsonResponse($formatted);
+    }
     }

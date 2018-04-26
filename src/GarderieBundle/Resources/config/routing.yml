@@ -23,3 +23,5 @@ garderie_stat:
     path:     /stat
     defaults: { _controller: GarderieBundle:Garderies:StatistiquesInscripion}
 
+
+

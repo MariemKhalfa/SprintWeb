@@ -1,0 +1,43 @@
+<?php
+
+
+namespace GarderieBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Vote
+ *
+ * @ORM\Table(name="vote", indexes={@ORM\Index(name="IDX_5A108564C02AFAE6", columns={"idgarderie"})})
+ * @ORM\Entity
+ */
+class Vote
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rating", type="integer", nullable=false)
+     */
+    private $rating;
+
+    /**
+     * @var \Garderies
+     *
+     * @ORM\ManyToOne(targetEntity="Garderies")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idgarderie", referencedColumnName="id")
+     * })
+     */
+    private $idgarderie;
+
+
+}
+

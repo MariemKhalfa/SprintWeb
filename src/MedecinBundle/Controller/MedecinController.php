@@ -232,19 +232,10 @@ $voitures=new Garderies();
             /*     else{
                      return new JsonResponse(\Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
                  }*/
-            $manager = $this->get('mgilet.notification');
-            $notif = $manager->createNotification('Hello world !');
-            $notif->setMessage('Votre demande dinscription a étè enregistrée');
-            $notif->setLink('http://symfony.com/');
-            // or the one-line method :
-            // $manager->createNotification('Notification subject','Some random text','http://google.fr');
 
-            // you can add a notification to a list of entities
-            // the third parameter `$flush` allows you to directly flush the entities
-            $manager->addNotification(array($this->getUser()), $notif, true);
             $request->getSession()
                 ->getFlashBag()
-                ->add('notice', 'Welcome to the Death Star, have a magical day!')
+                ->add('notice', 'Votre demande dinscription a étè enregistrée!')
             ;
          //   return  $this->redirectToRoute("garderie_listeFront2");
         }
@@ -416,6 +407,62 @@ $voitures=new Garderies();
 
         return $this->render('MedecinBundle:Front:rechercherMedecin.html.twig',array('form'=>$form->createView(),"medecin"=>$medecins));
 
+    }
+    public function allallAction(){
+        $tasks=$this->getDoctrine()->getManager()->getRepository('GarderieBundle:Garderies')->findAll();
+        $serializer=new
+        Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($tasks);
+        return new JsonResponse($formatted);
+    }
+
+    public function newAction(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        $garderie=$em->getRepository('MedecinBundle:Medecins')->UpdateRating($request->get('rating'),$request->get('id'));
+
+        $serializer=new Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($garderie);
+        return new JsonResponse($formatted);
+    }
+
+    public function new1Action(Request $request){
+        $em=$this->getDoctrine()->getManager();
+        $inscription=new Inscription();
+        $enfant=$em->getRepository('FrontBundle:Enfant')->findOneBy(array('pseudonyme'=>$request->get('nomEnfant')));
+        $inscription->setIdenfant($enfant);
+        $inscription->setEtat('attente');
+        $garderie3=$em->getRepository('GarderieBundle:Garderies')->findOneBy(array('id'=>$request->get('idGarderie')));
+        $inscription->setIdgarderie($garderie3);
+        $parent=$em->getRepository('FrontBundle:User')->findOneBy(array('id'=>$request->get('idParent')));
+        $date=$request->get('date');
+        $inscription->setJourArriv(new \DateTime("$date"));
+        $inscription->setIdparent($parent);
+        $inscription->setCommentaires($request->get('commentaires'));
+        $inscription->setNurserie($request->get('nurserie'));
+        $inscription->setRepas($request->get('repas'));
+        $inscription->setAdresse($request->get('adresse'));
+        $inscription->setNomparent($parent);
+        $em->persist($inscription);
+        $em->flush();
+        $serializer=new Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($inscription);
+        return new JsonResponse($formatted);
+    }
+
+    public function allallMedecinsAction(){
+        $tasks=$this->getDoctrine()->getManager()->getRepository('MedecinBundle:Medecins')->findAll();
+        $serializer=new
+        Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($tasks);
+        return new JsonResponse($formatted);
+    }
+    function  DetailsMedecins5Action(Request $request){
+        $medecin=new Medecins();
+        $em=$this->getDoctrine()->getManager();
+        $medecins=$em->getRepository('MedecinBundle:Medecins')->findSerieDQL5($request->get('adresse'),$request->get('nom'));
+        $serializer=new Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($medecins);
+        return new JsonResponse($formatted);
     }
 
 }
