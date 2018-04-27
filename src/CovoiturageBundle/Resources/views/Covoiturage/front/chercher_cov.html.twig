@@ -21,45 +21,68 @@
                              pour leurs enfants.</p>
                          <div class="single__widget search">
                              <h4>Trouver</h4>
-                             <form action="#">
-                                 <input type="text" id="adresse" name="adresse" placeholder="adresse">
-
-                             </form>
+                             {{ form(form) }}
                          </div>
                          <div class="wel__btn">
-                             <a class="dcare__btn" href="{{ path('chercher_cov') }}"><span class="fa fa-search"></span></a>
+                             <a class="dcare__btn" href="about-us.html"><span class="fa fa-search"></span></a>
                          </div>
-
-                             <table border="0px">
-                                 {% for c in cov  %}
-                                     <tr>
-                                         <td>Titre</td>
-                                         <td>Date</td>
-                                         <td>Heure départ</td>
-                                         <td>Lieu départ</td>
-                                         <td>Destination </td>
-
-                                     </tr>
-
-                                     <tr>
-                                         <td>{{ c.titre }}</td>
-                                         <td>{{ c.date |date("dd/mm/yyyy") }}</td>
-                                         <td>{{ c.heureDep |date ("h:i") }}</td>
-                                         <td>{{c.adresse}}</td>
-                                     </tr>
-                                 {% endfor %}
-                             </table>
 
                      </div>
                  </div>
                  <div class="col-md-12 col-lg-6 col-sm-12 md-mt-40 sm-mt-40">
                      <div class="jnr__Welcome__thumb">
                          <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
-                         <a class="play__btn" href="https://www.youtube.com/watch?v=MCJEkZtqlBk"><i class="fa fa-play"></i></a>
+                         <a class="play__btn" href="https://www.youtube.com/watch?v=Sl_fcDJVbgI"><i class="fa fa-play"></i></a>
                      </div>
                  </div>
              </div>
          </div>
      </section>
- {% endblock %}
+     <div id="div">
 
+     </div>
+     <script src="{{ asset('jquery-3.2.1.js') }}"></script>
+     <script>
+         $("#rechercheCov").keyup(
+             function(){
+                 var adresse=$("#rechercheCov").val();
+
+                 var Data='adresse=' + adresse;
+                 console.log(Data);
+                 $.ajax({
+                     type:"POST",
+                     url: "{{ path('chercher_cov') }}",
+                     data: Data,
+                     success:function(data){
+                         console.log(data);
+
+                         $("#div").html("<table id='res' border='1'>" +
+                            " <td>Titre</td> <td>Date</td> <td>Heure départ</td> <td>Lieu départ</td> <td>Destination </td><td>Details</td></table>");
+                         $.each(data,function (k,e1) {
+
+
+                             $("#res").append(
+                                 "<tr>"+
+                                 "<td>"+e1.titre+"</td>"+
+                                 "<td>"+e1.date+"</td>"+
+                                 "<td>"+e1.heureDep +"</td>"+
+                                 "<td>"+e1.lieuDep +"</td>"+
+                                 "<td>"+e1.lieuDest +"</td>"+
+                                 "<td>"+e1.description +"</td>"+
+                                 "<td>"+
+                                 "<a href='{{ path('details_cov',{'id':"+e1.id+"}) }}'>Details"+
+                                 "</a>"+
+                                 "</td>"+
+                                 "</tr>");
+
+
+                         });
+                     }
+                 });
+
+             });
+
+
+
+     </script>
+ {% endblock %}

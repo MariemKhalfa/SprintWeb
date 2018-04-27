@@ -1,18 +1,94 @@
 {% extends 'backBase.html.twig' %}
 
 {% block body %}
-<div class="panel panel-default card-view">
-    <h1>Promotion creation</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default card-view">
+                <div class="panel-wrapper collapse in">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12">
+                                <div class="form-wrap">
+                                    <div class="panel-heading">
+                                        <div class="pull-left">
+                                            <h6 class="panel-title txt-dark">Crée votre Promotion</h6>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label mb-10" for="exampleInputuname_1">Nom de laPromotion</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="ti-blackboard"></i></div>
+                                            {{ form_widget(form.intitule, { 'attr': {'class': '', 'id':'exampleInputuname_1'}} ) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label mb-10" for="exampleInputEmail_1">Nom Du magasin</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="icon-pencil"></i></div>
+                                            {{ form_widget(form.ensegne, { 'attr': {'class': '', 'id':'exampleInputuname_1'}} ) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label mb-10" for="exampleInputpwd_1">Image du Coupon</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="icon-picture"></i></div>
+                                            {{ form_widget(form.image, { 'attr': {'class': '' , 'id':'exampleInputuname_1'}} ) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label mb-10" for="exampleInputEmail_1">Type de la Promotion</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="icon-pencil"></i></div>
+                                            {{ form_widget(form.type, { 'attr': {'class': '', 'id':'exampleInputuname_1'}} ) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label mb-10" for="exampleInputEmail_1">Nom du Produit</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="icon-pencil"></i></div>
+                                            {{ form_widget(form.nomprod, { 'attr': {'class': '', 'id':'exampleInputuname_1'}} ) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label mb-10" for="exampleInputEmail_1">Description du produit</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="icon-pencil"></i></div>
+                                            {{ form_widget(form.description, { 'attr': {'class': '', 'id':'exampleInputuname_1'}} ) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label mb-10" for="exampleInputEmail_1"> Date Debut </label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="icon-pencil"></i></div>
+                                            {{ form_widget(form.datedebut, { 'attr': {'class': '', 'id':'exampleInputuname_1'}} ) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label mb-10" for="exampleInputEmail_1">Date Fin</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="icon-pencil"></i></div>
+                                            {{ form_widget(form.datefin, { 'attr': {'class': '', 'id':'exampleInputuname_1'}} ) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" value="Create" class="btn btn-success  mr-10"/>
 
-    <ul>
-        <li>
-            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('promotions_index') }}">Back to the list</a>
-        </li>
-    </ul>
-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+    <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('promotions_index') }}">Listes des Promotion</a>
+
+
+
+
+
+
 {% endblock %}

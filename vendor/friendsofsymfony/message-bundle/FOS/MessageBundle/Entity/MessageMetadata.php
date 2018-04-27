@@ -1,34 +1,33 @@
 <?php
 
-namespace BabysittingBundle\Entity;
+namespace FOS\MessageBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use FOS\MessageBundle\Entity\MessageMetadata as BaseMessageMetadata;
+use FOS\MessageBundle\Model\MessageMetadata as BaseMessageMetadata;
+use FOS\MessageBundle\Model\MessageInterface;
 
-/**
- * @ORM\Entity
- */
-class MessageMetadata extends BaseMessageMetadata
+abstract class MessageMetadata extends BaseMessageMetadata
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
     protected $id;
-
-    /**
-     * @ORM\ManyToOne(
-     *   targetEntity="BabysittingBundle\Entity\Message",
-     *   inversedBy="metadata"
-     * )
-     * @var \FOS\MessageBundle\Model\MessageInterface
-     */
     protected $message;
 
     /**
-     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
-     * @var \FOS\MessageBundle\Model\ParticipantInterface
+     * @return int
      */
-    protected $participant;
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return MessageInterface
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    public function setMessage(MessageInterface $message)
+    {
+        $this->message = $message;
+    }
 }

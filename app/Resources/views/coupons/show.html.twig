@@ -1,75 +1,80 @@
 {% extends 'backBase.html.twig' %}
 
 {% block body %}
-    <h1>Coupon</h1>
-<div class="panel panel-default card-view">
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ coupon.id }}</td>
-            </tr>
-            <tr>
-                <th>Intitule</th>
-                <td>{{ coupon.intitule }}</td>
-            </tr>
-            <tr>
-                <th>Imagecoupon</th>
-                <td><img style="width:60px " src="{{ asset('uploads/brochures/'~coupon.imageCoupon) }}"</td>
-            </tr>
-            <tr>
-                <th>Ensegne</th>
-                <td>{{ coupon.ensegne }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ coupon.description }}</td>
-            </tr>
-            <tr>
-                <th>Datedebut</th>
-                <td>{% if coupon.dateDebut %}{{ coupon.dateDebut|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Datefin</th>
-                <td>{% if coupon.dateFin %}{{ coupon.dateFin|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Valeur</th>
-                <td>{{ coupon.valeur }}</td>
-            </tr>
-            <tr>
-                <th>Code promo</th>
-                <td>{{ coupon.codePromo }}</td>
-            </tr>
-            <tr>
-                <th>Time left </th>
-                <td>    <script language="JavaScript">
-                        TargetDate = "{% if coupon.dateFin %}{{ coupon.dateFin|date('Y-m-d') }}{% endif %}";
-                        BackColor = "palegreen";
-                        ForeColor = "red";
-                        CountActive = true;
-                        CountStepper = -1;
-                        LeadingZero = true;
-                        DisplayFormat = "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
-                        FinishMessage = "Coupon périmé !!! ";
-                    </script>
-                    <script language="JavaScript" src="https://scripts.hashemian.com/js/countdown.js"></script></td>
-            </tr>
-        </tbody>
-    </table>
 
-    <ul>
-        <li>
-            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('coupons_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('coupons_edit', { 'id': coupon.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-</div>
+
+    <div class="col-lg-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">Coupon : {{ coupon.intitule }}</h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body task-panel">
+                    <div class="list-group mb-0">
+                        <a href="#" class="list-group-item">
+                            <span class="badge badge-info">{{ coupon.id }}</span>
+                            <i class=" icon-target"></i> Id du coupon
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge  badge-success">{{ coupon.intitule }}</span>
+                            <i class="ti-blackboard"></i> Nom du coupon
+                        </a>
+
+                        <a href="#" class="list-group-item">
+                            <span class="badge  badge-success">{{ coupon.ensegne }}</span>
+                            <i class="icon-pencil"></i> Nom du magasin
+                        </a>
+
+                        <a href="#" class="list-group-item">
+                            <span class="badge  badge-success"> <img style="width:40px " src="{{ asset('uploads/brochures/'~coupon.imageCoupon) }}"> </span>
+                            <i class="icon-picture"></i> Image du Coupon
+                        </a>
+
+                        <a href="#" class="list-group-item">
+                            <span class="badge  badge-success">{{ coupon.description }}</span>
+                            <i class="ti-blackboard"></i> Description
+                        </a>
+
+                        <a href="#" class="list-group-item">
+                            <span class="badge  badge-success">{% if coupon.dateDebut %}{{ coupon.dateDebut|date('Y-m-d') }}{% endif %}</span>
+                            <i class="ti-blackboard"></i> Date Debut
+                        </a>
+
+                        <a href="#" class="list-group-item">
+                            <span class="badge  badge-success">{% if coupon.dateFin %}{{ coupon.dateFin|date('Y-m-d') }}{% endif %}</span>
+                            <i class="ti-blackboard"></i> Date Fin
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge  badge-success"><script language="JavaScript">
+                            TargetDate = "{% if coupon.dateFin %}{{ coupon.dateFin|date('Y-m-d') }}{% endif %}";
+                            BackColor = "palegreen";
+                            ForeColor = "red";
+                            CountActive = true;
+                            CountStepper = -1;
+                            LeadingZero = true;
+                            DisplayFormat = "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+                            FinishMessage = "Coupon périmé !!! ";
+                        </script>
+                        <script language="JavaScript" src="https://scripts.hashemian.com/js/countdown.js"></script></td></span>
+                            <i class="ti-blackboard"></i> Status
+                        </a>
+                        <a href="#" class="">
+                            <span class=""><a class="label label-info capitalize-font inline-block ml-10" href="{{ path('coupons_index') }}">Back to the list</a></span>
+                            <span class=""><a class="label label-info capitalize-font inline-block ml-10" href="{{ path('coupons_edit', { 'id': coupon.id }) }}">Edit</a></span>
+                        </a>
+
+                     </div>
+
+                </div>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-success  mr-10">
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+
+    </div
+    </div>
 {% endblock %}

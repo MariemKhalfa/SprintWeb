@@ -1,0 +1,3 @@
+message_homepage:
+    path:     /mess
+    defaults: { _controller: MessageBundle:Default:index }

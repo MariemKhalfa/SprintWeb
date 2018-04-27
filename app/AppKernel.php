@@ -31,7 +31,10 @@ class AppKernel extends Kernel
             new JeuxBundle\JeuxBundle(),
             new BackOfficeBundle\BackOfficeBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
-            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
+            new MessageBundle\MessageBundle(),
+            new AncaRebeca\FullCalendarBundle\FullCalendarBundle()
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

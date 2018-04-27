@@ -3,7 +3,9 @@
 namespace ELearningBundle\Controller;
 
 use ELearningBundle\Form\ModificationEnseignant;
+use FrontBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
@@ -48,24 +50,39 @@ class DefaultController extends Controller
         $Form->handleRequest($request);
         if ($Form->isSubmitted()) {
             $em = $this->getDoctrine()->getManager();
+            $Enseignant->addRole('ROLE_ENSEIGNANT');
             $em->persist($Enseignant);
             $em->flush();
             return $this->redirectToRoute('e_learning_afficherBackEnseignant');
         }
-        return $this->render('ELearningBundle:Enseignant:ModificationEnseignant.html.twig', array('form' => $Form->createView()));
+        return $this->render('ELearningBundle:Enseignant:ModificationEnseignant.html.twig', array('form' => $Form->createView(),'id'=>$id));
     }
 
     function AjoutAction(Request $request)
     {
-        $Enseignant = new Enseignant();
+        $Enseignant = new User();
 
         if ($request->isMethod('POST')) {
-            $Enseignant->set($request->get('username'));
-            $Enseignant->set($request->get('email'));
-            $Enseignant->set($request->get('mdp'));
+
+            $Enseignant->setUsername($request->get('username'));
+            $Enseignant->setCIN($request->get('cin'));
+            $Enseignant->setEmail($request->get('email'));
+            $Enseignant->setTelephone($request->get('tel'));
+            $Enseignant->setPlainPassword($request->get('mdp'));
+            $Enseignant->setSexe($request->get('sexe'));
+            $Enseignant->setNom($request->get('nom'));
+            $Enseignant->setPrenom($request->get('prenom'));
+            $Enseignant->addRole('ROLE_ENSEIGNANT');
+            $Enseignant->setRue($request->get('rue'));
+            $Enseignant->setVille($request->get('ville'));
+            $Enseignant->setDescription($request->get('description'));
+            $Enseignant->setSpecialite($request->get('specialite'));
+            $Enseignant->setEnabled(1);
             $em = $this->getDoctrine()->getManager();
             $em->persist($Enseignant);
             $em->flush();
+            return $this->redirectToRoute('e_learning_afficherBackEnseignant');
+
         }
         return $this->render('@ELearning/Enseignant/ajoutEnseignant.html.twig');
     }

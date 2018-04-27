@@ -1,47 +1,29 @@
 <?php
 
-namespace BabysittingBundle\Entity;
+namespace FOS\MessageBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
-use FOS\MessageBundle\Entity\Message as BaseMessage;
+use FOS\MessageBundle\Model\Message as BaseMessage;
+use FOS\MessageBundle\Model\MessageMetadata as ModelMessageMetadata;
 
-/**
- * @ORM\Entity
- */
-class Message extends BaseMessage
+abstract class Message extends BaseMessage
 {
     /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * Get the collection of MessageMetadata.
+     *
+     * @return Collection
      */
-    protected $id;
-
+    public function getAllMetadata()
+    {
+        return $this->metadata;
+    }
 
     /**
-     * @ORM\ManyToOne(
-     *   targetEntity="BabysittingBundle\Entity\Thread",
-     *   inversedBy="messages"
-     * )
-     * @var \FOS\MessageBundle\Model\ThreadInterface
+     * {@inheritdoc}
      */
-
-    protected $thread;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
-     * @var \FOS\MessageBundle\Model\ParticipantInterface
-     */
-    protected $sender;
-
-    /**
-     * @ORM\OneToMany(
-     *   targetEntity="BabysittingBundle\Entity\MessageMetadata",
-     *   mappedBy="message",
-     *   cascade={"all"}
-     * )
-     * @var MessageMetadata[]|Collection
-     */
-    protected $metadata;
+    public function addMetadata(ModelMessageMetadata $meta)
+    {
+        $meta->setMessage($this);
+        parent::addMetadata($meta);
+    }
 }

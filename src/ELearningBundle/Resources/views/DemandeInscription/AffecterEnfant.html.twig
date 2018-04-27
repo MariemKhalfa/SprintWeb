@@ -1,0 +1,11 @@
+
+  <form method="POST" action="{{ path('e_learning_affecterEnfant',{'idm': idm ,'idp':idp}) }}">
+  le pseudonyme de mon enfant :<select name="pseudonymeEnfant"  class="form-control" id="exampleFormControlSelect1" required>
+      {% for m in Enfant %}
+          <option value="{{ m.pseudonyme }}">{{ m.pseudonyme }}</option>
+      {% endfor %}
+  </select> <br> <br>
+   Date Debut : <input type="datetime-local" class="form-control" name="dateDebut"> <br> <br>
+        <textarea class="form-control"  type="textarea" name="description"></textarea><br><br>
+        <center> <input type="submit" value="valider" class="btn btn-primary"></center>
+    </form>

@@ -224,7 +224,7 @@
                 </ul>
             <li>
                 <a href="{{ path('e_learning_afficherBackEnseignant') }}" data-toggle="collapse" data-target="#app_dr"><i class="icon-grid mr-10"> Gestion Enseignants</i> <span class="pull-right"><span class="label label-info mr-10"></span></span></a>
-
+                <a href="{{ path('AfficheRecette') }}" data-toggle="collapse" data-target="#ecom_dr"><i class="icon-basket-loaded mr-10"></i>Recette<span class="pull-right"></span></a>
                 <a href="{{ path('activite_afficherActivite') }}" data-toggle="collapse" data-target="#ui_dr"><i class="icon-vector mr-10"> Gestion Activités</i><span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
 
 
@@ -391,7 +391,7 @@
     <script src="{{ asset('dist/js/init.js') }}"></script>
     <script src="{{ asset('dist/js/dashboard-data.js') }}"></script>
 
-
+{% block js %}{% endblock %}
 </body>
 
 

@@ -37,12 +37,12 @@
                                         <div class="event-section">
 
                                             <div class="event__location">
-                                                {% for b in bab %}
+                                                {% for c in cov %}
                                                     <ul>
-                                                        <li><span class="ti-user"></span>{{ b.babysitteur }}</li>
-                                                        <li><span class="ti-location-pin"></span>{{ b.adresse }}</li>
-                                                        <li><span class="ti-time"></span>{{ b.heureDeb |date('h:i')}} - {{ b.heureFin |date('h:i')}}</li>
-                                                        <li><span class="ti-calendar"></span>{{ b.heureDeb |date('d/m/y')}} </li>
+                                                        <li><span class="ti-user"></span>{{ c.titre }}</li>
+                                                        <li><span class="ti-location-pin"></span>{{ c.lieuDep}}v-> {{ c.lieuDest }}</li>
+                                                        <li><span class="ti-time"></span>{{ c.heureDep |date('h:i')}} </li>
+                                                        <li><span class="ti-calendar"></span>{{ c.date |date('d/m/y')}} </li>
                                                         <li><span class="ti-mobile"></span>Phone : +660 256 24857 </li>
                                                         <li><span class="ti-email"></span>Email : username@email.com,</li>
                                                         <li><span class="ti-dribbble"></span>http:// tutoring education theme.com</li>

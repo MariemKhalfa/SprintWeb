@@ -1272,9 +1272,63 @@
         ]
     },
     {
+<<<<<<< HEAD
         "name": "sensio/framework-extra-bundle",
         "version": "v3.0.29",
         "version_normalized": "3.0.29.0",
+=======
+        "name": "mgilet/notification-bundle",
+        "version": "2.0.3",
+        "version_normalized": "2.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/maximilienGilet/notification-bundle.git",
+            "reference": "7cbc4d5b6b04d978111afc14d867749af965d3e0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/maximilienGilet/notification-bundle/zipball/7cbc4d5b6b04d978111afc14d867749af965d3e0",
+            "reference": "7cbc4d5b6b04d978111afc14d867749af965d3e0",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/doctrine-bundle": "*",
+            "symfony/framework-bundle": ">=2.7 <4",
+            "twig/twig": "*"
+        },
+        "time": "2017-11-24T08:47:45+00:00",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Mgilet\\NotificationBundle\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Maximilien Gilet",
+                "email": "maximilien248@gmail.com"
+            }
+        ],
+        "description": "A simple Symfony 3 bundle for user notifications",
+        "keywords": [
+            "symfony notification bundle simple"
+        ]
+    },
+    {
+        "name": "monolog/monolog",
+        "version": "1.23.0",
+        "version_normalized": "1.23.0.0",
+>>>>>>> ab47b9d12ccf5c4c95e757f918499534c7e0b3c3
         "source": {
             "type": "git",
             "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
@@ -2811,6 +2865,7 @@
         ]
     },
     {
+<<<<<<< HEAD
         "name": "doctrine/orm",
         "version": "v2.6.1",
         "version_normalized": "2.6.1.0",
@@ -2854,11 +2909,39 @@
             "branch-alias": {
                 "dev-master": "2.6.x-dev"
             }
+=======
+        "name": "ancarebeca/full-calendar-bundle",
+        "version": "v5.0.0",
+        "version_normalized": "5.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ancarebeca/FullCalendarBundle.git",
+            "reference": "12096b8fe471832b35a91764729ae9c15d97eba6"
         },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ancarebeca/FullCalendarBundle/zipball/12096b8fe471832b35a91764729ae9c15d97eba6",
+            "reference": "12096b8fe471832b35a91764729ae9c15d97eba6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9",
+            "symfony/symfony": "^3.1.0"
+        },
+        "require-dev": {
+            "phpspec/phpspec": "^2.2"
+>>>>>>> ab47b9d12ccf5c4c95e757f918499534c7e0b3c3
+        },
+        "time": "2017-05-01T14:35:52+00:00",
+        "type": "symfony-bundle",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
+<<<<<<< HEAD
                 "Doctrine\\ORM\\": "lib/Doctrine/ORM"
+=======
+                "AncaRebeca\\FullCalendarBundle\\": ""
+>>>>>>> ab47b9d12ccf5c4c95e757f918499534c7e0b3c3
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -2867,6 +2950,7 @@
         ],
         "authors": [
             {
+<<<<<<< HEAD
                 "name": "Roman Borschel",
                 "email": "roman@code-factory.org"
             },
@@ -2892,6 +2976,21 @@
         "keywords": [
             "database",
             "orm"
+=======
+                "name": "Rebeca Mora Anca",
+                "email": "anca.rebeca@gmail.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Symfony2 integration with the library FullCalendar.js",
+        "homepage": "https://github.com/ancarebeca/FullCalendarBundle",
+        "keywords": [
+            "calendar",
+            "fullcalendar",
+            "jquery calendar",
+            "symfony2 bundle",
+            "symfony2 calendar"
+>>>>>>> ab47b9d12ccf5c4c95e757f918499534c7e0b3c3
         ]
     }
 ]

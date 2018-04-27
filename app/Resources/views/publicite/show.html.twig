@@ -32,10 +32,17 @@
                             <span class="badge  badge-success"> <img style="width:40px " src="{{ asset('uploads/brochures/'~publicite.imagePub) }}"> </span>
                             <i class="icon-picture"></i> Image du magasin
                         </a>
-
+                        <a href="#" class="">
+                            <span class=""><a class="label label-info capitalize-font inline-block ml-10" href="{{ path('publicite_index') }}">Back to the list</a></span>
+                            <span class=""><a class="label label-info capitalize-font inline-block ml-10" href="{{ path('publicite_edit', { 'id': publicite.id }) }}">Edit</a></span>
+                        </a>
 
                     </div>
                 </div>
+            </div>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete" class="btn btn-success  mr-10">
+            {{ form_end(delete_form) }}
             </div>
         </div>
     </div
@@ -44,19 +51,4 @@
 
 
 
-
-    <ul>
-        <li>
-            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('publicite_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('publicite_edit', { 'id': publicite.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-</div>
 {% endblock %}

@@ -7,6 +7,7 @@
     <table class="jsgrid-table">
     <tbody>
     <tr class="jsgrid-header-row">
+        <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 100px;"></th>
         <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 50px;">Id</th>
         <th class="jsgrid-header-cell jsgrid-align-right jsgrid-header-sortable" style="width: 100px;">Intitule</th>
         <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 100px;">Imagecoupon</th>
@@ -18,6 +19,7 @@
         <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">Codepromo</th>
         <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">Actions</th>
         <th class="jsgrid-header-cell jsgrid-control-field jsgrid-align-center" style="width: 50px;">
+        <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 100px;"></th>
 
         </th>
 
@@ -25,6 +27,7 @@
         <tbody>
         {% for coupon in coupons %}
             <tr>
+                <td></td>
                 <td><a href="{{ path('coupons_show', { 'id': coupon.id }) }}">{{ coupon.id }}</a></td>
                 <td>{{ coupon.intitule }}</td>
                 <td><img style="width:60px " align="center" src="{{ asset('uploads/brochures/'~coupon.imageCoupon) }}"</td>
@@ -34,6 +37,7 @@
                 <td>{% if coupon.dateFin %}{{ coupon.dateFin|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ coupon.valeur }}</td>
                 <td>{{ coupon.codePromo }}</td>
+                <td></td>
 
                 <td>
                     <ul>

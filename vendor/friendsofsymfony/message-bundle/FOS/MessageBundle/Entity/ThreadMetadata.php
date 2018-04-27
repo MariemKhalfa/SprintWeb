@@ -1,35 +1,35 @@
 <?php
 
-namespace BabysittingBundle\Entity;
+namespace FOS\MessageBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use FOS\MessageBundle\Entity\ThreadMetadata as BaseThreadMetadata;
+use FOS\MessageBundle\Model\ThreadInterface;
+use FOS\MessageBundle\Model\ThreadMetadata as BaseThreadMetadata;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="message_thread_metadata")
- */
-class ThreadMetadata extends BaseThreadMetadata
+abstract class ThreadMetadata extends BaseThreadMetadata
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
     protected $id;
-
-    /**
-     * @ORM\ManyToOne(
-     *   targetEntity="BabysittingBundle\Entity\Thread",
-     *   inversedBy="metadata"
-     * )
-     * @var \FOS\MessageBundle\Model\ThreadInterface
-     */
     protected $thread;
 
     /**
-     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\User")
-     * @var \FOS\MessageBundle\Model\ParticipantInterface
+     * Gets the thread map id.
+     *
+     * @return int
      */
-    protected $participant;
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return ThreadInterface
+     */
+    public function getThread()
+    {
+        return $this->thread;
+    }
+
+    public function setThread(ThreadInterface $thread)
+    {
+        $this->thread = $thread;
+    }
 }

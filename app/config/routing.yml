@@ -1,3 +1,7 @@
+message:
+    resource: "@MessageBundle/Resources/config/routing.yml"
+    prefix:   /
+
 back_office:
     resource: "@BackOfficeBundle/Resources/config/routing.yml"
     prefix:   /admin
@@ -68,4 +72,10 @@ fos_user_change_password:
 mgilet_notifications:
     resource: "@MgiletNotificationBundle/Controller/"
     prefix: /notifications
+
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /msg
+ancarebeca_fullcalendar:
+    resource: "@FullCalendarBundle/Resources/config/routing.yml"
 

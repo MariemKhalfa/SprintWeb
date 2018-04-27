@@ -46,5 +46,6 @@ return array(
     'Doctrine\\Bundle\\DoctrineBundle\\' => array($vendorDir . '/doctrine/doctrine-bundle'),
     'Composer\\CaBundle\\' => array($vendorDir . '/composer/ca-bundle/src'),
     'CMEN\\GoogleChartsBundle\\' => array($vendorDir . '/cmen/google-charts-bundle'),
+    'AncaRebeca\\FullCalendarBundle\\' => array($vendorDir . '/ancarebeca/full-calendar-bundle'),
     '' => array($baseDir . '/src'),
 );
